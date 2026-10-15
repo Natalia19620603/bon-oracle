@@ -3,66 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Бон Оракул | Bon Oracle</title>
-    <meta name="description" content="Оракул на основе учений Тендзина Вангьяла Ринпоче">
-    <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="style.css">
-    <meta name="theme-color" content="#1a1a2e">
+    <title>Бон Оракул</title>
+    <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
-    <!-- Экран выбора языка -->
     <div id="language-screen" class="screen active">
         <div class="language-container">
-            <!-- Бонский символ А (тибетская буква А) -->
-            <div class="symbol">ཨ</div>
+            <!-- Простой SVG символ вместо тибетского -->
+            <svg class="symbol" width="120" height="120" viewBox="0 0 120 120">
+                <circle cx="60" cy="60" r="55" fill="none" stroke="#d4af37" stroke-width="3"/>
+                <circle cx="60" cy="60" r="45" fill="none" stroke="#d4af37" stroke-width="2"/>
+                <text x="60" y="70" font-size="28" fill="#d4af37" text-anchor="middle" font-family="serif" font-weight="bold">БОН</text>
+            </svg>
             <h1>Выберите язык</h1>
             <p>Choose language / Elige idioma</p>
             <div class="language-buttons">
-                <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
-                <button class="lang-btn" data-lang="en">🇬🇧 English</button>
-                <button class="lang-btn" data-lang="es">🇪🇸 Español</button>
+                <button class="lang-btn" onclick="selectLang('ru')">🇺 Русский</button>
+                <button class="lang-btn" onclick="selectLang('en')">🇬🇧 English</button>
+                <button class="lang-btn" onclick="selectLang('es')">🇪🇸 Español</button>
             </div>
         </div>
     </div>
 
-    <!-- Главный экран (Алтарь) -->
     <div id="altar-screen" class="screen">
         <header>
-            <button id="menu-btn" class="icon-btn">☰</button>
+            <button class="icon-btn" onclick="showScreen('paths-screen')">☰</button>
             <div class="lang-switch">
-                <button class="lang-switch-btn" data-lang="ru">RU</button>
-                <button class="lang-switch-btn" data-lang="en">EN</button>
-                <button class="lang-switch-btn" data-lang="es">ES</button>
+                <button class="lang-switch-btn" onclick="switchLang('ru')">RU</button>
+                <button class="lang-switch-btn" onclick="switchLang('en')">EN</button>
+                <button class="lang-switch-btn" onclick="switchLang('es')">ES</button>
             </div>
         </header>
 
         <div class="altar-content">
             <div class="altar-grid">
-                <div class="card-back shamanism" data-deck="shamanism">
+                <div class="card-back shamanism" onclick="drawCard('shamanism')">
                     <div class="card-symbol">🌿</div>
-                    <div class="card-label" data-i18n="deck_shamanism">Шаманизм</div>
+                    <div class="card-label">Шаманизм</div>
                 </div>
-                <div class="card-back sutra" data-deck="sutra">
+                <div class="card-back sutra" onclick="drawCard('sutra')">
                     <div class="card-symbol">📿</div>
-                    <div class="card-label" data-i18n="deck_sutra">Сутра</div>
+                    <div class="card-label">Сутра</div>
                 </div>
-                <div class="card-back tantra" data-deck="tantra">
+                <div class="card-back tantra" onclick="drawCard('tantra')">
                     <div class="card-symbol">🔥</div>
-                    <div class="card-label" data-i18n="deck_tantra">Тантра</div>
+                    <div class="card-label">Тантра</div>
                 </div>
-                <div class="card-back dzogchen" data-deck="dzogchen">
+                <div class="card-back dzogchen" onclick="drawCard('dzogchen')">
                     <div class="card-symbol">☁️</div>
-                    <div class="card-label" data-i18n="deck_dzogchen">Дзогчен</div>
+                    <div class="card-label">Дзогчен</div>
                 </div>
             </div>
-            <p class="altar-question" data-i18n="altar_question">Что мне важно вспомнить сегодня?</p>
+            <p class="altar-question">Что мне важно вспомнить сегодня?</p>
         </div>
     </div>
 
-    <!-- Экран карты -->
     <div id="card-screen" class="screen">
         <header>
-            <button id="back-btn" class="icon-btn">← <span data-i18n="back">Назад</span></button>
+            <button class="icon-btn" onclick="showScreen('altar-screen')">← Назад</button>
         </header>
         <div class="card-content">
             <div class="card-image" id="card-image"></div>
@@ -73,17 +71,14 @@
                 <p id="card-situation-text"></p>
             </div>
             <div class="card-actions">
-                <button id="practice-btn" class="action-btn primary" data-i18n="what_to_do">🔥 Что делать?</button>
-                <button id="details-btn" class="action-btn secondary" data-i18n="details"> Подробнее</button>
-                <button id="other-levels-btn" class="action-btn secondary" data-i18n="other_levels">🔗 Другие уровни</button>
+                <button class="action-btn primary" onclick="showPractice()">🔥 Что делать?</button>
             </div>
         </div>
     </div>
 
-    <!-- Экран практики -->
     <div id="practice-screen" class="screen">
         <header>
-            <button id="practice-back-btn" class="icon-btn">← <span data-i18n="back">Назад</span></button>
+            <button class="icon-btn" onclick="showScreen('card-screen')">← Назад</button>
         </header>
         <div class="practice-content">
             <div class="practice-card-image" id="practice-card-image"></div>
@@ -91,59 +86,51 @@
                 <h2 id="practice-title"></h2>
                 <p id="practice-time" class="practice-time"></p>
             </div>
-            <div class="practice-divider">✦ </div>
+            <div class="practice-divider">  ✦</div>
             <div class="practice-steps-scroll">
                 <div class="practice-steps" id="practice-steps"></div>
             </div>
-            <button id="timer-btn" class="action-btn primary timer-button">
-                ⏱️ <span data-i18n="start_timer">Начать таймер</span>
-            </button>
+            <button class="action-btn primary timer-button" onclick="startTimer(300)">⏱️ Начать таймер</button>
         </div>
     </div>
 
-    <!-- Экран "О путях" -->
     <div id="paths-screen" class="screen">
         <header>
-            <button id="paths-back-btn" class="icon-btn">← <span data-i18n="back">Назад</span></button>
+            <button class="icon-btn" onclick="showScreen('altar-screen')">← Назад</button>
         </header>
         <div class="paths-content">
-            <h2 class="paths-title" data-i18n="paths_title">Четыре пути Бон</h2>
-            
+            <h2 class="paths-title">Четыре пути Бон</h2>
             <div class="path-card shamanism-path">
                 <div class="path-icon">🌿</div>
-                <h3 data-i18n="path_shamanism_title">Шаманизм</h3>
-                <p data-i18n="path_shamanism_desc">Внешний путь. Работа с природой, духами, элементами.</p>
+                <h3>Шаманизм</h3>
+                <p>Внешний путь. Работа с природой, духами, элементами.</p>
             </div>
-
             <div class="path-card sutra-path">
                 <div class="path-icon">📿</div>
-                <h3 data-i18n="path_sutra_title">Сутра</h3>
-                <p data-i18n="path_sutra_desc">Путь преобразования ума через этику и сострадание.</p>
+                <h3>Сутра</h3>
+                <p>Путь преобразования ума через этику и сострадание.</p>
             </div>
-
             <div class="path-card tantra-path">
                 <div class="path-icon">🔥</div>
-                <h3 data-i18n="path_tantra_title">Тантра</h3>
-                <p data-i18n="path_tantra_desc">Путь преобразования энергии через каналы и божества.</p>
+                <h3>Тантра</h3>
+                <p>Путь преобразования энергии через каналы и божества.</p>
             </div>
-
             <div class="path-card dzogchen-path">
                 <div class="path-icon">☁️</div>
-                <h3 data-i18n="path_dzogchen_title">Дзогчен</h3>
-                <p data-i18n="path_dzogchen_desc">Путь Великого Совершенства. Прямое узнавание природы ума.</p>
+                <h3>Дзогчен</h3>
+                <p>Путь Великого Совершенства. Прямое узнавание природы ума.</p>
             </div>
         </div>
     </div>
 
-    <!-- Таймер -->
     <div id="timer-modal" class="modal">
         <div class="timer-content">
             <div class="timer-display" id="timer-display">5:00</div>
-            <button id="timer-close" class="action-btn secondary" data-i18n="close">Закрыть</button>
+            <button class="action-btn secondary" onclick="stopTimer()">Закрыть</button>
         </div>
     </div>
 
-    <script src="data.js?v=2"></script>
-    <script src="app.js?v=2"></script>
+    <script src="data.js?v=3"></script>
+    <script src="app.js?v=3"></script>
 </body>
 </html>

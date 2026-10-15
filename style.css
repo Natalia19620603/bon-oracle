@@ -4,24 +4,11 @@
     box-sizing: border-box;
 }
 
-:root {
-    --bg-dark: #1a1a2e;
-    --bg-darker: #0f0f1e;
-    --text-light: #e0e0e0;
-    --text-dim: #a0a0a0;
-    --accent-shamanism: #4a7c59;
-    --accent-sutra: #d4a574;
-    --accent-tantra: #c9463d;
-    --accent-dzogchen: #6b9bd1;
-    --gold: #d4af37;
-}
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: var(--bg-dark);
-    color: var(--text-light);
+    background: #1a1a2e;
+    color: #e0e0e0;
     min-height: 100vh;
-    overflow-x: hidden;
 }
 
 .screen {
@@ -44,29 +31,19 @@ body {
     text-align: center;
 }
 
-/* Бонский символ А */
 .symbol {
-    font-size: 100px;
     margin-bottom: 20px;
-    color: var(--gold);
-    animation: pulse 2s ease-in-out infinite;
-    font-family: 'Noto Sans Tibetan', 'Microsoft Himalaya', sans-serif;
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 0.7; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.05); }
 }
 
 .language-container h1 {
     font-size: 28px;
     margin-bottom: 10px;
-    color: var(--gold);
+    color: #d4af37;
 }
 
 .language-container p {
     font-size: 16px;
-    color: var(--text-dim);
+    color: #a0a0a0;
     margin-bottom: 40px;
 }
 
@@ -81,18 +58,16 @@ body {
 .lang-btn {
     padding: 15px 30px;
     font-size: 18px;
-    background: var(--bg-darker);
-    color: var(--text-light);
-    border: 2px solid var(--gold);
+    background: #0f0f1e;
+    color: #e0e0e0;
+    border: 2px solid #d4af37;
     border-radius: 10px;
     cursor: pointer;
-    transition: all 0.3s;
 }
 
 .lang-btn:hover {
-    background: var(--gold);
-    color: var(--bg-dark);
-    transform: translateY(-2px);
+    background: #d4af37;
+    color: #1a1a2e;
 }
 
 header {
@@ -105,7 +80,7 @@ header {
 .icon-btn {
     background: none;
     border: none;
-    color: var(--text-light);
+    color: #e0e0e0;
     font-size: 24px;
     cursor: pointer;
     padding: 10px;
@@ -117,20 +92,18 @@ header {
 }
 
 .lang-switch-btn {
-    background: var(--bg-darker);
-    color: var(--text-dim);
-    border: 1px solid var(--text-dim);
+    background: #0f0f1e;
+    color: #a0a0a0;
+    border: 1px solid #a0a0a0;
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 12px;
-    transition: all 0.3s;
 }
 
 .lang-switch-btn.active {
-    background: var(--gold);
-    color: var(--bg-dark);
-    border-color: var(--gold);
+    background: #d4af37;
+    color: #1a1a2e;
 }
 
 .altar-content {
@@ -151,21 +124,18 @@ header {
 
 .card-back {
     aspect-ratio: 2/3;
-    background: var(--bg-darker);
-    border: 3px solid var(--gold);
+    background: #0f0f1e;
+    border: 3px solid #d4af37;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.3s;
-    pointer-events: auto;
-    z-index: 10;
 }
 
 .card-back:hover {
-    transform: translateY(-5px) scale(1.05);
+    transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
 }
 
@@ -176,18 +146,18 @@ header {
 
 .card-label {
     font-size: 14px;
-    color: var(--text-light);
+    color: #e0e0e0;
     font-weight: bold;
 }
 
-.card-back.shamanism { border-color: var(--accent-shamanism); }
-.card-back.sutra { border-color: var(--accent-sutra); }
-.card-back.tantra { border-color: var(--accent-tantra); }
-.card-back.dzogchen { border-color: var(--accent-dzogchen); }
+.card-back.shamanism { border-color: #4a7c59; }
+.card-back.sutra { border-color: #d4a574; }
+.card-back.tantra { border-color: #c9463d; }
+.card-back.dzogchen { border-color: #6b9bd1; }
 
 .altar-question {
     font-size: 18px;
-    color: var(--text-dim);
+    color: #a0a0a0;
     text-align: center;
     font-style: italic;
 }
@@ -204,8 +174,8 @@ header {
 .card-image {
     width: 220px;
     height: 300px;
-    background: var(--bg-darker);
-    border: 3px solid var(--gold);
+    background: #0f0f1e;
+    border: 3px solid #d4af37;
     border-radius: 15px;
     display: flex;
     align-items: center;
@@ -222,29 +192,29 @@ header {
 
 #card-title {
     font-size: 32px;
-    color: var(--gold);
+    color: #d4af37;
     text-align: center;
 }
 
 .card-subtitle {
     font-size: 18px;
-    color: var(--text-dim);
+    color: #a0a0a0;
     text-align: center;
 }
 
 .card-deck-badge {
     padding: 5px 15px;
-    background: var(--bg-darker);
+    background: #0f0f1e;
     border-radius: 20px;
     font-size: 14px;
-    color: var(--text-dim);
+    color: #a0a0a0;
 }
 
 .card-situation {
-    background: var(--bg-darker);
+    background: #0f0f1e;
     padding: 20px;
     border-radius: 10px;
-    border-left: 4px solid var(--gold);
+    border-left: 4px solid #d4af37;
     max-width: 500px;
     width: 100%;
 }
@@ -252,7 +222,7 @@ header {
 #card-situation-text {
     font-size: 16px;
     line-height: 1.6;
-    color: var(--text-light);
+    color: #e0e0e0;
 }
 
 .card-actions {
@@ -269,24 +239,18 @@ header {
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    transition: all 0.3s;
 }
 
 .action-btn.primary {
-    background: var(--gold);
-    color: var(--bg-dark);
+    background: #d4af37;
+    color: #1a1a2e;
     font-weight: bold;
 }
 
-.action-btn.primary:hover {
-    background: #e6c155;
-    transform: translateY(-2px);
-}
-
 .action-btn.secondary {
-    background: var(--bg-darker);
-    color: var(--text-light);
-    border: 2px solid var(--text-dim);
+    background: #0f0f1e;
+    color: #e0e0e0;
+    border: 2px solid #a0a0a0;
 }
 
 .practice-content {
@@ -304,206 +268,4 @@ header {
 
 .practice-card-image {
     width: 100px;
-    height: 130px;
-    background: var(--bg-darker);
-    border: 3px solid var(--gold);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 40px;
-    overflow: hidden;
-    flex-shrink: 0;
-}
-
-.practice-card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.practice-header {
-    text-align: center;
-    flex-shrink: 0;
-}
-
-#practice-title {
-    font-size: 22px;
-    color: var(--gold);
-    margin-bottom: 5px;
-}
-
-.practice-time {
-    font-size: 14px;
-    color: var(--text-dim);
-    font-style: italic;
-}
-
-.practice-divider {
-    text-align: center;
-    color: var(--gold);
-    font-size: 14px;
-    letter-spacing: 8px;
-    opacity: 0.6;
-    flex-shrink: 0;
-}
-
-.practice-steps-scroll {
-    flex: 1;
-    overflow-y: auto;
-    width: 100%;
-}
-
-.practice-steps {
-    background: var(--bg-darker);
-    padding: 15px;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    border: 1px solid rgba(212, 175, 55, 0.2);
-}
-
-.practice-step {
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-    padding: 10px;
-    background: rgba(212, 175, 55, 0.05);
-    border-radius: 8px;
-    border-left: 3px solid var(--gold);
-}
-
-.step-number {
-    background: var(--gold);
-    color: var(--bg-dark);
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    flex-shrink: 0;
-    font-size: 14px;
-}
-
-.step-text {
-    font-size: 15px;
-    line-height: 1.5;
-    color: var(--text-light);
-}
-
-.timer-button {
-    width: 100%;
-    max-width: 250px;
-    text-align: center;
-    padding: 12px 20px;
-    font-size: 16px;
-    border-radius: 50px;
-    flex-shrink: 0;
-    margin-top: 5px;
-}
-
-.paths-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px 0;
-    overflow-y: auto;
-}
-
-.paths-title {
-    font-size: 28px;
-    color: var(--gold);
-    text-align: center;
-}
-
-.path-card {
-    background: var(--bg-darker);
-    padding: 20px;
-    border-radius: 15px;
-    border: 2px solid var(--gold);
-}
-
-.path-icon {
-    font-size: 40px;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.path-card h3 {
-    font-size: 22px;
-    color: var(--gold);
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.path-card p {
-    font-size: 15px;
-    line-height: 1.6;
-    color: var(--text-light);
-    text-align: center;
-}
-
-.shamanism-path { border-color: var(--accent-shamanism); }
-.sutra-path { border-color: var(--accent-sutra); }
-.tantra-path { border-color: var(--accent-tantra); }
-.dzogchen-path { border-color: var(--accent-dzogchen); }
-
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.8);
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-}
-
-.modal.active {
-    display: flex;
-}
-
-.timer-content {
-    background: var(--bg-darker);
-    padding: 40px;
-    border-radius: 20px;
-    border: 3px solid var(--gold);
-    text-align: center;
-}
-
-.timer-display {
-    font-size: 72px;
-    color: var(--gold);
-    margin-bottom: 30px;
-    font-family: 'Courier New', monospace;
-}
-
-@media (max-width: 480px) {
-    .symbol {
-        font-size: 80px;
-    }
-    
-    .altar-grid {
-        max-width: 280px;
-    }
-    
-    .card-symbol {
-        font-size: 40px;
-    }
-    
-    .card-label {
-        font-size: 12px;
-    }
-    
-    #card-title {
-        font-size: 24px;
-    }
-    
-    .card-image {
-        width: 180px;
-        height: 240px;
-    }
-}
+   
