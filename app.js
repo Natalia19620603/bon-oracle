@@ -93,11 +93,8 @@ function updateLangSwitchUI() {
     });
 }
 
-// 🎲 ФУНКЦИЯ СЛУЧАЙНОГО ВЫБОРА КАРТЫ
 function drawCard(deck) {
-    const deckCards = data.cards[deck]; // Получаем массив карт колоды
-    
-    // Выбираем случайный индекс
+    const deckCards = data.cards[deck];
     const randomIndex = Math.floor(Math.random() * deckCards.length);
     const card = deckCards[randomIndex];
     
@@ -111,14 +108,21 @@ function showCardScreen(cardData) {
     const { deck, card } = cardData || currentCard;
     const translation = card.translations[currentLang];
 
-    document.getElementById('card-image').textContent = card.icon;
+    // Показываем картинку, если она есть, иначе эмодзи
+    const imageElement = document.getElementById('card-image');
+    if (card.image) {
+        imageElement.innerHTML = `<img src="${card.image}" alt="${translation.title}" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">`;
+    } else {
+        imageElement.textContent = card.icon;
+    }
+    
     document.getElementById('card-title').textContent = translation.title;
     document.getElementById('card-subtitle').textContent = translation.subtitle;
     
     const deckNames = {
-        shamanism: { ru: '🌿 Шаманизм', en: ' Shamanism', es: '🌿 Chamanismo' },
-        sutra: { ru: '📿 Сутра', en: ' Sutra', es: '📿 Sutra' },
-        tantra: { ru: ' Тантра', en: '🔥 Tantra', es: '🔥 Tantra' },
+        shamanism: { ru: '🌿 Шаманизм', en: '🌿 Shamanism', es: '🌿 Chamanismo' },
+        sutra: { ru: ' Сутра', en: '📿 Sutra', es: '📿 Sutra' },
+        tantra: { ru: '🔥 Тантра', en: '🔥 Tantra', es: '🔥 Tantra' },
         dzogchen: { ru: '☁️ Дзогчен', en: '☁️ Dzogchen', es: '☁️ Dzogchen' }
     };
     document.getElementById('card-deck').textContent = deckNames[deck][currentLang];

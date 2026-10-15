@@ -4,7 +4,7 @@ const data = {
             altar_question: "Что мне важно вспомнить сегодня?",
             what_to_do: "🔥 Что делать?",
             details: "📖 Подробнее",
-            other_levels: "🔗 Другие уровни",
+            other_levels: " Другие уровни",
             start_timer: "Начать таймер",
             back: "Назад",
             close: "Закрыть",
@@ -54,7 +54,7 @@ const data = {
             },
             {
                 id: "water",
-                icon: "",
+                icon: "💧",
                 translations: {
                     ru: { title: "Вода", subtitle: "Стихия текучести", situation: "Ты чувствуешь скованность, неспособность адаптироваться, эмоциональную сухость.", practice: { title: "Текучесть Воды", time: "2 минуты", steps: ["Выпей стакан воды медленно.", "Почувствуй, как она течёт внутри.", "Представь синий свет в почках.", "Отпусти контроль.", "Позволь жизни течь."] } },
                     en: { title: "Water", subtitle: "Element of flow", situation: "You feel rigidity, inability to adapt, emotional dryness.", practice: { title: "Flow of Water", time: "2 minutes", steps: ["Drink water slowly.", "Feel it flowing inside.", "Visualize blue light in kidneys.", "Release control.", "Let life flow."] } },
@@ -63,7 +63,7 @@ const data = {
             },
             {
                 id: "fire",
-                icon: "🔥",
+                icon: "",
                 translations: {
                     ru: { title: "Огонь", subtitle: "Стихия трансформации", situation: "Ты чувствуешь холод, апатию, отсутствие страсти и энергии.", practice: { title: "Сила Огня", time: "3 минуты", steps: ["Потри ладони друг о друга.", "Почувствуй тепло.", "Представь красный свет в сердце.", "Вдохни огонь.", "Зажги внутренний огонь."] } },
                     en: { title: "Fire", subtitle: "Element of transformation", situation: "You feel cold, apathy, lack of passion and energy.", practice: { title: "Power of Fire", time: "3 minutes", steps: ["Rub palms together.", "Feel warmth.", "Visualize red light in heart.", "Inhale fire.", "Ignite inner fire."] } },
@@ -91,7 +91,7 @@ const data = {
             },
             {
                 id: "nagas",
-                icon: "",
+                icon: "🐍",
                 translations: {
                     ru: { title: "Наги", subtitle: "Духи воды", situation: "Ты забыл о связи с водной стихией, используешь воду механически.", practice: { title: "Связь с Нагами", time: "1 минута", steps: ["Встань у воды.", "Положи руку на сосуд.", "Скажи: «Благодарю, наги».", "Визуализируй синий свет.", "Пей с осознанием."] } },
                     en: { title: "Nagas", subtitle: "Water spirits", situation: "You forgot connection with water element, use water mechanically.", practice: { title: "Connection with Nagas", time: "1 minute", steps: ["Stand by water.", "Place hand on container.", "Say: 'Thank you, nagas'.", "Visualize blue light.", "Drink with awareness."] } },
@@ -100,7 +100,7 @@ const data = {
             },
             {
                 id: "lu",
-                icon: "",
+                icon: "🌍",
                 translations: {
                     ru: { title: "Лу", subtitle: "Духи земли", situation: "Ты забыл о связи с землёй, ходишь по ней неосознанно.", practice: { title: "Связь с Лу", time: "2 минуты", steps: ["Сними обувь, встань на землю.", "Почувствуй почву под ногами.", "Скажи: «Благодарю, мать-земля».", "Визуализируй желтый свет.", "Побудь в тишине."] } },
                     en: { title: "Lu", subtitle: "Earth spirits", situation: "You forgot connection with earth, walk on it unconsciously.", practice: { title: "Connection with Lu", time: "2 minutes", steps: ["Remove shoes, stand on earth.", "Feel soil under feet.", "Say: 'Thank you, mother earth'.", "Visualize yellow light.", "Rest in silence."] } },
@@ -187,7 +187,7 @@ const data = {
             },
             {
                 id: "space_prana",
-                icon: "",
+                icon: "🌬️",
                 translations: {
                     ru: { title: "Прана пространства", subtitle: "Открытость", situation: "Ты чувствуешь скованность, застой, тяжесть в теле.", practice: { title: "Простор в теле", time: "2 минуты", steps: ["Расслабь плечи и челюсть.", "Представь белое пространство внутри.", "Вдохни легкий ветер.", "Выдохни напряжение.", "Побудь в пустоте."] } },
                     en: { title: "Space Prana", subtitle: "Openness", situation: "You feel tightness, stagnation, heaviness in body.", practice: { title: "Space in body", time: "2 minutes", steps: ["Relax shoulders and jaw.", "Imagine white space inside.", "Inhale light wind.", "Exhale tension.", "Rest in emptiness."] } },
