@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бон Оракул | Bon Oracle</title>
+    <meta name="description" content="Оракул на основе учений Тендзина Вангьяла Ринпоче">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#1a1a2e">
+</head>
+<body>
+    <!-- Экран выбора языка (первый запуск) -->
+    <div id="language-screen" class="screen active">
+        <div class="language-container">
+            <div class="symbol">🕉</div>
+            <h1>Выберите язык</h1>
+            <p>Choose language / Elige idioma</p>
+            <div class="language-buttons">
+                <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+                <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+                <button class="lang-btn" data-lang="es">🇪🇸 Español</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Главный экран (Алтарь) -->
+    <div id="altar-screen" class="screen">
+        <header>
+            <button id="menu-btn" class="icon-btn">☰</button>
+            <div class="lang-switch">
+                <button class="lang-switch-btn" data-lang="ru">RU</button>
+                <button class="lang-switch-btn" data-lang="en">EN</button>
+                <button class="lang-switch-btn" data-lang="es">ES</button>
+            </div>
+        </header>
+
+        <div class="altar-content">
+            <div class="altar-grid">
+                <div class="card-back shamanism" data-deck="shamanism">
+                    <div class="card-symbol">🌿</div>
+                </div>
+                <div class="card-back sutra" data-deck="sutra">
+                    <div class="card-symbol">📿</div>
+                </div>
+                <div class="card-back tantra" data-deck="tantra">
+                    <div class="card-symbol">🔥</div>
+                </div>
+                <div class="card-back dzogchen" data-deck="dzogchen">
+                    <div class="card-symbol">☁️</div>
+                </div>
+            </div>
+            <p class="altar-question" data-i18n="altar_question">Что мне важно вспомнить сегодня?</p>
+        </div>
+    </div>
+
+    <!-- Экран карты -->
+    <div id="card-screen" class="screen">
+        <header>
+            <button id="back-btn" class="icon-btn">←</button>
+        </header>
+        <div class="card-content">
+            <div class="card-image" id="card-image"></div>
+            <h2 id="card-title"></h2>
+            <p id="card-subtitle" class="card-subtitle"></p>
+            <p id="card-deck" class="card-deck-badge"></p>
+            <div class="card-situation">
+                <p id="card-situation-text"></p>
+            </div>
+            <div class="card-actions">
+                <button id="practice-btn" class="action-btn primary" data-i18n="what_to_do">🔥 Что делать?</button>
+                <button id="details-btn" class="action-btn secondary" data-i18n="details">📖 Подробнее</button>
+                <button id="other-levels-btn" class="action-btn secondary" data-i18n="other_levels">🔗 Другие уровни</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Экран практики -->
+    <div id="practice-screen" class="screen">
+        <header>
+            <button id="practice-back-btn" class="icon-btn">←</button>
+        </header>
+        <div class="practice-content">
+            <h2 id="practice-title"></h2>
+            <p id="practice-time" class="practice-time"></p>
+            <div class="practice-steps" id="practice-steps"></div>
+            <button id="timer-btn" class="action-btn primary">⏱️ Начать таймер</button>
+        </div>
+    </div>
+
+    <!-- Таймер (модальное окно) -->
+    <div id="timer-modal" class="modal">
+        <div class="timer-content">
+            <div class="timer-display" id="timer-display">5:00</div>
+            <button id="timer-close" class="action-btn secondary">Закрыть</button>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,412 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-dark: #1a1a2e;
+    --bg-darker: #0f0f1e;
+    --text-light: #e0e0e0;
+    --text-dim: #a0a0a0;
+    --accent-shamanism: #4a7c59;
+    --accent-sutra: #d4a574;
+    --accent-tantra: #c9463d;
+    --accent-dzogchen: #6b9bd1;
+    --gold: #d4af37;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-light);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Скрыть/показать экраны */
+.screen {
+    display: none;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.screen.active {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Экран выбора языка */
+.language-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.symbol {
+    font-size: 80px;
+    margin-bottom: 20px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+}
+
+.language-container h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: var(--gold);
+}
+
+.language-container p {
+    font-size: 16px;
+    color: var(--text-dim);
+    margin-bottom: 40px;
+}
+
+.language-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.lang-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    background: var(--bg-darker);
+    color: var(--text-light);
+    border: 2px solid var(--gold);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.lang-btn:hover {
+    background: var(--gold);
+    color: var(--bg-dark);
+    transform: translateY(-2px);
+}
+
+/* Главный экран (Алтарь) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.lang-switch {
+    display: flex;
+    gap: 5px;
+}
+
+.lang-switch-btn {
+    background: var(--bg-darker);
+    color: var(--text-dim);
+    border: 1px solid var(--text-dim);
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s;
+}
+
+.lang-switch-btn.active {
+    background: var(--gold);
+    color: var(--bg-dark);
+    border-color: var(--gold);
+}
+
+.altar-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.altar-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 400px;
+}
+
+.card-back {
+    aspect-ratio: 2/3;
+    background: var(--bg-darker);
+    border: 3px solid var(--gold);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-back::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 0%, var(--bg-darker) 100%);
+    opacity: 0.5;
+}
+
+.card-back:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+}
+
+.card-symbol {
+    font-size: 60px;
+    z-index: 1;
+}
+
+.card-back.shamanism { border-color: var(--accent-shamanism); }
+.card-back.sutra { border-color: var(--accent-sutra); }
+.card-back.tantra { border-color: var(--accent-tantra); }
+.card-back.dzogchen { border-color: var(--accent-dzogchen); }
+
+.altar-question {
+    font-size: 18px;
+    color: var(--text-dim);
+    text-align: center;
+    font-style: italic;
+}
+
+/* Экран карты */
+.card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.card-image {
+    width: 200px;
+    height: 200px;
+    background: var(--bg-darker);
+    border: 3px solid var(--gold);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+}
+
+#card-title {
+    font-size: 32px;
+    color: var(--gold);
+    text-align: center;
+}
+
+.card-subtitle {
+    font-size: 18px;
+    color: var(--text-dim);
+    text-align: center;
+}
+
+.card-deck-badge {
+    padding: 5px 15px;
+    background: var(--bg-darker);
+    border-radius: 20px;
+    font-size: 14px;
+    color: var(--text-dim);
+}
+
+.card-situation {
+    background: var(--bg-darker);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid var(--gold);
+    max-width: 500px;
+    width: 100%;
+}
+
+#card-situation-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-light);
+}
+
+.card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.action-btn {
+    padding: 15px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: left;
+}
+
+.action-btn.primary {
+    background: var(--gold);
+    color: var(--bg-dark);
+    font-weight: bold;
+}
+
+.action-btn.primary:hover {
+    background: #e6c155;
+    transform: translateY(-2px);
+}
+
+.action-btn.secondary {
+    background: var(--bg-darker);
+    color: var(--text-light);
+    border: 2px solid var(--text-dim);
+}
+
+.action-btn.secondary:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+/* Экран практики */
+.practice-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+#practice-title {
+    font-size: 28px;
+    color: var(--gold);
+}
+
+.practice-time {
+    font-size: 16px;
+    color: var(--text-dim);
+}
+
+.practice-steps {
+    background: var(--bg-darker);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.practice-step {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.step-number {
+    background: var(--gold);
+    color: var(--bg-dark);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.step-text {
+    font-size: 16px;
+    line-height: 1.6;
+    padding-top: 3px;
+}
+
+/* Таймер */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.timer-content {
+    background: var(--bg-darker);
+    padding: 40px;
+    border-radius: 20px;
+    border: 3px solid var(--gold);
+    text-align: center;
+}
+
+.timer-display {
+    font-size: 72px;
+    color: var(--gold);
+    margin-bottom: 30px;
+    font-family: 'Courier New', monospace;
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+    .altar-grid {
+        max-width: 300px;
+    }
+    
+    .card-symbol {
+        font-size: 40px;
+    }
+    
+    #card-title {
+        font-size: 24px;
+    }
+    
+    .card-image {
+        width: 150px;
+        height: 150px;
+        font-size: 60px;
+    }
+}
+
+@media (min-width: 768px) {
+    .altar-grid {
+        max-width: 500px;
+        gap: 30px;
+    }
+    
+    .card-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .action-btn {
+        flex: 1;
+        min-width: 200px;
+    }
+}
