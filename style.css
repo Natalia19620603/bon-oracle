@@ -314,35 +314,34 @@ header {
     color: var(--gold);
 }
 
-/* ========== КОМПАКТНЫЙ ЭКРАН ПРАКТИКИ ========== */
+/* ========== ЭКРАН ПРАКТИКИ ========== */
 
 .practice-content {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px; /* Уменьшили с 25px */
+    gap: 10px;
     padding: 10px 0;
     max-width: 600px;
     margin: 0 auto;
     width: 100%;
-    overflow-y: auto; /* Добавили прокрутку если нужно */
+    height: calc(100vh - 60px);
 }
 
-/* Картинка карты - КОМПАКТНАЯ */
 .practice-card-image {
-    width: 120px; /* Было 180px */
-    height: 160px; /* Было 240px */
+    width: 100px;
+    height: 130px;
     background: var(--bg-darker);
     border: 3px solid var(--gold);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 50px; /* Было 60px */
+    font-size: 40px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
-    flex-shrink: 0; /* Не сжимается */
+    flex-shrink: 0;
 }
 
 .practice-card-image img {
@@ -351,7 +350,6 @@ header {
     object-fit: cover;
 }
 
-/* Заголовок практики - КОМПАКТНЫЙ */
 .practice-header {
     text-align: center;
     width: 100%;
@@ -359,48 +357,52 @@ header {
 }
 
 #practice-title {
-    font-size: 24px; /* Было 28px */
+    font-size: 22px;
     color: var(--gold);
-    margin-bottom: 5px; /* Было 8px */
+    margin-bottom: 5px;
     font-weight: 600;
 }
 
 .practice-time {
-    font-size: 14px; /* Было 16px */
+    font-size: 14px;
     color: var(--text-dim);
     font-style: italic;
 }
 
-/* Декоративная линия - КОМПАКТНАЯ */
 .practice-divider {
     text-align: center;
     color: var(--gold);
-    font-size: 16px; /* Было 18px */
+    font-size: 14px;
     letter-spacing: 8px;
     opacity: 0.6;
-    margin: 5px 0; /* Было 10px */
+    margin: 5px 0;
     flex-shrink: 0;
 }
 
-/* Шаги практики - КОМПАКТНЫЕ */
+/* Прокручиваемая область шагов */
+.practice-steps-scroll {
+    flex: 1;
+    overflow-y: auto;
+    width: 100%;
+    padding: 5px;
+}
+
 .practice-steps {
     background: var(--bg-darker);
-    padding: 15px; /* Было 25px */
+    padding: 15px;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Было 18px */
+    gap: 10px;
     width: 100%;
     border: 1px solid rgba(212, 175, 55, 0.2);
-    flex: 1; /* Занимает оставшееся место */
-    overflow-y: auto; /* Прокрутка если шагов много */
 }
 
 .practice-step {
     display: flex;
-    gap: 12px; /* Было 15px */
+    gap: 12px;
     align-items: flex-start;
-    padding: 10px; /* Было 12px */
+    padding: 10px;
     background: rgba(212, 175, 55, 0.05);
     border-radius: 8px;
     border-left: 3px solid var(--gold);
@@ -415,40 +417,97 @@ header {
 .step-number {
     background: var(--gold);
     color: var(--bg-dark);
-    width: 28px; /* Было 32px */
-    height: 28px; /* Было 32px */
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
     flex-shrink: 0;
-    font-size: 14px; /* Было 16px */
+    font-size: 14px;
 }
 
 .step-text {
-    font-size: 15px; /* Было 16px */
-    line-height: 1.5; /* Было 1.6 */
+    font-size: 15px;
+    line-height: 1.5;
     padding-top: 3px;
     color: var(--text-light);
 }
 
-/* Кнопка таймера - КОМПАКТНАЯ */
+/* Кнопка таймера - всегда видна */
 .timer-button {
     width: 100%;
-    max-width: 250px; /* Было 300px */
+    max-width: 250px;
     text-align: center;
-    padding: 14px 25px; /* Было 18px 30px */
-    font-size: 16px; /* Было 18px */
+    padding: 12px 20px;
+    font-size: 16px;
     border-radius: 50px;
     box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
     flex-shrink: 0;
+    margin-top: 5px;
 }
 
 .timer-button:hover {
     box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
     transform: translateY(-2px);
 }
+
+/* ========== ЭКРАН "О ПУТЯХ" ========== */
+
+.paths-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+    overflow-y: auto;
+}
+
+.paths-title {
+    font-size: 28px;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.path-card {
+    background: var(--bg-darker);
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid var(--gold);
+    transition: all 0.3s;
+}
+
+.path-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
+}
+
+.path-icon {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.path-card h3 {
+    font-size: 22px;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.path-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-light);
+    text-align: center;
+}
+
+.shamanism-path { border-color: var(--accent-shamanism); }
+.sutra-path { border-color: var(--accent-sutra); }
+.tantra-path { border-color: var(--accent-tantra); }
+.dzogchen-path { border-color: var(--accent-dzogchen); }
 
 /* Таймер модальное окно */
 .modal {
@@ -480,44 +539,95 @@ header {
     font-family: 'Courier New', monospace;
 }
 
-/* Адаптивность для мобильных */
+/* Адаптивность */
 @media (max-width: 480px) {
     .screen {
-        padding: 10px; /* Было 20px */
+        padding: 10px;
     }
     
     .altar-grid {
-        max-width: 280px; /* Было 300px */
+        max-width: 280px;
         gap: 15px;
     }
     
     .card-symbol {
-        font-size: 35px; /* Было 40px */
+        font-size: 35px;
     }
     
     .card-label {
-        font-size: 11px; /* Было 12px */
+        font-size: 11px;
     }
     
     #card-title {
-        font-size: 22px; /* Было 24px */
+        font-size: 22px;
     }
     
     .card-image {
-        width: 160px; /* Было 180px */
-        height: 220px; /* Было 260px */
+        width: 160px;
+        height: 220px;
     }
     
-    /* Практика на мобильных - ещё компактнее */
     .practice-card-image {
-        width: 100px; /* Было 150px */
-        height: 130px; /* Было 200px */
-        font-size: 40px;
+        width: 80px;
+        height: 110px;
+        font-size: 35px;
     }
     
     #practice-title {
-        font-size: 20px; /* Было 24px */
+        font-size: 20px;
     }
     
     .practice-steps {
-       
+        padding: 12px;
+        gap: 8px;
+    }
+    
+    .practice-step {
+        padding: 8px;
+        gap: 10px;
+    }
+    
+    .step-number {
+        width: 24px;
+        height: 24px;
+        font-size: 12px;
+    }
+    
+    .step-text {
+        font-size: 14px;
+    }
+    
+    .timer-button {
+        padding: 10px 18px;
+        font-size: 15px;
+    }
+    
+    .paths-title {
+        font-size: 24px;
+    }
+    
+    .path-card h3 {
+        font-size: 20px;
+    }
+    
+    .path-card p {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 768px) {
+    .altar-grid {
+        max-width: 500px;
+        gap: 30px;
+    }
+    
+    .card-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .action-btn {
+        flex: 1;
+        min-width: 200px;
+    }
+}

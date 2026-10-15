@@ -42,7 +42,7 @@
                     <div class="card-label" data-i18n="deck_shamanism">Шаманизм</div>
                 </div>
                 <div class="card-back sutra" data-deck="sutra">
-                    <div class="card-symbol">📿</div>
+                    <div class="card-symbol"></div>
                     <div class="card-label" data-i18n="deck_sutra">Сутра</div>
                 </div>
                 <div class="card-back tantra" data-deck="tantra">
@@ -50,7 +50,7 @@
                     <div class="card-label" data-i18n="deck_tantra">Тантра</div>
                 </div>
                 <div class="card-back dzogchen" data-deck="dzogchen">
-                    <div class="card-symbol">️</div>
+                    <div class="card-symbol">☁️</div>
                     <div class="card-label" data-i18n="deck_dzogchen">Дзогчен</div>
                 </div>
             </div>
@@ -79,13 +79,13 @@
         </div>
     </div>
 
-    <!-- Экран практики (УЛУЧШЕННЫЙ ДИЗАЙН) -->
+    <!-- Экран практики -->
     <div id="practice-screen" class="screen">
         <header>
             <button id="practice-back-btn" class="icon-btn">← <span data-i18n="back">Назад</span></button>
         </header>
         <div class="practice-content">
-            <!-- Картинка карты сверху -->
+            <!-- Картинка карты -->
             <div class="practice-card-image" id="practice-card-image"></div>
             
             <!-- Название практики -->
@@ -97,25 +97,44 @@
             <!-- Декоративная линия -->
             <div class="practice-divider">✦  ✦</div>
 
-            <!-- Шаги практики (красивые карточки) -->
-            <div class="practice-steps" id="practice-steps"></div>
+            <!-- Шаги практики (прокручиваемые) -->
+            <div class="practice-steps-scroll">
+                <div class="practice-steps" id="practice-steps"></div>
+            </div>
 
-            <!-- Кнопка таймера (компактная) -->
+            <!-- Кнопка таймера (всегда видна внизу) -->
             <button id="timer-btn" class="action-btn primary timer-button">
                 ⏱️ <span data-i18n="start_timer">Начать таймер</span>
             </button>
         </div>
     </div>
 
-    <!-- Таймер -->
-    <div id="timer-modal" class="modal">
-        <div class="timer-content">
-            <div class="timer-display" id="timer-display">5:00</div>
-            <button id="timer-close" class="action-btn secondary" data-i18n="close">Закрыть</button>
-        </div>
-    </div>
+    <!-- Экран "О путях" -->
+    <div id="paths-screen" class="screen">
+        <header>
+            <button id="paths-back-btn" class="icon-btn">← <span data-i18n="back">Назад</span></button>
+        </header>
+        <div class="paths-content">
+            <h2 class="paths-title" data-i18n="paths_title">Четыре пути Бон</h2>
+            
+            <div class="path-card shamanism-path">
+                <div class="path-icon"></div>
+                <h3 data-i18n="path_shamanism_title">Шаманизм</h3>
+                <p data-i18n="path_shamanism_desc">Внешний путь. Работа с природой, духами, элементами. Установление гармонии с окружающим миром через подношения и ритуалы.</p>
+            </div>
 
-    <script src="data.js"></script>
-    <script src="app.js"></script>
-</body>
-</html>
+            <div class="path-card sutra-path">
+                <div class="path-icon">📿</div>
+                <h3 data-i18n="path_sutra_title">Сутра</h3>
+                <p data-i18n="path_sutra_desc">Путь преобразования ума. Развитие этики, сострадания, мудрости. Меняет наше отношение к миру через мотивацию и нравственность.</p>
+            </div>
+
+            <div class="path-card tantra-path">
+                <div class="path-icon">🔥</div>
+                <h3 data-i18n="path_tantra_title">Тантра</h3>
+                <p data-i18n="path_tantra_desc">Путь преобразования энергии. Работа с каналами, ветрами, божествами. Меняет нашу энергетику через визуализации и мантры.</p>
+            </div>
+
+            <div class="path-card dzogchen-path">
+                <div class="path-icon">☁️</div>
+                <h3 data-i18n="path_dzogchen_title">Дзог

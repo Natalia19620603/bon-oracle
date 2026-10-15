@@ -2,6 +2,43 @@ let currentLang = localStorage.getItem('lang') || 'ru';
 let currentCard = null;
 let timerInterval = null;
 
+// Переводы для экрана "О путях"
+const pathsTranslations = {
+    ru: {
+        paths_title: "Четыре пути Бон",
+        path_shamanism_title: "Шаманизм",
+        path_shamanism_desc: "Внешний путь. Работа с природой, духами, элементами. Установление гармонии с окружающим миром через подношения и ритуалы.",
+        path_sutra_title: "Сутра",
+        path_sutra_desc: "Путь преобразования ума. Развитие этики, сострадания, мудрости. Меняет наше отношение к миру через мотивацию и нравственность.",
+        path_tantra_title: "Тантра",
+        path_tantra_desc: "Путь преобразования энергии. Работа с каналами, ветрами, божествами. Меняет нашу энергетику через визуализации и мантры.",
+        path_dzogchen_title: "Дзогчен",
+        path_dzogchen_desc: "Путь Великого Совершенства. Прямое узнавание природы ума. Без усилий и трансформации — просто пребывание в том, что есть."
+    },
+    en: {
+        paths_title: "Four Paths of Bon",
+        path_shamanism_title: "Shamanism",
+        path_shamanism_desc: "Outer path. Working with nature, spirits, elements. Establishing harmony with the surrounding world through offerings and rituals.",
+        path_sutra_title: "Sutra",
+        path_sutra_desc: "Path of mind transformation. Development of ethics, compassion, wisdom. Changes our attitude to the world through motivation and morality.",
+        path_tantra_title: "Tantra",
+        path_tantra_desc: "Path of energy transformation. Working with channels, winds, deities. Changes our energy through visualizations and mantras.",
+        path_dzogchen_title: "Dzogchen",
+        path_dzogchen_desc: "Path of Great Perfection. Direct recognition of the nature of mind. Without effort and transformation — simply abiding in what is."
+    },
+    es: {
+        paths_title: "Cuatro caminos del Bon",
+        path_shamanism_title: "Chamanismo",
+        path_shamanism_desc: "Camino exterior. Trabajo con naturaleza, espíritus, elementos. Establecer armonía con el mundo a través de ofrendas y rituales.",
+        path_sutra_title: "Sutra",
+        path_sutra_desc: "Camino de transformación de la mente. Desarrollo de ética, compasión, sabiduría. Cambia nuestra actitud al mundo a través de motivación y moralidad.",
+        path_tantra_title: "Tantra",
+        path_tantra_desc: "Camino de transformación de energía. Trabajo con canales, vientos, deidades. Cambia nuestra energía a través de visualizaciones y mantras.",
+        path_dzogchen_title: "Dzogchen",
+        path_dzogchen_desc: "Camino de la Gran Perfección. Reconocimiento directo de la naturaleza de la mente. Sin esfuerzo ni transformación — simplemente permaneciendo en lo que es."
+    }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log('App initialized, language:', currentLang);
     
@@ -66,6 +103,18 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         stopTimer();
     });
+
+    // Кнопка меню - открывает экран "О путях"
+    document.getElementById('menu-btn').addEventListener('click', (e) => {
+        e.preventDefault();
+        showPathsScreen();
+    });
+
+    // Кнопка назад с экрана "О путях"
+    document.getElementById('paths-back-btn').addEventListener('click', (e) => {
+        e.preventDefault();
+        showScreen('altar-screen');
+    });
 });
 
 function showScreen(screenId) {
@@ -120,7 +169,7 @@ function showCardScreen(cardData) {
     
     const deckNames = {
         shamanism: { ru: '🌿 Шаманизм', en: '🌿 Shamanism', es: '🌿 Chamanismo' },
-        sutra: { ru: ' Сутра', en: '📿 Sutra', es: '📿 Sutra' },
+        sutra: { ru: '📿 Сутра', en: '📿 Sutra', es: '📿 Sutra' },
         tantra: { ru: '🔥 Тантра', en: '🔥 Tantra', es: '🔥 Tantra' },
         dzogchen: { ru: '☁️ Дзогчен', en: '☁️ Dzogchen', es: '☁️ Dzogchen' }
     };
@@ -136,7 +185,6 @@ function showPractice() {
     const translation = card.translations[currentLang];
     const practice = translation.practice;
 
-    // Показываем картинку карты на экране практики
     const practiceImageElement = document.getElementById('practice-card-image');
     if (card.image) {
         practiceImageElement.innerHTML = `<img src="${card.image}" alt="${translation.title}" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">`;
@@ -160,6 +208,22 @@ function showPractice() {
     });
 
     showScreen('practice-screen');
+}
+
+function showPathsScreen() {
+    const translations = pathsTranslations[currentLang];
+    
+    document.querySelector('.paths-title').textContent = translations.paths_title;
+    document.querySelector('.path_shamanism_title').textContent = translations.path_shamanism_title;
+    document.querySelector('.path_shamanism_desc').textContent = translations.path_shamanism_desc;
+    document.querySelector('.path_sutra_title').textContent = translations.path_sutra_title;
+    document.querySelector('.path_sutra_desc').textContent = translations.path_sutra_desc;
+    document.querySelector('.path_tantra_title').textContent = translations.path_tantra_title;
+    document.querySelector('.path_tantra_desc').textContent = translations.path_tantra_desc;
+    document.querySelector('.path_dzogchen_title').textContent = translations.path_dzogchen_title;
+    document.querySelector('.path_dzogchen_desc').textContent = translations.path_dzogchen_desc;
+    
+    showScreen('paths-screen');
 }
 
 function startTimer(seconds) {
