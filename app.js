@@ -2,45 +2,44 @@ let currentLang = localStorage.getItem('lang') || 'ru';
 let currentCard = null;
 let timerInterval = null;
 
-// Переводы для экрана "О путях"
 const pathsTranslations = {
     ru: {
         paths_title: "Четыре пути Бон",
         path_shamanism_title: "Шаманизм",
-        path_shamanism_desc: "Внешний путь. Работа с природой, духами, элементами. Установление гармонии с окружающим миром через подношения и ритуалы.",
+        path_shamanism_desc: "Внешний путь. Работа с природой, духами, элементами. Установление гармонии через подношения и ритуалы.",
         path_sutra_title: "Сутра",
-        path_sutra_desc: "Путь преобразования ума. Развитие этики, сострадания, мудрости. Меняет наше отношение к миру через мотивацию и нравственность.",
+        path_sutra_desc: "Путь преобразования ума. Развитие этики, сострадания, мудрости. Меняет отношение к миру.",
         path_tantra_title: "Тантра",
-        path_tantra_desc: "Путь преобразования энергии. Работа с каналами, ветрами, божествами. Меняет нашу энергетику через визуализации и мантры.",
+        path_tantra_desc: "Путь преобразования энергии. Работа с каналами, ветрами, божествами. Меняет энергетику.",
         path_dzogchen_title: "Дзогчен",
-        path_dzogchen_desc: "Путь Великого Совершенства. Прямое узнавание природы ума. Без усилий и трансформации — просто пребывание в том, что есть."
+        path_dzogchen_desc: "Путь Великого Совершенства. Прямое узнавание природы ума. Без усилий — просто пребывание."
     },
     en: {
         paths_title: "Four Paths of Bon",
         path_shamanism_title: "Shamanism",
-        path_shamanism_desc: "Outer path. Working with nature, spirits, elements. Establishing harmony with the surrounding world through offerings and rituals.",
+        path_shamanism_desc: "Outer path. Working with nature, spirits, elements. Harmony through offerings and rituals.",
         path_sutra_title: "Sutra",
-        path_sutra_desc: "Path of mind transformation. Development of ethics, compassion, wisdom. Changes our attitude to the world through motivation and morality.",
+        path_sutra_desc: "Path of mind transformation. Ethics, compassion, wisdom. Changes attitude to the world.",
         path_tantra_title: "Tantra",
-        path_tantra_desc: "Path of energy transformation. Working with channels, winds, deities. Changes our energy through visualizations and mantras.",
+        path_tantra_desc: "Path of energy transformation. Channels, winds, deities. Changes energy through practice.",
         path_dzogchen_title: "Dzogchen",
-        path_dzogchen_desc: "Path of Great Perfection. Direct recognition of the nature of mind. Without effort and transformation — simply abiding in what is."
+        path_dzogchen_desc: "Path of Great Perfection. Direct recognition of mind nature. Without effort — just abiding."
     },
     es: {
         paths_title: "Cuatro caminos del Bon",
         path_shamanism_title: "Chamanismo",
-        path_shamanism_desc: "Camino exterior. Trabajo con naturaleza, espíritus, elementos. Establecer armonía con el mundo a través de ofrendas y rituales.",
+        path_shamanism_desc: "Camino exterior. Trabajo con naturaleza, espíritus, elementos. Armonía a través de ofrendas.",
         path_sutra_title: "Sutra",
-        path_sutra_desc: "Camino de transformación de la mente. Desarrollo de ética, compasión, sabiduría. Cambia nuestra actitud al mundo a través de motivación y moralidad.",
+        path_sutra_desc: "Camino de transformación mental. Ética, compasión, sabiduría. Cambia actitud al mundo.",
         path_tantra_title: "Tantra",
-        path_tantra_desc: "Camino de transformación de energía. Trabajo con canales, vientos, deidades. Cambia nuestra energía a través de visualizaciones y mantras.",
+        path_tantra_desc: "Camino de transformación energética. Canales, vientos, deidades. Cambia energía.",
         path_dzogchen_title: "Dzogchen",
-        path_dzogchen_desc: "Camino de la Gran Perfección. Reconocimiento directo de la naturaleza de la mente. Sin esfuerzo ni transformación — simplemente permaneciendo en lo que es."
+        path_dzogchen_desc: "Camino de la Gran Perfección. Reconocimiento directo de la mente. Sin esfuerzo."
     }
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('App initialized, language:', currentLang);
+    console.log('✅ App initialized, language:', currentLang);
     
     if (currentLang) {
         showScreen('altar-screen');
@@ -50,9 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
         showScreen('language-screen');
     }
 
+    // Обработчики кнопок языка
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
+            console.log('🌐 Language button clicked:', btn.dataset.lang);
             currentLang = btn.dataset.lang;
             localStorage.setItem('lang', currentLang);
             showScreen('altar-screen');
@@ -64,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.lang-switch-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
+            console.log('🔄 Language switched to:', btn.dataset.lang);
             currentLang = btn.dataset.lang;
             localStorage.setItem('lang', currentLang);
             updateLanguage();
@@ -75,6 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         card.addEventListener('click', (e) => {
             e.preventDefault();
             const deck = card.dataset.deck;
+            console.log('🎴 Card clicked:', deck);
             drawCard(deck);
         });
     });
@@ -104,13 +107,12 @@ document.addEventListener('DOMContentLoaded', () => {
         stopTimer();
     });
 
-    // Кнопка меню - открывает экран "О путях"
     document.getElementById('menu-btn').addEventListener('click', (e) => {
         e.preventDefault();
+        console.log(' Menu clicked - showing paths');
         showPathsScreen();
     });
 
-    // Кнопка назад с экрана "О путях"
     document.getElementById('paths-back-btn').addEventListener('click', (e) => {
         e.preventDefault();
         showScreen('altar-screen');
@@ -118,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function showScreen(screenId) {
+    console.log('📱 Showing screen:', screenId);
     document.querySelectorAll('.screen').forEach(screen => {
         screen.classList.remove('active');
     });
@@ -146,9 +149,7 @@ function drawCard(deck) {
     const deckCards = data.cards[deck];
     const randomIndex = Math.floor(Math.random() * deckCards.length);
     const card = deckCards[randomIndex];
-    
-    console.log('Randomly drew:', card.id, 'from deck:', deck);
-    
+    console.log('🎲 Drew card:', card.id);
     currentCard = { deck, card };
     showCardScreen({ deck, card });
 }
@@ -159,7 +160,7 @@ function showCardScreen(cardData) {
 
     const imageElement = document.getElementById('card-image');
     if (card.image) {
-        imageElement.innerHTML = `<img src="${card.image}" alt="${translation.title}" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">`;
+        imageElement.innerHTML = `<img src="${card.image}" alt="${translation.title}">`;
     } else {
         imageElement.textContent = card.icon;
     }
@@ -187,7 +188,7 @@ function showPractice() {
 
     const practiceImageElement = document.getElementById('practice-card-image');
     if (card.image) {
-        practiceImageElement.innerHTML = `<img src="${card.image}" alt="${translation.title}" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">`;
+        practiceImageElement.innerHTML = `<img src="${card.image}" alt="${translation.title}">`;
     } else {
         practiceImageElement.textContent = card.icon;
     }
@@ -211,34 +212,28 @@ function showPractice() {
 }
 
 function showPathsScreen() {
-    const translations = pathsTranslations[currentLang];
-    
-    document.querySelector('.paths-title').textContent = translations.paths_title;
-    document.querySelector('.path_shamanism_title').textContent = translations.path_shamanism_title;
-    document.querySelector('.path_shamanism_desc').textContent = translations.path_shamanism_desc;
-    document.querySelector('.path_sutra_title').textContent = translations.path_sutra_title;
-    document.querySelector('.path_sutra_desc').textContent = translations.path_sutra_desc;
-    document.querySelector('.path_tantra_title').textContent = translations.path_tantra_title;
-    document.querySelector('.path_tantra_desc').textContent = translations.path_tantra_desc;
-    document.querySelector('.path_dzogchen_title').textContent = translations.path_dzogchen_title;
-    document.querySelector('.path_dzogchen_desc').textContent = translations.path_dzogchen_desc;
-    
+    const t = pathsTranslations[currentLang];
+    document.querySelector('.paths-title').textContent = t.paths_title;
+    document.querySelector('.path_shamanism_title').textContent = t.path_shamanism_title;
+    document.querySelector('.path_shamanism_desc').textContent = t.path_shamanism_desc;
+    document.querySelector('.path_sutra_title').textContent = t.path_sutra_title;
+    document.querySelector('.path_sutra_desc').textContent = t.path_sutra_desc;
+    document.querySelector('.path_tantra_title').textContent = t.path_tantra_title;
+    document.querySelector('.path_tantra_desc').textContent = t.path_tantra_desc;
+    document.querySelector('.path_dzogchen_title').textContent = t.path_dzogchen_title;
+    document.querySelector('.path_dzogchen_desc').textContent = t.path_dzogchen_desc;
     showScreen('paths-screen');
 }
 
 function startTimer(seconds) {
     const modal = document.getElementById('timer-modal');
     modal.classList.add('active');
-    
     let remaining = seconds;
     updateTimerDisplay(remaining);
-
     if (timerInterval) clearInterval(timerInterval);
-    
     timerInterval = setInterval(() => {
         remaining--;
         updateTimerDisplay(remaining);
-
         if (remaining <= 0) {
             stopTimer();
             alert('⏰ Время вышло!');
@@ -249,8 +244,7 @@ function startTimer(seconds) {
 function updateTimerDisplay(seconds) {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
-    document.getElementById('timer-display').textContent = 
-        `${mins}:${secs.toString().padStart(2, '0')}`;
+    document.getElementById('timer-display').textContent = `${mins}:${secs.toString().padStart(2, '0')}`;
 }
 
 function stopTimer() {
