@@ -15,8 +15,8 @@ const data = {
         },
         en: {
             altar_question: "What is important for me to remember today?",
-            what_to_do: " What to do?",
-            details: " Details",
+            what_to_do: "🔥 What to do?",
+            details: "📖 Details",
             other_levels: "🔗 Other levels",
             start_timer: "Start timer",
             back: "Back",
@@ -41,18 +41,8 @@ const data = {
         }
     },
 
-    // ВАЖНО: Теперь это МАССИВЫ (в квадратных скобках [ ]), а не одиночные объекты
     cards: {
         shamanism: [
-            {
-                id: "nagi",
-                icon: "🐍",
-                translations: {
-                    ru: { title: "Наги", subtitle: "Духи воды", situation: "Ты забыл о связи с природой. Вода — это жизнь, и ты используешь её механически.", practice: { title: "Связь с водой", time: "1-2 минуты", steps: ["Встань у источника воды.", "Положи руку на сосуд.", "Скажи: «Я вижу тебя, наги. Благодарю за воду».", "Визуализируй синий свет.", "Пей с осознанием."] } },
-                    en: { title: "Nagi", subtitle: "Water spirits", situation: "You forgot your connection with nature. Water is life, used mechanically.", practice: { title: "Connection with water", time: "1-2 minutes", steps: ["Stand by a water source.", "Place hand on container.", "Say: 'I see you, nagas. Thank you.'", "Visualize blue light.", "Drink with awareness."] } },
-                    es: { title: "Nagi", subtitle: "Espíritus del agua", situation: "Olvidaste tu conexión con la naturaleza. El agua es vida, usada mecánicamente.", practice: { title: "Conexión con el agua", time: "1-2 minutos", steps: ["Párate junto al agua.", "Pon la mano en el recipiente.", "Di: 'Los veo, nagas. Gracias.'", "Visualiza luz azul.", "Bebe con conciencia."] } }
-                }
-            },
             {
                 id: "earth",
                 icon: "🏔️",
@@ -60,6 +50,106 @@ const data = {
                     ru: { title: "Земля", subtitle: "Стихия устойчивости", situation: "Ты чувствуешь тревогу, потерю опоры, суету. Тебе нужно заземлиться.", practice: { title: "Сила Земли", time: "2 минуты", steps: ["Поставь стопы плотно на пол.", "Представь корни, уходящие в землю.", "Вдохни желтый свет земли.", "Почувствуй тяжесть и покой.", "Скажи: «Я в безопасности»."] } },
                     en: { title: "Earth", subtitle: "Element of stability", situation: "You feel anxiety, loss of ground, rush. You need to ground yourself.", practice: { title: "Power of Earth", time: "2 minutes", steps: ["Place feet firmly on floor.", "Imagine roots going into earth.", "Inhale yellow earth light.", "Feel weight and peace.", "Say: 'I am safe'."] } },
                     es: { title: "Tierra", subtitle: "Elemento de estabilidad", situation: "Sientes ansiedad, pérdida de suelo, prisa. Necesitas enraizarte.", practice: { title: "Poder de la Tierra", time: "2 minutos", steps: ["Pon los pies firmes.", "Imagina raíces en la tierra.", "Inhala luz amarilla.", "Siente peso y paz.", "Di: 'Estoy a salvo'."] } }
+                }
+            },
+            {
+                id: "water",
+                icon: "",
+                translations: {
+                    ru: { title: "Вода", subtitle: "Стихия текучести", situation: "Ты чувствуешь скованность, неспособность адаптироваться, эмоциональную сухость.", practice: { title: "Текучесть Воды", time: "2 минуты", steps: ["Выпей стакан воды медленно.", "Почувствуй, как она течёт внутри.", "Представь синий свет в почках.", "Отпусти контроль.", "Позволь жизни течь."] } },
+                    en: { title: "Water", subtitle: "Element of flow", situation: "You feel rigidity, inability to adapt, emotional dryness.", practice: { title: "Flow of Water", time: "2 minutes", steps: ["Drink water slowly.", "Feel it flowing inside.", "Visualize blue light in kidneys.", "Release control.", "Let life flow."] } },
+                    es: { title: "Agua", subtitle: "Elemento de fluidez", situation: "Sientes rigidez, incapacidad de adaptarte, sequedad emocional.", practice: { title: "Fluidez del Agua", time: "2 minutos", steps: ["Bebe agua lentamente.", "Siente cómo fluye.", "Visualiza luz azul en riñones.", "Suelta el control.", "Deja que la vida fluya."] } }
+                }
+            },
+            {
+                id: "fire",
+                icon: "🔥",
+                translations: {
+                    ru: { title: "Огонь", subtitle: "Стихия трансформации", situation: "Ты чувствуешь холод, апатию, отсутствие страсти и энергии.", practice: { title: "Сила Огня", time: "3 минуты", steps: ["Потри ладони друг о друга.", "Почувствуй тепло.", "Представь красный свет в сердце.", "Вдохни огонь.", "Зажги внутренний огонь."] } },
+                    en: { title: "Fire", subtitle: "Element of transformation", situation: "You feel cold, apathy, lack of passion and energy.", practice: { title: "Power of Fire", time: "3 minutes", steps: ["Rub palms together.", "Feel warmth.", "Visualize red light in heart.", "Inhale fire.", "Ignite inner fire."] } },
+                    es: { title: "Fuego", subtitle: "Elemento de transformación", situation: "Sientes frío, apatía, falta de pasión y energía.", practice: { title: "Poder del Fuego", time: "3 minutos", steps: ["Frota las palmas.", "Siente calor.", "Visualiza luz roja en corazón.", "Inhala fuego.", "Enciende fuego interno."] } }
+                }
+            },
+            {
+                id: "air",
+                icon: "💨",
+                translations: {
+                    ru: { title: "Воздух", subtitle: "Стихия движения", situation: "Ты чувствуешь застой, тяжесть, неспособность двигаться вперёд.", practice: { title: "Свобода Воздуха", time: "2 минуты", steps: ["Выйди на свежий воздух.", "Сделай 9 глубоких вдохов.", "Представь зелёный свет в лёгких.", "Почувствуй лёгкость.", "Отпусти всё лишнее."] } },
+                    en: { title: "Air", subtitle: "Element of movement", situation: "You feel stagnation, heaviness, inability to move forward.", practice: { title: "Freedom of Air", time: "2 minutes", steps: ["Go outside.", "Take 9 deep breaths.", "Visualize green light in lungs.", "Feel lightness.", "Release all excess."] } },
+                    es: { title: "Aire", subtitle: "Elemento de movimiento", situation: "Sientes estancamiento, pesadez, incapacidad de avanzar.", practice: { title: "Libertad del Aire", time: "2 minutos", steps: ["Sal al aire libre.", "Toma 9 respiraciones profundas.", "Visualiza luz verde en pulmones.", "Siente ligereza.", "Suelta todo lo excesivo."] } }
+                }
+            },
+            {
+                id: "space",
+                icon: "☁️",
+                image: "kunzhi-sky.png",
+                translations: {
+                    ru: { title: "Пространство", subtitle: "Стихия пустоты", situation: "Ты забыл о бесконечности, чувствуешь себя ограниченным, зажатым.", practice: { title: "Простор Пространства", time: "2 минуты", steps: ["Посмотри на небо.", "Почувствуй бесконечность.", "Представь белое пространство вокруг.", "Раствори границы тела.", "Побудь в пустоте."] } },
+                    en: { title: "Space", subtitle: "Element of emptiness", situation: "You forgot infinity, feel limited, squeezed.", practice: { title: "Vastness of Space", time: "2 minutes", steps: ["Look at the sky.", "Feel infinity.", "Visualize white space around.", "Dissolve body boundaries.", "Rest in emptiness."] } },
+                    es: { title: "Espacio", subtitle: "Elemento de vacuidad", situation: "Olvidaste el infinito, te sientes limitado, apretado.", practice: { title: "Inmensidad del Espacio", time: "2 minutos", steps: ["Mira el cielo.", "Siente el infinito.", "Visualiza espacio blanco.", "Disuelve límites del cuerpo.", "Descansa en el vacío."] } }
+                }
+            },
+            {
+                id: "nagas",
+                icon: "",
+                translations: {
+                    ru: { title: "Наги", subtitle: "Духи воды", situation: "Ты забыл о связи с водной стихией, используешь воду механически.", practice: { title: "Связь с Нагами", time: "1 минута", steps: ["Встань у воды.", "Положи руку на сосуд.", "Скажи: «Благодарю, наги».", "Визуализируй синий свет.", "Пей с осознанием."] } },
+                    en: { title: "Nagas", subtitle: "Water spirits", situation: "You forgot connection with water element, use water mechanically.", practice: { title: "Connection with Nagas", time: "1 minute", steps: ["Stand by water.", "Place hand on container.", "Say: 'Thank you, nagas'.", "Visualize blue light.", "Drink with awareness."] } },
+                    es: { title: "Nagas", subtitle: "Espíritus del agua", situation: "Olvidaste conexión con elemento agua, usas agua mecánicamente.", practice: { title: "Conexión con Nagas", time: "1 minuto", steps: ["Párate junto al agua.", "Pon mano en recipiente.", "Di: 'Gracias, nagas'.", "Visualiza luz azul.", "Bebe con conciencia."] } }
+                }
+            },
+            {
+                id: "lu",
+                icon: "",
+                translations: {
+                    ru: { title: "Лу", subtitle: "Духи земли", situation: "Ты забыл о связи с землёй, ходишь по ней неосознанно.", practice: { title: "Связь с Лу", time: "2 минуты", steps: ["Сними обувь, встань на землю.", "Почувствуй почву под ногами.", "Скажи: «Благодарю, мать-земля».", "Визуализируй желтый свет.", "Побудь в тишине."] } },
+                    en: { title: "Lu", subtitle: "Earth spirits", situation: "You forgot connection with earth, walk on it unconsciously.", practice: { title: "Connection with Lu", time: "2 minutes", steps: ["Remove shoes, stand on earth.", "Feel soil under feet.", "Say: 'Thank you, mother earth'.", "Visualize yellow light.", "Rest in silence."] } },
+                    es: { title: "Lu", subtitle: "Espíritus de la tierra", situation: "Olvidaste conexión con la tierra, caminas sobre ella inconscientemente.", practice: { title: "Conexión con Lu", time: "2 minutos", steps: ["Quita zapatos, pisa tierra.", "Siente el suelo.", "Di: 'Gracias, madre tierra'.", "Visualiza luz amarilla.", "Descansa en silencio."] } }
+                }
+            },
+            {
+                id: "lha",
+                icon: "✨",
+                translations: {
+                    ru: { title: "Лха", subtitle: "Небесные духи", situation: "Ты забыл о небесной поддержке, чувствуешь себя одиноким.", practice: { title: "Связь с Лха", time: "2 минуты", steps: ["Посмотри вверх, в небо.", "Представь светлых существ.", "Скажи: «Я под защитой».", "Вдохни белый свет.", "Почувствуй поддержку."] } },
+                    en: { title: "Lha", subtitle: "Celestial spirits", situation: "You forgot heavenly support, feel alone.", practice: { title: "Connection with Lha", time: "2 minutes", steps: ["Look up at sky.", "Imagine luminous beings.", "Say: 'I am protected'.", "Inhale white light.", "Feel support."] } },
+                    es: { title: "Lha", subtitle: "Espíritus celestiales", situation: "Olvidaste el apoyo celestial, te sientes solo.", practice: { title: "Conexión con Lha", time: "2 minutos", steps: ["Mira al cielo.", "Imagina seres luminosos.", "Di: 'Estoy protegido'.", "Inhala luz blanca.", "Siente apoyo."] } }
+                }
+            },
+            {
+                id: "nyen",
+                icon: "🌳",
+                translations: {
+                    ru: { title: "Ньен", subtitle: "Духи деревьев и гор", situation: "Ты забыл о связи с лесом и горами, живёшь в отрыве от природы.", practice: { title: "Связь с Ньен", time: "3 минуты", steps: ["Обними дерево или посмотри на горы.", "Почувствуй их силу.", "Скажи: «Благодарю за опору».", "Вдохни зелёный свет.", "Побудь в тишине."] } },
+                    en: { title: "Nyen", subtitle: "Tree and mountain spirits", situation: "You forgot connection with forest and mountains, live disconnected from nature.", practice: { title: "Connection with Nyen", time: "3 minutes", steps: ["Hug a tree or look at mountains.", "Feel their strength.", "Say: 'Thank you for support'.", "Inhale green light.", "Rest in silence."] } },
+                    es: { title: "Nyen", subtitle: "Espíritus de árboles y montañas", situation: "Olvidaste conexión con bosque y montañas, vives desconectado de la naturaleza.", practice: { title: "Conexión con Nyen", time: "3 minutos", steps: ["Abraza un árbol o mira montañas.", "Siente su fuerza.", "Di: 'Gracias por apoyo'.", "Inhala luz verde.", "Descansa en silencio."] } }
+                }
+            },
+            {
+                id: "sang",
+                icon: "🌫️",
+                translations: {
+                    ru: { title: "Санг", subtitle: "Ритуал курения", situation: "Тебе нужно очищение пространства, ты чувствуешь тяжесть в месте.", practice: { title: "Ритуал Санг", time: "5 минут", steps: ["Зажги благовония или можжевельник.", "Пройди по комнате.", "Скажи: «Очищаю это пространство».", "Визуализируй белый дым.", "Открой окно."] } },
+                    en: { title: "Sang", subtitle: "Smoke offering ritual", situation: "You need space purification, feel heaviness in place.", practice: { title: "Sang Ritual", time: "5 minutes", steps: ["Light incense or juniper.", "Walk through room.", "Say: 'I purify this space'.", "Visualize white smoke.", "Open window."] } },
+                    es: { title: "Sang", subtitle: "Ritual de ofrenda de humo", situation: "Necesitas purificación del espacio, sientes pesadez.", practice: { title: "Ritual Sang", time: "5 minutos", steps: ["Enciende incienso o enebro.", "Camina por la habitación.", "Di: 'Purifico este espacio'.", "Visualiza humo blanco.", "Abre ventana."] } }
+                }
+            },
+            {
+                id: "serkem",
+                icon: "🍵",
+                translations: {
+                    ru: { title: "Серкьем", subtitle: "Подношение чая", situation: "Тебе нужно выразить благодарность, ты чувствуешь неблагодарность.", practice: { title: "Ритуал Серкьем", time: "3 минуты", steps: ["Налей чай или молоко в чашу.", "Подними чашу.", "Скажи: «Подношу защитникам».", "Вылей на землю или выпей.", "Побудь в благодарности."] } },
+                    en: { title: "Serkem", subtitle: "Tea offering", situation: "You need to express gratitude, feel ungrateful.", practice: { title: "Serkem Ritual", time: "3 minutes", steps: ["Pour tea or milk into cup.", "Lift cup.", "Say: 'I offer to protectors'.", "Pour on ground or drink.", "Rest in gratitude."] } },
+                    es: { title: "Serkem", subtitle: "Ofrenda de té", situation: "Necesitas expresar gratitud, te sientes desagradecido.", practice: { title: "Ritual Serkem", time: "3 minutos", steps: ["Vierte té o leche en taza.", "Levanta taza.", "Di: 'Ofrezco a protectores'.", "Vierte en tierra o bebe.", "Descansa en gratitud."] } }
+                }
+            },
+            {
+                id: "sur",
+                icon: "🔥",
+                translations: {
+                    ru: { title: "Сур", subtitle: "Подношение сожжённой пищи", situation: "Тебе нужно отдать кармические долги, ты чувствуешь препятствия.", practice: { title: "Ритуал Сур", time: "10 минут", steps: ["Приготовь цзамбу или муку.", "Зажги огонь.", "Поднеси еду 4 гостям.", "Сожги подношение.", "Посвяти заслуги всем существам."] } },
+                    en: { title: "Sur", subtitle: "Burnt food offering", situation: "You need to repay karmic debts, feel obstacles.", practice: { title: "Sur Ritual", time: "10 minutes", steps: ["Prepare tsampa or flour.", "Light fire.", "Offer food to 4 guests.", "Burn offering.", "Dedicate merits to all beings."] } },
+                    es: { title: "Sur", subtitle: "Ofrenda de comida quemada", situation: "Necesitas pagar deudas kármicas, sientes obstáculos.", practice: { title: "Ritual Sur", time: "10 minutos", steps: ["Prepara tsampa o harina.", "Enciende fuego.", "Ofrece comida a 4 huéspedes.", "Quema ofrenda.", "Dedica méritos a todos."] } }
                 }
             }
         ],
