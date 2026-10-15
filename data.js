@@ -1,30 +1,46 @@
 const data = {
-    // Переводы интерфейса
     i18n: {
         ru: {
             altar_question: "Что мне важно вспомнить сегодня?",
             what_to_do: "🔥 Что делать?",
             details: "📖 Подробнее",
             other_levels: "🔗 Другие уровни",
-            start_timer: "⏱️ Начать таймер"
+            start_timer: "Начать таймер",
+            back: "Назад",
+            close: "Закрыть",
+            deck_shamanism: "Шаманизм",
+            deck_sutra: "Сутра",
+            deck_tantra: "Тантра",
+            deck_dzogchen: "Дзогчен"
         },
         en: {
             altar_question: "What is important for me to remember today?",
             what_to_do: "🔥 What to do?",
             details: "📖 Details",
             other_levels: "🔗 Other levels",
-            start_timer: "⏱️ Start timer"
+            start_timer: "Start timer",
+            back: "Back",
+            close: "Close",
+            deck_shamanism: "Shamanism",
+            deck_sutra: "Sutra",
+            deck_tantra: "Tantra",
+            deck_dzogchen: "Dzogchen"
         },
         es: {
             altar_question: "¿Qué es importante que recuerde hoy?",
             what_to_do: "🔥 ¿Qué hacer?",
             details: "📖 Detalles",
             other_levels: "🔗 Otros niveles",
-            start_timer: "⏱️ Iniciar temporizador"
+            start_timer: "Iniciar temporizador",
+            back: "Volver",
+            close: "Cerrar",
+            deck_shamanism: "Chamanismo",
+            deck_sutra: "Sutra",
+            deck_tantra: "Tantra",
+            deck_dzogchen: "Dzogchen"
         }
     },
 
-    // Карты
     cards: {
         shamanism: {
             id: "nagi",

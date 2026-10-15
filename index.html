@@ -10,7 +10,7 @@
     <meta name="theme-color" content="#1a1a2e">
 </head>
 <body>
-    <!-- Экран выбора языка (первый запуск) -->
+    <!-- Экран выбора языка -->
     <div id="language-screen" class="screen active">
         <div class="language-container">
             <div class="symbol">🕉</div>
@@ -39,15 +39,19 @@
             <div class="altar-grid">
                 <div class="card-back shamanism" data-deck="shamanism">
                     <div class="card-symbol">🌿</div>
+                    <div class="card-label" data-i18n="deck_shamanism">Шаманизм</div>
                 </div>
                 <div class="card-back sutra" data-deck="sutra">
                     <div class="card-symbol">📿</div>
+                    <div class="card-label" data-i18n="deck_sutra">Сутра</div>
                 </div>
                 <div class="card-back tantra" data-deck="tantra">
                     <div class="card-symbol">🔥</div>
+                    <div class="card-label" data-i18n="deck_tantra">Тантра</div>
                 </div>
                 <div class="card-back dzogchen" data-deck="dzogchen">
                     <div class="card-symbol">☁️</div>
+                    <div class="card-label" data-i18n="deck_dzogchen">Дзогчен</div>
                 </div>
             </div>
             <p class="altar-question" data-i18n="altar_question">Что мне важно вспомнить сегодня?</p>
@@ -57,7 +61,7 @@
     <!-- Экран карты -->
     <div id="card-screen" class="screen">
         <header>
-            <button id="back-btn" class="icon-btn">←</button>
+            <button id="back-btn" class="icon-btn">← <span data-i18n="back">Назад</span></button>
         </header>
         <div class="card-content">
             <div class="card-image" id="card-image"></div>
@@ -70,7 +74,7 @@
             <div class="card-actions">
                 <button id="practice-btn" class="action-btn primary" data-i18n="what_to_do">🔥 Что делать?</button>
                 <button id="details-btn" class="action-btn secondary" data-i18n="details">📖 Подробнее</button>
-                <button id="other-levels-btn" class="action-btn secondary" data-i18n="other_levels">🔗 Другие уровни</button>
+                <button id="other-levels-btn" class="action-btn secondary" data-i18n="other_levels"> Другие уровни</button>
             </div>
         </div>
     </div>
@@ -78,21 +82,21 @@
     <!-- Экран практики -->
     <div id="practice-screen" class="screen">
         <header>
-            <button id="practice-back-btn" class="icon-btn">←</button>
+            <button id="practice-back-btn" class="icon-btn">← <span data-i18n="back">Назад</span></button>
         </header>
         <div class="practice-content">
             <h2 id="practice-title"></h2>
             <p id="practice-time" class="practice-time"></p>
             <div class="practice-steps" id="practice-steps"></div>
-            <button id="timer-btn" class="action-btn primary">⏱️ Начать таймер</button>
+            <button id="timer-btn" class="action-btn primary">⏱️ <span data-i18n="start_timer">Начать таймер</span></button>
         </div>
     </div>
 
-    <!-- Таймер (модальное окно) -->
+    <!-- Таймер -->
     <div id="timer-modal" class="modal">
         <div class="timer-content">
             <div class="timer-display" id="timer-display">5:00</div>
-            <button id="timer-close" class="action-btn secondary">Закрыть</button>
+            <button id="timer-close" class="action-btn secondary" data-i18n="close">Закрыть</button>
         </div>
     </div>
 
