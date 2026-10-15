@@ -28,7 +28,7 @@ body {
 .screen {
     display: none;
     min-height: 100vh;
-    padding: 20px;
+    padding: 15px;
 }
 
 .screen.active {
@@ -314,33 +314,35 @@ header {
     color: var(--gold);
 }
 
-/* ========== УЛУЧШЕННЫЙ ЭКРАН ПРАКТИКИ ========== */
+/* ========== КОМПАКТНЫЙ ЭКРАН ПРАКТИКИ ========== */
 
 .practice-content {
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Центрируем всё */
-    gap: 25px;
-    padding: 20px 0;
+    align-items: center;
+    gap: 12px; /* Уменьшили с 25px */
+    padding: 10px 0;
     max-width: 600px;
     margin: 0 auto;
     width: 100%;
+    overflow-y: auto; /* Добавили прокрутку если нужно */
 }
 
-/* Картинка карты на экране практики */
+/* Картинка карты - КОМПАКТНАЯ */
 .practice-card-image {
-    width: 180px;
-    height: 240px;
+    width: 120px; /* Было 180px */
+    height: 160px; /* Было 240px */
     background: var(--bg-darker);
     border: 3px solid var(--gold);
-    border-radius: 15px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 60px;
+    font-size: 50px; /* Было 60px */
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+    flex-shrink: 0; /* Не сжимается */
 }
 
 .practice-card-image img {
@@ -349,98 +351,103 @@ header {
     object-fit: cover;
 }
 
-/* Заголовок практики */
+/* Заголовок практики - КОМПАКТНЫЙ */
 .practice-header {
     text-align: center;
     width: 100%;
+    flex-shrink: 0;
 }
 
 #practice-title {
-    font-size: 28px;
+    font-size: 24px; /* Было 28px */
     color: var(--gold);
-    margin-bottom: 8px;
+    margin-bottom: 5px; /* Было 8px */
     font-weight: 600;
 }
 
 .practice-time {
-    font-size: 16px;
+    font-size: 14px; /* Было 16px */
     color: var(--text-dim);
     font-style: italic;
 }
 
-/* Декоративная линия */
+/* Декоративная линия - КОМПАКТНАЯ */
 .practice-divider {
     text-align: center;
     color: var(--gold);
-    font-size: 18px;
-    letter-spacing: 10px;
+    font-size: 16px; /* Было 18px */
+    letter-spacing: 8px;
     opacity: 0.6;
-    margin: 10px 0;
+    margin: 5px 0; /* Было 10px */
+    flex-shrink: 0;
 }
 
-/* Шаги практики — красивые карточки */
+/* Шаги практики - КОМПАКТНЫЕ */
 .practice-steps {
     background: var(--bg-darker);
-    padding: 25px;
-    border-radius: 15px;
+    padding: 15px; /* Было 25px */
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 10px; /* Было 18px */
     width: 100%;
     border: 1px solid rgba(212, 175, 55, 0.2);
+    flex: 1; /* Занимает оставшееся место */
+    overflow-y: auto; /* Прокрутка если шагов много */
 }
 
 .practice-step {
     display: flex;
-    gap: 15px;
+    gap: 12px; /* Было 15px */
     align-items: flex-start;
-    padding: 12px;
+    padding: 10px; /* Было 12px */
     background: rgba(212, 175, 55, 0.05);
-    border-radius: 10px;
+    border-radius: 8px;
     border-left: 3px solid var(--gold);
     transition: all 0.3s;
 }
 
 .practice-step:hover {
     background: rgba(212, 175, 55, 0.1);
-    transform: translateX(5px);
+    transform: translateX(3px);
 }
 
 .step-number {
     background: var(--gold);
     color: var(--bg-dark);
-    width: 32px;
-    height: 32px;
+    width: 28px; /* Было 32px */
+    height: 28px; /* Было 32px */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
     flex-shrink: 0;
-    font-size: 16px;
+    font-size: 14px; /* Было 16px */
 }
 
 .step-text {
-    font-size: 16px;
-    line-height: 1.6;
-    padding-top: 4px;
+    font-size: 15px; /* Было 16px */
+    line-height: 1.5; /* Было 1.6 */
+    padding-top: 3px;
     color: var(--text-light);
 }
 
-/* Кнопка таймера — компактная */
+/* Кнопка таймера - КОМПАКТНАЯ */
 .timer-button {
     width: 100%;
-    max-width: 300px;
+    max-width: 250px; /* Было 300px */
     text-align: center;
-    padding: 18px 30px;
-    font-size: 18px;
+    padding: 14px 25px; /* Было 18px 30px */
+    font-size: 16px; /* Было 18px */
     border-radius: 50px;
-    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+    flex-shrink: 0;
 }
 
 .timer-button:hover {
-    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.5);
-    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+    transform: translateY(-2px);
 }
 
 /* Таймер модальное окно */
@@ -473,56 +480,44 @@ header {
     font-family: 'Courier New', monospace;
 }
 
-/* Адаптивность */
+/* Адаптивность для мобильных */
 @media (max-width: 480px) {
+    .screen {
+        padding: 10px; /* Было 20px */
+    }
+    
     .altar-grid {
-        max-width: 300px;
+        max-width: 280px; /* Было 300px */
+        gap: 15px;
     }
     
     .card-symbol {
-        font-size: 40px;
+        font-size: 35px; /* Было 40px */
     }
     
     .card-label {
-        font-size: 12px;
+        font-size: 11px; /* Было 12px */
     }
     
     #card-title {
-        font-size: 24px;
+        font-size: 22px; /* Было 24px */
     }
     
     .card-image {
-        width: 180px;
-        height: 260px;
+        width: 160px; /* Было 180px */
+        height: 220px; /* Было 260px */
     }
     
+    /* Практика на мобильных - ещё компактнее */
     .practice-card-image {
-        width: 150px;
-        height: 200px;
+        width: 100px; /* Было 150px */
+        height: 130px; /* Было 200px */
+        font-size: 40px;
     }
     
     #practice-title {
-        font-size: 24px;
+        font-size: 20px; /* Было 24px */
     }
     
     .practice-steps {
-        padding: 15px;
-    }
-}
-
-@media (min-width: 768px) {
-    .altar-grid {
-        max-width: 500px;
-        gap: 30px;
-    }
-    
-    .card-actions {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-    
-    .action-btn {
-        flex: 1;
-        min-width: 200px;
-    }
-}
+       
