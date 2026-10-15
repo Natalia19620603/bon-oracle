@@ -50,7 +50,7 @@
                     <div class="card-label" data-i18n="deck_tantra">Тантра</div>
                 </div>
                 <div class="card-back dzogchen" data-deck="dzogchen">
-                    <div class="card-symbol">☁️</div>
+                    <div class="card-symbol">️</div>
                     <div class="card-label" data-i18n="deck_dzogchen">Дзогчен</div>
                 </div>
             </div>
@@ -74,21 +74,36 @@
             <div class="card-actions">
                 <button id="practice-btn" class="action-btn primary" data-i18n="what_to_do">🔥 Что делать?</button>
                 <button id="details-btn" class="action-btn secondary" data-i18n="details">📖 Подробнее</button>
-                <button id="other-levels-btn" class="action-btn secondary" data-i18n="other_levels"> Другие уровни</button>
+                <button id="other-levels-btn" class="action-btn secondary" data-i18n="other_levels">🔗 Другие уровни</button>
             </div>
         </div>
     </div>
 
-    <!-- Экран практики -->
+    <!-- Экран практики (УЛУЧШЕННЫЙ ДИЗАЙН) -->
     <div id="practice-screen" class="screen">
         <header>
             <button id="practice-back-btn" class="icon-btn">← <span data-i18n="back">Назад</span></button>
         </header>
         <div class="practice-content">
-            <h2 id="practice-title"></h2>
-            <p id="practice-time" class="practice-time"></p>
+            <!-- Картинка карты сверху -->
+            <div class="practice-card-image" id="practice-card-image"></div>
+            
+            <!-- Название практики -->
+            <div class="practice-header">
+                <h2 id="practice-title"></h2>
+                <p id="practice-time" class="practice-time"></p>
+            </div>
+
+            <!-- Декоративная линия -->
+            <div class="practice-divider">✦  ✦</div>
+
+            <!-- Шаги практики (красивые карточки) -->
             <div class="practice-steps" id="practice-steps"></div>
-            <button id="timer-btn" class="action-btn primary">⏱️ <span data-i18n="start_timer">Начать таймер</span></button>
+
+            <!-- Кнопка таймера (компактная) -->
+            <button id="timer-btn" class="action-btn primary timer-button">
+                ⏱️ <span data-i18n="start_timer">Начать таймер</span>
+            </button>
         </div>
     </div>
 

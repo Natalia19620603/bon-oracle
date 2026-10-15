@@ -108,7 +108,6 @@ function showCardScreen(cardData) {
     const { deck, card } = cardData || currentCard;
     const translation = card.translations[currentLang];
 
-    // Показываем картинку, если она есть, иначе эмодзи
     const imageElement = document.getElementById('card-image');
     if (card.image) {
         imageElement.innerHTML = `<img src="${card.image}" alt="${translation.title}" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">`;
@@ -136,6 +135,14 @@ function showPractice() {
     const { card } = currentCard;
     const translation = card.translations[currentLang];
     const practice = translation.practice;
+
+    // Показываем картинку карты на экране практики
+    const practiceImageElement = document.getElementById('practice-card-image');
+    if (card.image) {
+        practiceImageElement.innerHTML = `<img src="${card.image}" alt="${translation.title}" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">`;
+    } else {
+        practiceImageElement.textContent = card.icon;
+    }
 
     document.getElementById('practice-title').textContent = practice.title;
     document.getElementById('practice-time').textContent = practice.time;
