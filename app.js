@@ -13,60 +13,50 @@ document.addEventListener('DOMContentLoaded', () => {
         showScreen('language-screen');
     }
 
-    // Выбор языка на стартовом экране
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             currentLang = btn.dataset.lang;
             localStorage.setItem('lang', currentLang);
-            console.log('Language selected:', currentLang);
             showScreen('altar-screen');
             updateLanguage();
             updateLangSwitchUI();
         });
     });
 
-    // Переключатель языка в шапке
     document.querySelectorAll('.lang-switch-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             currentLang = btn.dataset.lang;
             localStorage.setItem('lang', currentLang);
-            console.log('Language switched to:', currentLang);
             updateLanguage();
             updateLangSwitchUI();
         });
     });
 
-    // Клик по картам на алтаре
     document.querySelectorAll('.card-back').forEach(card => {
         card.addEventListener('click', (e) => {
             e.preventDefault();
             const deck = card.dataset.deck;
-            console.log('Card clicked:', deck);
             drawCard(deck);
         });
     });
 
-    // Кнопка назад
     document.getElementById('back-btn').addEventListener('click', (e) => {
         e.preventDefault();
         showScreen('altar-screen');
     });
 
-    // Кнопка практики
     document.getElementById('practice-btn').addEventListener('click', (e) => {
         e.preventDefault();
         showPractice();
     });
 
-    // Кнопка назад из практики
     document.getElementById('practice-back-btn').addEventListener('click', (e) => {
         e.preventDefault();
         showCardScreen(currentCard);
     });
 
-    // Таймер
     document.getElementById('timer-btn').addEventListener('click', (e) => {
         e.preventDefault();
         startTimer(300);
@@ -82,17 +72,10 @@ function showScreen(screenId) {
     document.querySelectorAll('.screen').forEach(screen => {
         screen.classList.remove('active');
     });
-    const target = document.getElementById(screenId);
-    if (target) {
-        target.classList.add('active');
-        console.log('Screen shown:', screenId);
-    } else {
-        console.error('Screen not found:', screenId);
-    }
+    document.getElementById(screenId).classList.add('active');
 }
 
 function updateLanguage() {
-    console.log('Updating language to:', currentLang);
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.dataset.i18n;
         if (data.i18n[currentLang] && data.i18n[currentLang][key]) {
@@ -110,14 +93,17 @@ function updateLangSwitchUI() {
     });
 }
 
+// 🎲 ФУНКЦИЯ СЛУЧАЙНОГО ВЫБОРА КАРТЫ
 function drawCard(deck) {
-    const card = data.cards[deck];
-    if (!card) {
-        console.error('Card not found for deck:', deck);
-        return;
-    }
+    const deckCards = data.cards[deck]; // Получаем массив карт колоды
+    
+    // Выбираем случайный индекс
+    const randomIndex = Math.floor(Math.random() * deckCards.length);
+    const card = deckCards[randomIndex];
+    
+    console.log('Randomly drew:', card.id, 'from deck:', deck);
+    
     currentCard = { deck, card };
-    console.log('Drawing card:', card.id, 'from deck:', deck);
     showCardScreen({ deck, card });
 }
 
@@ -125,19 +111,14 @@ function showCardScreen(cardData) {
     const { deck, card } = cardData || currentCard;
     const translation = card.translations[currentLang];
 
-    if (!translation) {
-        console.error('Translation not found for language:', currentLang);
-        return;
-    }
-
     document.getElementById('card-image').textContent = card.icon;
     document.getElementById('card-title').textContent = translation.title;
     document.getElementById('card-subtitle').textContent = translation.subtitle;
     
     const deckNames = {
-        shamanism: { ru: '🌿 Шаманизм', en: '🌿 Shamanism', es: '🌿 Chamanismo' },
-        sutra: { ru: '📿 Сутра', en: '📿 Sutra', es: '📿 Sutra' },
-        tantra: { ru: '🔥 Тантра', en: '🔥 Tantra', es: ' Tantra' },
+        shamanism: { ru: '🌿 Шаманизм', en: ' Shamanism', es: '🌿 Chamanismo' },
+        sutra: { ru: '📿 Сутра', en: ' Sutra', es: '📿 Sutra' },
+        tantra: { ru: ' Тантра', en: '🔥 Tantra', es: '🔥 Tantra' },
         dzogchen: { ru: '☁️ Дзогчен', en: '☁️ Dzogchen', es: '☁️ Dzogchen' }
     };
     document.getElementById('card-deck').textContent = deckNames[deck][currentLang];
@@ -147,18 +128,10 @@ function showCardScreen(cardData) {
 }
 
 function showPractice() {
-    if (!currentCard) {
-        console.error('No current card selected');
-        return;
-    }
-    const { deck, card } = currentCard;
+    if (!currentCard) return;
+    const { card } = currentCard;
     const translation = card.translations[currentLang];
     const practice = translation.practice;
-
-    if (!practice) {
-        console.error('Practice not found');
-        return;
-    }
 
     document.getElementById('practice-title').textContent = practice.title;
     document.getElementById('practice-time').textContent = practice.time;
