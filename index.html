@@ -1,136 +1,345 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Бон Оракул</title>
-    <link rel="stylesheet" href="style.css?v=3">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Бон Оракул | Tenzin Wangyal Rinpoche</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #1a1a2e; color: #e0e0e0; min-height: 100vh; }
+.screen { display: none; min-height: 100vh; padding: 15px; }
+.screen.active { display: flex; flex-direction: column; }
+.language-container { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; text-align: center; }
+.symbol { font-size: 100px; margin-bottom: 20px; color: #d4af37; }
+.language-container h1 { font-size: 28px; margin-bottom: 10px; color: #d4af37; }
+.language-container p { font-size: 16px; color: #a0a0a0; margin-bottom: 40px; }
+.language-buttons { display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 300px; }
+.lang-btn { padding: 15px 30px; font-size: 18px; background: #0f0f1e; color: #e0e0e0; border: 2px solid #d4af37; border-radius: 10px; cursor: pointer; }
+.lang-btn:hover { background: #d4af37; color: #1a1a2e; }
+header { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; }
+.icon-btn { background: none; border: none; color: #e0e0e0; font-size: 24px; cursor: pointer; padding: 10px; }
+.lang-switch { display: flex; gap: 5px; }
+.lang-switch-btn { background: #0f0f1e; color: #a0a0a0; border: 1px solid #a0a0a0; padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 12px; }
+.lang-switch-btn.active { background: #d4af37; color: #1a1a2e; border-color: #d4af37; }
+.altar-content { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; }
+.altar-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 400px; width: 100%; }
+.card-back { aspect-ratio: 2/3; background: #0f0f1e; border: 3px solid #d4af37; border-radius: 15px; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s; }
+.card-back:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3); }
+.card-symbol { font-size: 60px; margin-bottom: 10px; }
+.card-label { font-size: 14px; color: #e0e0e0; font-weight: bold; text-align: center; }
+.card-back.shamanism { border-color: #4a7c59; }
+.card-back.sutra { border-color: #d4a574; }
+.card-back.tantra { border-color: #c9463d; }
+.card-back.dzogchen { border-color: #6b9bd1; }
+.altar-question { font-size: 18px; color: #a0a0a0; text-align: center; font-style: italic; }
+.card-content { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 15px; padding: 20px 0; overflow-y: auto; }
+.card-image { width: 180px; height: 240px; background: #0f0f1e; border: 3px solid #d4af37; border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 80px; overflow: hidden; flex-shrink: 0; }
+.card-image img { width: 100%; height: 100%; object-fit: cover; }
+#card-title { font-size: 28px; color: #d4af37; text-align: center; }
+.card-subtitle { font-size: 16px; color: #a0a0a0; text-align: center; }
+.card-deck-badge { padding: 5px 15px; background: #0f0f1e; border-radius: 20px; font-size: 14px; color: #a0a0a0; }
+.card-situation { background: #0f0f1e; padding: 15px; border-radius: 10px; border-left: 4px solid #d4af37; max-width: 500px; width: 100%; }
+#card-situation-text { font-size: 15px; line-height: 1.5; color: #e0e0e0; }
+.card-actions { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 500px; }
+.action-btn { padding: 14px 20px; font-size: 16px; border: none; border-radius: 10px; cursor: pointer; }
+.action-btn.primary { background: #d4af37; color: #1a1a2e; font-weight: bold; }
+.action-btn.secondary { background: #0f0f1e; color: #e0e0e0; border: 2px solid #a0a0a0; }
+.practice-content { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 10px 0; max-width: 600px; margin: 0 auto; width: 100%; height: calc(100vh - 60px); }
+.practice-card-image { width: 100px; height: 130px; background: #0f0f1e; border: 3px solid #d4af37; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 40px; overflow: hidden; flex-shrink: 0; }
+.practice-card-image img { width: 100%; height: 100%; object-fit: cover; }
+.practice-header { text-align: center; flex-shrink: 0; }
+#practice-title { font-size: 22px; color: #d4af37; margin-bottom: 5px; }
+.practice-time { font-size: 14px; color: #a0a0a0; font-style: italic; }
+.practice-divider { text-align: center; color: #d4af37; font-size: 14px; letter-spacing: 8px; flex-shrink: 0; }
+.practice-steps-scroll { flex: 1; overflow-y: auto; width: 100%; }
+.practice-steps { background: #0f0f1e; padding: 15px; border-radius: 12px; display: flex; flex-direction: column; gap: 10px; border: 1px solid rgba(212, 175, 55, 0.2); }
+.practice-step { display: flex; gap: 12px; align-items: flex-start; padding: 10px; background: rgba(212, 175, 55, 0.05); border-radius: 8px; border-left: 3px solid #d4af37; }
+.step-number { background: #d4af37; color: #1a1a2e; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; font-size: 14px; }
+.step-text { font-size: 15px; line-height: 1.5; color: #e0e0e0; }
+.timer-button { width: 100%; max-width: 250px; text-align: center; padding: 12px 20px; font-size: 16px; border-radius: 50px; flex-shrink: 0; }
+.paths-content { flex: 1; display: flex; flex-direction: column; gap: 20px; padding: 20px 0; overflow-y: auto; }
+.paths-title { font-size: 28px; color: #d4af37; text-align: center; }
+.path-card { background: #0f0f1e; padding: 20px; border-radius: 15px; border: 2px solid #d4af37; }
+.path-icon { font-size: 40px; text-align: center; margin-bottom: 10px; }
+.path-card h3 { font-size: 22px; color: #d4af37; text-align: center; margin-bottom: 10px; }
+.path-card p { font-size: 15px; line-height: 1.6; color: #e0e0e0; text-align: center; }
+.shamanism-path { border-color: #4a7c59; }
+.sutra-path { border-color: #d4a574; }
+.tantra-path { border-color: #c9463d; }
+.dzogchen-path { border-color: #6b9bd1; }
+.modal { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.8); align-items: center; justify-content: center; z-index: 1000; }
+.modal.active { display: flex; }
+.timer-content { background: #0f0f1e; padding: 40px; border-radius: 20px; border: 3px solid #d4af37; text-align: center; }
+.timer-display { font-size: 72px; color: #d4af37; margin-bottom: 30px; font-family: 'Courier New', monospace; }
+@media (max-width: 480px) {
+  .card-symbol { font-size: 40px; }
+  .card-label { font-size: 12px; }
+  #card-title { font-size: 22px; }
+  .card-image { width: 150px; height: 200px; }
+  .altar-grid { max-width: 300px; gap: 15px; }
+}
+</style>
 </head>
 <body>
-    <div id="language-screen" class="screen active">
-        <div class="language-container">
-            <!-- Простой SVG символ вместо тибетского -->
-            <svg class="symbol" width="120" height="120" viewBox="0 0 120 120">
-                <circle cx="60" cy="60" r="55" fill="none" stroke="#d4af37" stroke-width="3"/>
-                <circle cx="60" cy="60" r="45" fill="none" stroke="#d4af37" stroke-width="2"/>
-                <text x="60" y="70" font-size="28" fill="#d4af37" text-anchor="middle" font-family="serif" font-weight="bold">БОН</text>
-            </svg>
-            <h1>Выберите язык</h1>
-            <p>Choose language / Elige idioma</p>
-            <div class="language-buttons">
-                <button class="lang-btn" onclick="selectLang('ru')">🇺 Русский</button>
-                <button class="lang-btn" onclick="selectLang('en')">🇬🇧 English</button>
-                <button class="lang-btn" onclick="selectLang('es')">🇪🇸 Español</button>
-            </div>
-        </div>
+
+<div id="language-screen" class="screen active">
+  <div class="language-container">
+    <div class="symbol">🕉</div>
+    <h1>Выберите язык</h1>
+    <p>Choose language / Elige idioma</p>
+    <div class="language-buttons">
+      <button class="lang-btn" onclick="selectLang('ru')">🇷🇺 Русский</button>
+      <button class="lang-btn" onclick="selectLang('en')">🇬🇧 English</button>
+      <button class="lang-btn" onclick="selectLang('es')">🇪🇸 Español</button>
     </div>
+  </div>
+</div>
 
-    <div id="altar-screen" class="screen">
-        <header>
-            <button class="icon-btn" onclick="showScreen('paths-screen')">☰</button>
-            <div class="lang-switch">
-                <button class="lang-switch-btn" onclick="switchLang('ru')">RU</button>
-                <button class="lang-switch-btn" onclick="switchLang('en')">EN</button>
-                <button class="lang-switch-btn" onclick="switchLang('es')">ES</button>
-            </div>
-        </header>
-
-        <div class="altar-content">
-            <div class="altar-grid">
-                <div class="card-back shamanism" onclick="drawCard('shamanism')">
-                    <div class="card-symbol">🌿</div>
-                    <div class="card-label">Шаманизм</div>
-                </div>
-                <div class="card-back sutra" onclick="drawCard('sutra')">
-                    <div class="card-symbol">📿</div>
-                    <div class="card-label">Сутра</div>
-                </div>
-                <div class="card-back tantra" onclick="drawCard('tantra')">
-                    <div class="card-symbol">🔥</div>
-                    <div class="card-label">Тантра</div>
-                </div>
-                <div class="card-back dzogchen" onclick="drawCard('dzogchen')">
-                    <div class="card-symbol">☁️</div>
-                    <div class="card-label">Дзогчен</div>
-                </div>
-            </div>
-            <p class="altar-question">Что мне важно вспомнить сегодня?</p>
-        </div>
+<div id="altar-screen" class="screen">
+  <header>
+    <button class="icon-btn" onclick="showScreen('paths-screen')">☰</button>
+    <div class="lang-switch">
+      <button class="lang-switch-btn" onclick="switchLang('ru')">RU</button>
+      <button class="lang-switch-btn" onclick="switchLang('en')">EN</button>
+      <button class="lang-switch-btn" onclick="switchLang('es')">ES</button>
     </div>
-
-    <div id="card-screen" class="screen">
-        <header>
-            <button class="icon-btn" onclick="showScreen('altar-screen')">← Назад</button>
-        </header>
-        <div class="card-content">
-            <div class="card-image" id="card-image"></div>
-            <h2 id="card-title"></h2>
-            <p id="card-subtitle" class="card-subtitle"></p>
-            <p id="card-deck" class="card-deck-badge"></p>
-            <div class="card-situation">
-                <p id="card-situation-text"></p>
-            </div>
-            <div class="card-actions">
-                <button class="action-btn primary" onclick="showPractice()">🔥 Что делать?</button>
-            </div>
-        </div>
+  </header>
+  <div class="altar-content">
+    <div class="altar-grid">
+      <div class="card-back shamanism" onclick="drawCard('shamanism')">
+        <div class="card-symbol">🌿</div>
+        <div class="card-label">Шаманизм</div>
+      </div>
+      <div class="card-back sutra" onclick="drawCard('sutra')">
+        <div class="card-symbol">📿</div>
+        <div class="card-label">Сутра</div>
+      </div>
+      <div class="card-back tantra" onclick="drawCard('tantra')">
+        <div class="card-symbol">🔥</div>
+        <div class="card-label">Тантра</div>
+      </div>
+      <div class="card-back dzogchen" onclick="drawCard('dzogchen')">
+        <div class="card-symbol">☁️</div>
+        <div class="card-label">Дзогчен</div>
+      </div>
     </div>
+    <p class="altar-question">Что мне важно вспомнить сегодня?</p>
+  </div>
+</div>
 
-    <div id="practice-screen" class="screen">
-        <header>
-            <button class="icon-btn" onclick="showScreen('card-screen')">← Назад</button>
-        </header>
-        <div class="practice-content">
-            <div class="practice-card-image" id="practice-card-image"></div>
-            <div class="practice-header">
-                <h2 id="practice-title"></h2>
-                <p id="practice-time" class="practice-time"></p>
-            </div>
-            <div class="practice-divider">  ✦</div>
-            <div class="practice-steps-scroll">
-                <div class="practice-steps" id="practice-steps"></div>
-            </div>
-            <button class="action-btn primary timer-button" onclick="startTimer(300)">⏱️ Начать таймер</button>
-        </div>
+<div id="card-screen" class="screen">
+  <header>
+    <button class="icon-btn" onclick="showScreen('altar-screen')">← Назад</button>
+  </header>
+  <div class="card-content">
+    <div class="card-image" id="card-image"></div>
+    <h2 id="card-title"></h2>
+    <p id="card-subtitle" class="card-subtitle"></p>
+    <p id="card-deck" class="card-deck-badge"></p>
+    <div class="card-situation"><p id="card-situation-text"></p></div>
+    <div class="card-actions">
+      <button class="action-btn primary" onclick="showPractice()">🔥 Что делать?</button>
     </div>
+  </div>
+</div>
 
-    <div id="paths-screen" class="screen">
-        <header>
-            <button class="icon-btn" onclick="showScreen('altar-screen')">← Назад</button>
-        </header>
-        <div class="paths-content">
-            <h2 class="paths-title">Четыре пути Бон</h2>
-            <div class="path-card shamanism-path">
-                <div class="path-icon">🌿</div>
-                <h3>Шаманизм</h3>
-                <p>Внешний путь. Работа с природой, духами, элементами.</p>
-            </div>
-            <div class="path-card sutra-path">
-                <div class="path-icon">📿</div>
-                <h3>Сутра</h3>
-                <p>Путь преобразования ума через этику и сострадание.</p>
-            </div>
-            <div class="path-card tantra-path">
-                <div class="path-icon">🔥</div>
-                <h3>Тантра</h3>
-                <p>Путь преобразования энергии через каналы и божества.</p>
-            </div>
-            <div class="path-card dzogchen-path">
-                <div class="path-icon">☁️</div>
-                <h3>Дзогчен</h3>
-                <p>Путь Великого Совершенства. Прямое узнавание природы ума.</p>
-            </div>
-        </div>
+<div id="practice-screen" class="screen">
+  <header>
+    <button class="icon-btn" onclick="showScreen('card-screen')">← Назад</button>
+  </header>
+  <div class="practice-content">
+    <div class="practice-card-image" id="practice-card-image"></div>
+    <div class="practice-header">
+      <h2 id="practice-title"></h2>
+      <p id="practice-time" class="practice-time"></p>
     </div>
-
-    <div id="timer-modal" class="modal">
-        <div class="timer-content">
-            <div class="timer-display" id="timer-display">5:00</div>
-            <button class="action-btn secondary" onclick="stopTimer()">Закрыть</button>
-        </div>
+    <div class="practice-divider">✦ ✦</div>
+    <div class="practice-steps-scroll">
+      <div class="practice-steps" id="practice-steps"></div>
     </div>
+    <button class="action-btn primary timer-button" onclick="startTimer(300)">⏱ Начать таймер</button>
+  </div>
+</div>
 
-    <script src="data.js?v=3"></script>
-    <script src="app.js?v=3"></script>
+<div id="paths-screen" class="screen">
+  <header>
+    <button class="icon-btn" onclick="showScreen('altar-screen')">← Назад</button>
+  </header>
+  <div class="paths-content">
+    <h2 class="paths-title">Четыре пути Бон</h2>
+    <div class="path-card shamanism-path">
+      <div class="path-icon">🌿</div>
+      <h3>Шаманизм</h3>
+      <p>Внешний путь. Работа с природой, духами, элементами. Установление гармонии через подношения и ритуалы.</p>
+    </div>
+    <div class="path-card sutra-path">
+      <div class="path-icon">📿</div>
+      <h3>Сутра</h3>
+      <p>Путь преобразования ума. Развитие этики, сострадания, мудрости. Меняет отношение к миру через мотивацию.</p>
+    </div>
+    <div class="path-card tantra-path">
+      <div class="path-icon"></div>
+      <h3>Тантра</h3>
+      <p>Путь преобразования энергии. Работа с каналами, ветрами, божествами. Меняет энергетику через визуализации.</p>
+    </div>
+    <div class="path-card dzogchen-path">
+      <div class="path-icon">☁️</div>
+      <h3>Дзогчен</h3>
+      <p>Путь Великого Совершенства. Прямое узнавание природы ума. Без усилий — просто пребывание в том, что есть.</p>
+    </div>
+  </div>
+</div>
+
+<div id="timer-modal" class="modal">
+  <div class="timer-content">
+    <div class="timer-display" id="timer-display">5:00</div>
+    <button class="action-btn secondary" onclick="stopTimer()">Закрыть</button>
+  </div>
+</div>
+
+<script>
+// === ДАННЫЕ ===
+const data = {
+  cards: {
+    shamanism: [
+      { id: "earth", icon: "️", translations: { ru: { title: "Земля", subtitle: "Стихия устойчивости", situation: "Тревога, потеря опоры, суета.", practice: { title: "Сила Земли", time: "2 мин", steps: ["Стопы плотно на пол.", "Представь корни в земле.", "Вдохни жёлтый свет.", "Почувствуй тяжесть и покой.", "Скажи: «Я в безопасности»."] } }, en: { title: "Earth", subtitle: "Element of stability", situation: "Anxiety, loss of ground.", practice: { title: "Power of Earth", time: "2 min", steps: ["Feet firmly on floor.", "Imagine roots into earth.", "Inhale yellow light.", "Feel weight and peace.", "Say: 'I am safe'."] } }, es: { title: "Tierra", subtitle: "Elemento de estabilidad", situation: "Ansiedad, pérdida de suelo.", practice: { title: "Poder de la Tierra", time: "2 min", steps: ["Pies firmes en el suelo.", "Imagina raíces.", "Inhala luz amarilla.", "Siente peso y paz.", "Di: 'Estoy a salvo'."] } } } },
+      { id: "water", icon: "💧", translations: { ru: { title: "Вода", subtitle: "Стихия текучести", situation: "Скованность, неспособность адаптироваться.", practice: { title: "Текучесть Воды", time: "2 мин", steps: ["Выпей воду медленно.", "Почувствуй течение внутри.", "Синий свет в почках.", "Отпусти контроль.", "Позволь жизни течь."] } }, en: { title: "Water", subtitle: "Element of flow", situation: "Rigidity, inability to adapt.", practice: { title: "Flow of Water", time: "2 min", steps: ["Drink water slowly.", "Feel it flowing.", "Blue light in kidneys.", "Release control.", "Let life flow."] } }, es: { title: "Agua", subtitle: "Elemento de fluidez", situation: "Rigidez, incapacidad de adaptarse.", practice: { title: "Fluidez del Agua", time: "2 min", steps: ["Bebe agua lentamente.", "Siente el flujo.", "Luz azul en riñones.", "Suelta control.", "Deja que la vida fluya."] } } } },
+      { id: "fire", icon: "🔥", translations: { ru: { title: "Огонь", subtitle: "Стихия трансформации", situation: "Холод, апатия, отсутствие энергии.", practice: { title: "Сила Огня", time: "3 мин", steps: ["Потри ладони.", "Почувствуй тепло.", "Красный свет в сердце.", "Вдохни огонь.", "Зажги внутренний огонь."] } }, en: { title: "Fire", subtitle: "Element of transformation", situation: "Cold, apathy, lack of energy.", practice: { title: "Power of Fire", time: "3 min", steps: ["Rub palms.", "Feel warmth.", "Red light in heart.", "Inhale fire.", "Ignite inner fire."] } }, es: { title: "Fuego", subtitle: "Elemento de transformación", situation: "Frío, apatía, falta de energía.", practice: { title: "Poder del Fuego", time: "3 min", steps: ["Frota palmas.", "Siente calor.", "Luz roja en corazón.", "Inhala fuego.", "Enciende fuego interno."] } } } },
+      { id: "air", icon: "💨", translations: { ru: { title: "Воздух", subtitle: "Стихия движения", situation: "Застой, тяжесть, невозможность двигаться.", practice: { title: "Свобода Воздуха", time: "2 мин", steps: ["Выйди на воздух.", "9 глубоких вдохов.", "Зелёный свет в лёгких.", "Почувствуй лёгкость.", "Отпусти лишнее."] } }, en: { title: "Air", subtitle: "Element of movement", situation: "Stagnation, heaviness.", practice: { title: "Freedom of Air", time: "2 min", steps: ["Go outside.", "9 deep breaths.", "Green light in lungs.", "Feel lightness.", "Release excess."] } }, es: { title: "Aire", subtitle: "Elemento de movimiento", situation: "Estancamiento, pesadez.", practice: { title: "Libertad del Aire", time: "2 min", steps: ["Sal al aire.", "9 respiraciones profundas.", "Luz verde en pulmones.", "Siente ligereza.", "Suelta lo excesivo."] } } } },
+      { id: "space", icon: "☁️", translations: { ru: { title: "Пространство", subtitle: "Стихия пустоты", situation: "Ограниченность, зажатость.", practice: { title: "Простор Пространства", time: "2 мин", steps: ["Посмотри на небо.", "Почувствуй бесконечность.", "Белое пространство вокруг.", "Раствори границы тела.", "Побудь в пустоте."] } }, en: { title: "Space", subtitle: "Element of emptiness", situation: "Feeling limited, squeezed.", practice: { title: "Vastness of Space", time: "2 min", steps: ["Look at sky.", "Feel infinity.", "White space around.", "Dissolve body boundaries.", "Rest in emptiness."] } }, es: { title: "Espacio", subtitle: "Elemento de vacuidad", situation: "Te sientes limitado.", practice: { title: "Inmensidad del Espacio", time: "2 min", steps: ["Mira el cielo.", "Siente el infinito.", "Espacio blanco alrededor.", "Disuelve límites del cuerpo.", "Descansa en el vacío."] } } } },
+      { id: "nagas", icon: "🐍", translations: { ru: { title: "Наги", subtitle: "Духи воды", situation: "Забыл о связи с водной стихией.", practice: { title: "Связь с Нагами", time: "1 мин", steps: ["Встань у воды.", "Рука на сосуд.", "«Благодарю, наги».", "Синий свет.", "Пей с осознанием."] } }, en: { title: "Nagas", subtitle: "Water spirits", situation: "Forgot connection with water.", practice: { title: "Connection with Nagas", time: "1 min", steps: ["Stand by water.", "Hand on container.", "'Thank you, nagas'.", "Blue light.", "Drink with awareness."] } }, es: { title: "Nagas", subtitle: "Espíritus del agua", situation: "Olvidaste conexión con agua.", practice: { title: "Conexión con Nagas", time: "1 min", steps: ["Párate junto al agua.", "Mano en recipiente.", "'Gracias, nagas'.", "Luz azul.", "Bebe con conciencia."] } } } },
+      { id: "lu", icon: "🌍", translations: { ru: { title: "Лу", subtitle: "Духи земли", situation: "Ходишь по земле неосознанно.", practice: { title: "Связь с Лу", time: "2 мин", steps: ["Сними обувь, встань на землю.", "Почувствуй почву.", "«Благодарю, мать-земля».", "Жёлтый свет.", "Побудь в тишине."] } }, en: { title: "Lu", subtitle: "Earth spirits", situation: "Walk on earth unconsciously.", practice: { title: "Connection with Lu", time: "2 min", steps: ["Remove shoes, stand on earth.", "Feel soil.", "'Thank you, mother earth'.", "Yellow light.", "Rest in silence."] } }, es: { title: "Lu", subtitle: "Espíritus de la tierra", situation: "Caminas sobre la tierra inconscientemente.", practice: { title: "Conexión con Lu", time: "2 min", steps: ["Quita zapatos, pisa tierra.", "Siente el suelo.", "'Gracias, madre tierra'.", "Luz amarilla.", "Descansa en silencio."] } } } },
+      { id: "lha", icon: "✨", translations: { ru: { title: "Лха", subtitle: "Небесные духи", situation: "Чувствуешь себя одиноким.", practice: { title: "Связь с Лха", time: "2 мин", steps: ["Посмотри в небо.", "Представь светлых существ.", "«Я под защитой».", "Вдохни белый свет.", "Почувствуй поддержку."] } }, en: { title: "Lha", subtitle: "Celestial spirits", situation: "Feel alone.", practice: { title: "Connection with Lha", time: "2 min", steps: ["Look up at sky.", "Imagine luminous beings.", "'I am protected'.", "Inhale white light.", "Feel support."] } }, es: { title: "Lha", subtitle: "Espíritus celestiales", situation: "Te sientes solo.", practice: { title: "Conexión con Lha", time: "2 min", steps: ["Mira al cielo.", "Imagina seres luminosos.", "'Estoy protegido'.", "Inhala luz blanca.", "Siente apoyo."] } } } },
+      { id: "nyen", icon: "🌳", translations: { ru: { title: "Ньен", subtitle: "Духи деревьев и гор", situation: "Живёшь в отрыве от природы.", practice: { title: "Связь с Ньен", time: "3 мин", steps: ["Обними дерево или посмотри на горы.", "Почувствуй их силу.", "«Благодарю за опору».", "Зелёный свет.", "Побудь в тишине."] } }, en: { title: "Nyen", subtitle: "Tree and mountain spirits", situation: "Disconnected from nature.", practice: { title: "Connection with Nyen", time: "3 min", steps: ["Hug a tree or look at mountains.", "Feel their strength.", "'Thank you for support'.", "Green light.", "Rest in silence."] } }, es: { title: "Nyen", subtitle: "Espíritus de árboles y montañas", situation: "Desconectado de la naturaleza.", practice: { title: "Conexión con Nyen", time: "3 min", steps: ["Abraza un árbol o mira montañas.", "Siente su fuerza.", "'Gracias por apoyo'.", "Luz verde.", "Descansa en silencio."] } } } },
+      { id: "sang", icon: "🌫️", translations: { ru: { title: "Санг", subtitle: "Ритуал курения", situation: "Тяжесть в месте, нужно очищение.", practice: { title: "Ритуал Санг", time: "5 мин", steps: ["Зажги благовония.", "Пройди по комнате.", "«Очищаю пространство».", "Белый дым.", "Открой окно."] } }, en: { title: "Sang", subtitle: "Smoke offering", situation: "Heaviness in place, need purification.", practice: { title: "Sang Ritual", time: "5 min", steps: ["Light incense.", "Walk through room.", "'I purify this space'.", "White smoke.", "Open window."] } }, es: { title: "Sang", subtitle: "Ofrenda de humo", situation: "Pesadez en el lugar.", practice: { title: "Ritual Sang", time: "5 min", steps: ["Enciende incienso.", "Camina por la habitación.", "'Purifico este espacio'.", "Humo blanco.", "Abre ventana."] } } } },
+      { id: "serkem", icon: "🍵", translations: { ru: { title: "Серкьем", subtitle: "Подношение чая", situation: "Чувствуешь неблагодарность.", practice: { title: "Ритуал Серкьем", time: "3 мин", steps: ["Налей чай в чашу.", "Подними чашу.", "«Подношу защитникам».", "Вылей на землю.", "Побудь в благодарности."] } }, en: { title: "Serkem", subtitle: "Tea offering", situation: "Feel ungrateful.", practice: { title: "Serkem Ritual", time: "3 min", steps: ["Pour tea into cup.", "Lift cup.", "'I offer to protectors'.", "Pour on ground.", "Rest in gratitude."] } }, es: { title: "Serkem", subtitle: "Ofrenda de té", situation: "Te sientes desagradecido.", practice: { title: "Ritual Serkem", time: "3 min", steps: ["Vierte té en taza.", "Levanta taza.", "'Ofrezco a protectores'.", "Vierte en tierra.", "Descansa en gratitud."] } } } },
+      { id: "sur", icon: "", translations: { ru: { title: "Сур", subtitle: "Подношение сожжённой пищи", situation: "Кармические долги, препятствия.", practice: { title: "Ритуал Сур", time: "10 мин", steps: ["Приготовь муку.", "Зажги огонь.", "Поднеси 4 гостям.", "Сожги подношение.", "Посвяти заслуги всем."] } }, en: { title: "Sur", subtitle: "Burnt food offering", situation: "Karmic debts, obstacles.", practice: { title: "Sur Ritual", time: "10 min", steps: ["Prepare flour.", "Light fire.", "Offer to 4 guests.", "Burn offering.", "Dedicate merits to all."] } }, es: { title: "Sur", subtitle: "Ofrenda de comida quemada", situation: "Deudas kármicas, obstáculos.", practice: { title: "Ritual Sur", time: "10 min", steps: ["Prepara harina.", "Enciende fuego.", "Ofrece a 4 huéspedes.", "Quema ofrenda.", "Dedica méritos a todos."] } } } }
+    ],
+
+    sutra: [
+      { id: "refuge", icon: "", translations: { ru: { title: "Прибежище", subtitle: "Три Драгоценности Бона", situation: "Потерял направление, страх.", practice: { title: "Укрепление Прибежища", time: "2 мин", steps: ["Ладони у сердца.", "Вспомни Будду, Бон, Сангху.", "«Прибежище принимаю в Будде, Боне и Сангхе».", "Почувствуй защиту.", "Побудь в доверии."] } }, en: { title: "Refuge", subtitle: "Three Jewels of Bon", situation: "Lost direction, fear.", practice: { title: "Strengthening Refuge", time: "2 min", steps: ["Hands at heart.", "Recall Buddha, Bon, Sangha.", "'I take refuge in Buddha, Bon, Sangha'.", "Feel protection.", "Rest in trust."] } }, es: { title: "Refugio", subtitle: "Tres Joyas del Bon", situation: "Perdiste dirección, miedo.", practice: { title: "Fortalecer Refugio", time: "2 min", steps: ["Manos en el corazón.", "Recuerda Buda, Bon, Sangha.", "'Tomo refugio en Buda, Bon, Sangha'.", "Siente protección.", "Descansa en confianza."] } } } },
+      { id: "bodhicitta", icon: "", translations: { ru: { title: "Бодхичитта", subtitle: "Ум пробуждения", situation: "Зациклен на себе.", practice: { title: "Порождение Бодхичитты", time: "3 мин", steps: ["Вспомни всех существ.", "«Пусть я обрету пробуждение».", "«Чтобы освободить всех от страданий».", "Свет от сердца ко всем.", "Удерживай намерение."] } }, en: { title: "Bodhicitta", subtitle: "Awakening Mind", situation: "Self-centered.", practice: { title: "Generating Bodhicitta", time: "3 min", steps: ["Recall all beings.", "'May I attain awakening'.", "'To liberate all from suffering'.", "Light from heart to all.", "Hold intention."] } }, es: { title: "Bodhicitta", subtitle: "Mente de despertar", situation: "Centrado en ti mismo.", practice: { title: "Generar Bodhicitta", time: "3 min", steps: ["Recuerda a todos los seres.", "'Que alcance el despertar'.", "'Para liberar a todos del sufrimiento'.", "Luz del corazón a todos.", "Mantén intención."] } } } },
+      { id: "loving-kindness", icon: "💛", translations: { ru: { title: "Любящая доброта", subtitle: "Майтри", situation: "Холодность, отчуждение.", practice: { title: "Медитация любящей доброты", time: "3 мин", steps: ["Вспомни близкого.", "«Пусть ты будешь счастлив».", "Расширь на друзей, врагов, всех.", "Почувствуй, как сердце смягчается.", "Побудь в тепле."] } }, en: { title: "Loving-kindness", subtitle: "Maitri", situation: "Coldness, alienation.", practice: { title: "Loving-kindness meditation", time: "3 min", steps: ["Recall loved one.", "'May you be happy'.", "Extend to friends, enemies, all.", "Feel heart softening.", "Rest in warmth."] } }, es: { title: "Amor bondadoso", subtitle: "Maitri", situation: "Frialdad, alienación.", practice: { title: "Meditación de amor", time: "3 min", steps: ["Recuerda ser querido.", "'Que seas feliz'.", "Extiende a amigos, enemigos, todos.", "Siente corazón ablandarse.", "Descansa en calidez."] } } } },
+      { id: "compassion", icon: "🤲", translations: { ru: { title: "Сострадание", subtitle: "Ньиндже", situation: "Черствость, раздражение.", practice: { title: "Медитация сострадания", time: "3 мин", steps: ["Вспомни страдающее существо.", "«Пусть ты будешь свободен от страданий».", "Искреннее желание помочь.", "Расширь на всех существ.", "Побудь в открытом сердце."] } }, en: { title: "Compassion", subtitle: "Nyingje", situation: "Hardened, irritated.", practice: { title: "Compassion meditation", time: "3 min", steps: ["Recall suffering being.", "'May you be free from suffering'.", "Sincere desire to help.", "Extend to all beings.", "Rest in open heart."] } }, es: { title: "Compasión", subtitle: "Nyingje", situation: "Endurecido, irritado.", practice: { title: "Meditación de compasión", time: "3 min", steps: ["Recuerda ser que sufre.", "'Que seas libre del sufrimiento'.", "Deseo sincero de ayudar.", "Extiende a todos.", "Descansa con corazón abierto."] } } } },
+      { id: "joy", icon: "😊", translations: { ru: { title: "Сорадование", subtitle: "Мудита", situation: "Зависть, неумение радоваться.", practice: { title: "Практика сорадования", time: "2 мин", steps: ["Вспомни успех другого.", "Искренне порадуйся.", "«Пусть радость растёт».", "Расширь на всех.", "Улыбнись."] } }, en: { title: "Joy", subtitle: "Mudita", situation: "Envy, cannot rejoice.", practice: { title: "Joy practice", time: "2 min", steps: ["Recall someone's success.", "Sincerely rejoice.", "'May joy grow'.", "Extend to all.", "Smile."] } }, es: { title: "Alegría", subtitle: "Mudita", situation: "Envidia, no puedes regocijarte.", practice: { title: "Práctica de alegría", time: "2 min", steps: ["Recuerda éxito ajeno.", "Regocíjate sinceramente.", "'Que crezca la alegría'.", "Extiende a todos.", "Sonríe."] } } } },
+      { id: "equanimity", icon: "⚖️", translations: { ru: { title: "Равностность", subtitle: "Упекша", situation: "Делишь на «своих» и «чужих».", practice: { title: "Практика равностности", time: "3 мин", steps: ["Вспомни нейтрального и трудного человека.", "Все хотят счастья, как ты.", "Пожелай счастья трудному.", "Отпусти цепляние.", "Побудь в беспристрастии."] } }, en: { title: "Equanimity", subtitle: "Upeksha", situation: "Divide into friends/enemies.", practice: { title: "Equanimity practice", time: "3 min", steps: ["Recall neutral and difficult person.", "All want happiness like you.", "Wish happiness to difficult one.", "Release attachment.", "Rest in impartiality."] } }, es: { title: "Ecuanimidad", subtitle: "Upeksha", situation: "Divides en amigos/enemigos.", practice: { title: "Práctica de ecuanimidad", time: "3 min", steps: ["Recuerda persona neutral y difícil.", "Todos quieren felicidad.", "Deséale felicidad al difícil.", "Suelta apego.", "Descansa en imparcialidad."] } } } },
+      { id: "generosity", icon: "🎁", translations: { ru: { title: "Щедрость", subtitle: "Парамита Джинпа", situation: "Жадность, страх потери.", practice: { title: "Практика щедрости", time: "2 мин", steps: ["Посмотри на предмет.", "Мысленно подари всем существам.", "Отпусти собственность.", "Почувствуй простор.", "Улыбнись."] } }, en: { title: "Generosity", subtitle: "Paramita of Jinpa", situation: "Greed, fear of loss.", practice: { title: "Generosity practice", time: "2 min", steps: ["Look at object.", "Mentally gift to all beings.", "Release ownership.", "Feel spaciousness.", "Smile."] } }, es: { title: "Generosidad", subtitle: "Paramita de Jinpa", situation: "Avaricia, miedo a perder.", practice: { title: "Práctica de generosidad", time: "2 min", steps: ["Mira objeto.", "Regala mentalmente a todos.", "Suelta propiedad.", "Siente amplitud.", "Sonríe."] } } } },
+      { id: "ethics", icon: "📿", translations: { ru: { title: "Нравственность", subtitle: "Парамита Цултим", situation: "Вина, вред себе или другим.", practice: { title: "Очищение через этику", time: "3 мин", steps: ["Признай поступок без самобичевания.", "«Я вижу это и учусь».", "Намерение не повторять.", "Белый свет очищает тёмное.", "Отпусти вину."] } }, en: { title: "Ethics", subtitle: "Paramita of Tsultrim", situation: "Guilt, harmful action.", practice: { title: "Purification through ethics", time: "3 min", steps: ["Acknowledge action without self-blame.", "'I see this and I am learning'.", "Intention not to repeat.", "White light purifies dark.", "Release guilt."] } }, es: { title: "Ética", subtitle: "Paramita de Tsultrim", situation: "Culpa, acción dañina.", practice: { title: "Purificación por ética", time: "3 min", steps: ["Reconoce sin culparte.", "'Veo esto y estoy aprendiendo'.", "Intención de no repetir.", "Luz blanca purifica oscuridad.", "Suelta culpa."] } } } },
+      { id: "patience", icon: "🌊", translations: { ru: { title: "Терпение", subtitle: "Парамита Зопе", situation: "Раздражение, нетерпеливость.", practice: { title: "Практика терпения", time: "2 мин", steps: ["Глубокий выдох.", "«Это тоже пройдёт».", "Ситуация — учитель.", "Прими момент.", "Расслабь челюсть и плечи."] } }, en: { title: "Patience", subtitle: "Paramita of Zope", situation: "Irritation, impatience.", practice: { title: "Patience practice", time: "2 min", steps: ["Deep exhale.", "'This too shall pass'.", "Situation is teacher.", "Accept moment.", "Relax jaw and shoulders."] } }, es: { title: "Paciencia", subtitle: "Paramita de Zope", situation: "Irritación, impaciencia.", practice: { title: "Práctica de paciencia", time: "2 min", steps: ["Exhalación profunda.", "'Esto también pasará'.", "Situación es maestra.", "Acepta momento.", "Relaja mandíbula y hombros."] } } } },
+      { id: "effort", icon: "💪", translations: { ru: { title: "Радостное усердие", subtitle: "Парамита Цондю", situation: "Лень, апатия к практике.", practice: { title: "Пробуждение усердия", time: "2 мин", steps: ["Вспомни, зачем практикуешь.", "«Я способен».", "Одно маленькое действие.", "Похвали себя.", "Почувствуй лёгкую энергию."] } }, en: { title: "Joyous Effort", subtitle: "Paramita of Tsöndü", situation: "Laziness, apathy.", practice: { title: "Awakening effort", time: "2 min", steps: ["Recall why you practice.", "'I am capable'.", "One small action.", "Praise yourself.", "Feel light energy."] } }, es: { title: "Esfuerzo gozoso", subtitle: "Paramita de Tsöndü", situation: "Pereza, apatía.", practice: { title: "Despertar esfuerzo", time: "2 min", steps: ["Recuerda por qué practicas.", "'Soy capaz'.", "Una acción pequeña.", "Alábate.", "Siente energía ligera."] } } } },
+      { id: "concentration", icon: "", translations: { ru: { title: "Концентрация", subtitle: "Парамита Самтен", situation: "Хаотичный ум.", practice: { title: "Устойчивость ума", time: "5 мин", steps: ["Прямая спина.", "Внимание на дыхание.", "Ум ушёл — мягко верни.", "Считай вдохи до 10.", "Побудь в тишине."] } }, en: { title: "Concentration", subtitle: "Paramita of Samten", situation: "Chaotic mind.", practice: { title: "Stability of mind", time: "5 min", steps: ["Straight spine.", "Attention on breath.", "Mind wanders — gently return.", "Count breaths to 10.", "Rest in silence."] } }, es: { title: "Concentración", subtitle: "Paramita de Samten", situation: "Mente caótica.", practice: { title: "Estabilidad mental", time: "5 min", steps: ["Columna recta.", "Atención en respiración.", "Mente vague — vuelve suavemente.", "Cuenta respiraciones hasta 10.", "Descansa en silencio."] } } } },
+      { id: "wisdom", icon: "👁️", translations: { ru: { title: "Мудрость", subtitle: "Парамита Шераб", situation: "Запутался в концепциях.", practice: { title: "Взгляд мудрости", time: "3 мин", steps: ["«Что я принимаю за твёрдое?»", "Ситуация — взаимозависимая игра.", "Отпусти «хорошо/плохо».", "Доверься потоку причин.", "Действуй из ясности."] } }, en: { title: "Wisdom", subtitle: "Paramita of Sherab", situation: "Confused in concepts.", practice: { title: "View of wisdom", time: "3 min", steps: ["'What do I take as solid?'", "Situation is interdependent play.", "Release good/bad judgments.", "Trust flow of causes.", "Act from clarity."] } }, es: { title: "Sabiduría", subtitle: "Paramita de Sherab", situation: "Confundido en conceptos.", practice: { title: "Visión de sabiduría", time: "3 min", steps: ["'¿Qué tomo como sólido?'", "Situación es juego interdependiente.", "Suelta juicios bueno/malo.", "Confía en flujo de causas.", "Actúa desde claridad."] } } } }
+    ],
+
+    tantra: [
+      { id: "tsalung", icon: "🌬️", translations: { ru: { title: "Цалунг", subtitle: "Ветер и каналы", situation: "Энергетический застой.", practice: { title: "9 очищающих дыханий", time: "3 мин", steps: ["Закрой правую ноздрю.", "Вдохни белый свет левой.", "Задержи, очищая.", "Выдохни серый дым правой.", "Повтори 9 раз, меняя стороны."] } }, en: { title: "Tsa Lung", subtitle: "Winds and channels", situation: "Energy stagnation.", practice: { title: "9 Purifying Breaths", time: "3 min", steps: ["Close right nostril.", "Inhale white light through left.", "Hold, purifying.", "Exhale gray smoke through right.", "Repeat 9 times, switching sides."] } }, es: { title: "Tsa Lung", subtitle: "Vientos y canales", situation: "Estancamiento energético.", practice: { title: "9 Respiraciones purificadoras", time: "3 min", steps: ["Cierra fosa nasal derecha.", "Inhala luz blanca por izquierda.", "Mantén, purificando.", "Exhala humo gris por derecha.", "Repite 9 veces, alternando."] } } } },
+      { id: "central-channel", icon: "🔵", translations: { ru: { title: "Центральный канал", subtitle: "Ума", situation: "Энергия рассеяна.", practice: { title: "Медитация на канал", time: "3 мин", steps: ["Синий канал от основания до макушки.", "Вдох — энергия вверх.", "Выдох — опускается.", "Вертикальная ось покоя.", "Раствори канал в свете."] } }, en: { title: "Central Channel", subtitle: "Uma", situation: "Energy scattered.", practice: { title: "Meditation on channel", time: "3 min", steps: ["Blue channel from base to crown.", "Inhale — energy rises.", "Exhale — descends.", "Vertical axis of peace.", "Dissolve channel in light."] } }, es: { title: "Canal Central", subtitle: "Uma", situation: "Energía dispersa.", practice: { title: "Meditación en canal", time: "3 min", steps: ["Canal azul de base a coronilla.", "Inhala — energía sube.", "Exhala — baja.", "Eje vertical de paz.", "Disuelve canal en luz."] } } } },
+      { id: "five-pranas", icon: "", translations: { ru: { title: "Пять Пран", subtitle: "Тонкие ветры", situation: "Сбой функций тела/ума.", practice: { title: "Баланс пяти ветров", time: "3 мин", steps: ["Осознай 5 ветров.", "Успокой их.", "Вдохни гармонизирующий свет.", "Выдохни хаос.", "Почувствуй целостность."] } }, en: { title: "Five Pranas", subtitle: "Subtle winds", situation: "Body/mind malfunction.", practice: { title: "Balancing five winds", time: "3 min", steps: ["Acknowledge 5 winds.", "Calm them.", "Inhale harmonizing light.", "Exhale chaos.", "Feel wholeness."] } }, es: { title: "Cinco Pranas", subtitle: "Vientos sutiles", situation: "Fallo cuerpo/mente.", practice: { title: "Balanceando cinco vientos", time: "3 min", steps: ["Reconoce 5 vientos.", "Cálmalos.", "Inhala luz armonizadora.", "Exhala caos.", "Siente integridad."] } } } },
+      { id: "tigle", icon: "💧", translations: { ru: { title: "Тигле", subtitle: "Световые капли", situation: "Сухость, рассеянность.", practice: { title: "Собирание Тигле", time: "3 мин", steps: ["Внимание на сердце.", "Светящаяся сфера (тигле).", "С каждым вдохом — ярче.", "Эссенция осознавания.", "Побудь в сконцентрированном свете."] } }, en: { title: "Tigle", subtitle: "Luminous drops", situation: "Dryness, scattered mind.", practice: { title: "Gathering Tigle", time: "3 min", steps: ["Focus on heart.", "Luminous sphere (tigle).", "Each inhale — brighter.", "Essence of awareness.", "Rest in concentrated light."] } }, es: { title: "Tigle", subtitle: "Gotas luminosas", situation: "Sequedad, mente dispersa.", practice: { title: "Reunir Tigle", time: "3 min", steps: ["Enfoca en corazón.", "Esfera luminosa (tigle).", "Cada inhalación — más brillante.", "Esencia de conciencia.", "Descansa en luz concentrada."] } } } },
+      { id: "sherap-chamma", icon: "👸", translations: { ru: { title: "Шерап Чамма", subtitle: "Божественная Мать мудрости", situation: "Нужна интуиция, исцеление.", practice: { title: "Призыв Шерап Чамма", time: "5 мин", steps: ["Белая богиня с зеркалом.", "ОМ ПАДМА КИЛИ КИЛИ ШЕРАП ЧАММА ХУМ СОХА (7 раз).", "Попроси благословения мудрости.", "Белый свет в сердце.", "Раствори её в своём сердце."] } }, en: { title: "Sherap Chamma", subtitle: "Divine Mother of Wisdom", situation: "Need intuition, healing.", practice: { title: "Invoking Sherap Chamma", time: "5 min", steps: ["White goddess with mirror.", "OM PADMA KILI KILI SHERAP CHAMMA HUM SOHA (7 times).", "Ask for wisdom blessing.", "White light into heart.", "Dissolve her in your heart."] } }, es: { title: "Sherap Chamma", subtitle: "Madre Divina de Sabiduría", situation: "Necesitas intuición, sanación.", practice: { title: "Invocando Sherap Chamma", time: "5 min", steps: ["Diosa blanca con espejo.", "OM PADMA KILI KILI SHERAP CHAMMA HUM SOHA (7 veces).", "Pide bendición de sabiduría.", "Luz blanca en corazón.", "Disuélvela en tu corazón."] } } } },
+      { id: "shenla-odkar", icon: "☀️", translations: { ru: { title: "Шенла Одкар", subtitle: "Будда бесконечного света", situation: "Нужно очищение кармы.", practice: { title: "Визуализация Шенла Одкар", time: "5 мин", steps: ["Белый Будда над макушкой.", "ОМ МУНИ ТРИГЬЕ ДУ ШЕН (21 раз).", "Белый нектар смывает омрачения.", "Побудь в сиянии.", "Раствори Будду в сердце."] } }, en: { title: "Shenlha Okar", subtitle: "Buddha of Infinite Light", situation: "Need karma purification.", practice: { title: "Visualization of Shenlha Okar", time: "5 min", steps: ["White Buddha above crown.", "OM MUNI TRIGYE DU SHEN (21 times).", "White nectar washes obscurations.", "Rest in radiance.", "Dissolve Buddha in heart."] } }, es: { title: "Shenlha Okar", subtitle: "Buda de Luz Infinita", situation: "Necesitas purificar karma.", practice: { title: "Visualización de Shenlha Okar", time: "5 min", steps: ["Buda blanco sobre coronilla.", "OM MUNI TRIGYE DU SHEN (21 veces).", "Néctar blanco lava oscuridades.", "Descansa en resplandor.", "Disuelve Buda en corazón."] } } } },
+      { id: "tonpa-shenrab", icon: "🙏", translations: { ru: { title: "Тонпа Шенраб", subtitle: "Коренной Гуру", situation: "Отрыв от источника.", practice: { title: "Гуру-йога", time: "5 мин", steps: ["Тонпа Шенраб перед тобой.", "Ладони в молитве.", "ОМ МУНИ ТРИГЬЕ ДУ ШЕН (7 раз).", "Попроси благословения.", "Раствори Гуру в сердце."] } }, en: { title: "Tonpa Shenrab", subtitle: "Root Guru", situation: "Disconnected from source.", practice: { title: "Guru Yoga", time: "5 min", steps: ["Tonpa Shenrab before you.", "Palms in prayer.", "OM MUNI TRIGYE DU SHEN (7 times).", "Ask for blessing.", "Dissolve Guru in heart."] } }, es: { title: "Tonpa Shenrab", subtitle: "Guru Raíz", situation: "Desconectado de la fuente.", practice: { title: "Guru Yoga", time: "5 min", steps: ["Tonpa Shenrab frente a ti.", "Palmas en oración.", "OM MUNI TRIGYE DU SHEN (7 veces).", "Pide bendición.", "Disuelve Guru en corazón."] } } } },
+      { id: "seed-syllables", icon: "✨", translations: { ru: { title: "Слоги-источники", subtitle: "А, ОМ, ХУМ", situation: "Нужно очищение тела, речи, ума.", practice: { title: "Очищение А ОМ ХУМ", time: "3 мин", steps: ["Белый А на макушке (тело).", "Красный ОМ в горле (речь).", "Синий ХУМ в сердце (ум).", "Каждый по 7 раз.", "Побудь в тройственной чистоте."] } }, en: { title: "Seed Syllables", subtitle: "A, OM, HUM", situation: "Need body/speech/mind purification.", practice: { title: "A OM HUM Purification", time: "3 min", steps: ["White A at crown (body).", "Red OM at throat (speech).", "Blue HUM at heart (mind).", "Each 7 times.", "Rest in threefold purity."] } }, es: { title: "Sílabas semilla", subtitle: "A, OM, HUM", situation: "Necesitas purificación.", practice: { title: "Purificación A OM HUM", time: "3 min", steps: ["A blanca en coronilla (cuerpo).", "OM roja en garganta (habla).", "HUM azul en corazón (mente).", "Cada una 7 veces.", "Descansa en pureza triple."] } } } },
+      { id: "transform-anger", icon: "😤", translations: { ru: { title: "Трансформация гнева", subtitle: "В зерцалоподобную мудрость", situation: "Гнев, раздражение.", practice: { title: "Алхимия гнева", time: "3 мин", steps: ["Заметь гнев, не подавляй.", "Элемент Воды: прохладный синий свет.", "Вдохни синий свет в гнев.", "Огонь остывает, становится зеркалом.", "Ясность из хаоса."] } }, en: { title: "Transforming Anger", subtitle: "Into mirror-like wisdom", situation: "Anger, irritation.", practice: { title: "Alchemy of anger", time: "3 min", steps: ["Notice anger, don't suppress.", "Water element: cool blue light.", "Inhale blue light into anger.", "Fire cools, becomes mirror.", "Clarity from chaos."] } }, es: { title: "Transformar ira", subtitle: "En sabiduría espejo", situation: "Ira, irritación.", practice: { title: "Alquimia de ira", time: "3 min", steps: ["Nota ira, no suprimas.", "Elemento Agua: luz azul fresca.", "Inhala luz azul en ira.", "Fuego se enfría, vuelve espejo.", "Claridad del caos."] } } } },
+      { id: "transform-attachment", icon: "❤️‍🔥", translations: { ru: { title: "Трансформация привязанности", subtitle: "В различающую мудрость", situation: "Жажда, зависимость.", practice: { title: "Алхимия желания", time: "3 мин", steps: ["Заметь цепляние.", "Элемент Огня: красный свет в пупке.", "Огонь сжигает основу привязанности.", "Жар желания → тепло сострадания.", "Свобода от объекта."] } }, en: { title: "Transforming Attachment", subtitle: "Into discriminating wisdom", situation: "Craving, dependency.", practice: { title: "Alchemy of desire", time: "3 min", steps: ["Notice clinging.", "Fire element: red light in navel.", "Fire burns basis of attachment.", "Heat of desire → warmth of compassion.", "Freedom from object."] } }, es: { title: "Transformar apego", subtitle: "En sabiduría discriminativa", situation: "Anhelo, dependencia.", practice: { title: "Alquimia del deseo", time: "3 min", steps: ["Nota aferramiento.", "Elemento Fuego: luz roja en ombligo.", "Fuego quema base del apego.", "Calor de deseo → calidez de compasión.", "Libertad del objeto."] } } } },
+      { id: "transform-ignorance", icon: "🌌", translations: { ru: { title: "Трансформация неведения", subtitle: "В мудрость дхармодхату", situation: "Тупость, туман в уме.", practice: { title: "Алхимия неведения", time: "3 мин", steps: ["Заметь тупость.", "Элемент Пространства: безграничное небо.", "Ум расширяется до пространства.", "Туман растворяется в ясном небе.", "Открытая бдительная пустота."] } }, en: { title: "Transforming Ignorance", subtitle: "Into Dharmadhatu wisdom", situation: "Dullness, mental fog.", practice: { title: "Alchemy of ignorance", time: "3 min", steps: ["Notice dullness.", "Space element: boundless sky.", "Mind expands to space.", "Fog dissolves into clear sky.", "Open alert emptiness."] } }, es: { title: "Transformar ignorancia", subtitle: "En sabiduría dharmadhatu", situation: "Embotamiento, niebla mental.", practice: { title: "Alquimia de ignorancia", time: "3 min", steps: ["Nota embotamiento.", "Elemento Espacio: cielo ilimitado.", "Mente se expande al espacio.", "Niebla se disuelve en cielo claro.", "Vacuidad abierta y alerta."] } } } },
+      { id: "tummo", icon: "🔥", translations: { ru: { title: "Внутренний жар", subtitle: "Туммо", situation: "Холод, вялость.", practice: { title: "Пробуждение огня", time: "5 мин", steps: ["Прямая спина.", "Внимание ниже пупка.", "Слог РАМ, извергающий пламя.", "Резкий вдох — огонь вверх по каналу.", "Блаженное тепло по всему телу."] } }, en: { title: "Inner Heat", subtitle: "Tummo", situation: "Cold, lethargy.", practice: { title: "Awakening fire", time: "5 min", steps: ["Straight spine.", "Focus below navel.", "Syllable RAM emitting flames.", "Sharp inhale — fire up channel.", "Blissful warmth through body."] } }, es: { title: "Calor interno", subtitle: "Tummo", situation: "Frío, letargo.", practice: { title: "Despertar fuego", time: "5 min", steps: ["Columna recta.", "Enfoca bajo ombligo.", "Sílaba RAM emitiendo llamas.", "Inhala brusca — fuego sube.", "Calor dichoso por todo el cuerpo."] } } } }
+    ],
+
+    dzogchen: [
+      { id: "kunzhi", icon: "️", translations: { ru: { title: "Кунжи", subtitle: "Всеоснова", situation: "Забыл, что всё — проявление пространства.", practice: { title: "Возвращение к основе", time: "2 мин", steps: ["Остановись. Посмотри вокруг.", "«Всё это — игра Кунжи».", "Не меняй ничего.", "Почувствуй единство.", "Просто будь."] } }, en: { title: "Kunzhi", subtitle: "Ground of All", situation: "Forgot everything is space manifestation.", practice: { title: "Returning to ground", time: "2 min", steps: ["Stop. Look around.", "'This is Kunzhi's play'.", "Don't change anything.", "Feel unity.", "Just be."] } }, es: { title: "Kunzhi", subtitle: "Fundamento de Todo", situation: "Olvidaste que todo es manifestación.", practice: { title: "Regreso al fundamento", time: "2 min", steps: ["Detente. Mira alrededor.", "'Esto es juego de Kunzhi'.", "No cambies nada.", "Siente unidad.", "Solo sé."] } } } },
+      { id: "self-liberation", icon: "🌊", translations: { ru: { title: "Самоосвобождение", subtitle: "Рангдрол", situation: "Захватила эмоция или мысль.", practice: { title: "Освобождение мысли", time: "1 мин", steps: ["Заметь эмоцию.", "Не борись.", "«Кто ты?»", "Тает как облако.", "Останься в ясности."] } }, en: { title: "Self-liberation", subtitle: "Rangdrol", situation: "Caught by emotion or thought.", practice: { title: "Thought liberation", time: "1 min", steps: ["Notice emotion.", "Don't fight.", "'Who are you?'", "Melts like cloud.", "Rest in clarity."] } }, es: { title: "Autoliberación", subtitle: "Rangdrol", situation: "Atrapado por emoción o pensamiento.", practice: { title: "Liberación del pensamiento", time: "1 min", steps: ["Nota emoción.", "No luches.", "'¿Quién eres?'", "Se disuelve como nube.", "Descansa en claridad."] } } } }
+    ]
+  }
+};
+
+// === ЛОГИКА ===
+let currentLang = 'ru';
+let currentCard = null;
+let timerInterval = null;
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function selectLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('lang', lang);
+  showScreen('altar-screen');
+}
+
+function switchLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('lang', lang);
+  document.querySelectorAll('.lang-switch-btn').forEach(btn => {
+    btn.classList.remove('active');
+    if (btn.textContent.trim().toLowerCase() === lang) btn.classList.add('active');
+  });
+}
+
+function drawCard(deck) {
+  const cards = data.cards[deck];
+  const card = cards[Math.floor(Math.random() * cards.length)];
+  currentCard = { deck, card };
+  const t = card.translations[currentLang];
+  
+  const imageEl = document.getElementById('card-image');
+  if (card.image) {
+    imageEl.innerHTML = '<img src="' + card.image + '">';
+  } else {
+    imageEl.textContent = card.icon;
+  }
+  
+  document.getElementById('card-title').textContent = t.title;
+  document.getElementById('card-subtitle').textContent = t.subtitle;
+  document.getElementById('card-deck').textContent = deck;
+  document.getElementById('card-situation-text').textContent = t.situation;
+  showScreen('card-screen');
+}
+
+function showPractice() {
+  if (!currentCard) return;
+  const t = currentCard.card.translations[currentLang].practice;
+  document.getElementById('practice-title').textContent = t.title;
+  document.getElementById('practice-time').textContent = t.time;
+  const stepsEl = document.getElementById('practice-steps');
+  stepsEl.innerHTML = '';
+  t.steps.forEach((step, i) => {
+    stepsEl.innerHTML += '<div class="practice-step"><div class="step-number">' + (i+1) + '</div><div class="step-text">' + step + '</div></div>';
+  });
+  showScreen('practice-screen');
+}
+
+function startTimer(seconds) {
+  document.getElementById('timer-modal').classList.add('active');
+  let remaining = seconds;
+  updateTimerDisplay(remaining);
+  if (timerInterval) clearInterval(timerInterval);
+  timerInterval = setInterval(() => {
+    remaining--;
+    updateTimerDisplay(remaining);
+    if (remaining <= 0) { stopTimer(); alert('Время вышло!'); }
+  }, 1000);
+}
+
+function updateTimerDisplay(seconds) {
+  const mins = Math.floor(seconds / 60);
+  const secs = seconds % 60;
+  document.getElementById('timer-display').textContent = mins + ':' + (secs < 10 ? '0' : '') + secs;
+}
+
+function stopTimer() {
+  if (timerInterval) clearInterval(timerInterval);
+  document.getElementById('timer-modal').classList.remove('active');
+}
+
+// Инициализация
+window.onload = function() {
+  const saved = localStorage.getItem('lang');
+  if (saved) { currentLang = saved; showScreen('altar-screen'); }
+  else { showScreen('language-screen'); }
+};
+</script>
 </body>
 </html>
