@@ -48,11 +48,11 @@ header { display: flex; justify-content: space-between; align-items: center; pad
 .section-card.speech-section { border-color: #d4a574; }
 .section-card.mind-section { border-color: #6b9bd1; }
 .section-card.elements-section { border-color: #c9463d; }
+.section-card.pranas-section { border-color: #8e44ad; }
 .section-card.dream-section { border-color: #9b59b6; }
 .section-card.transition-section { border-color: #34495e; }
 .section-card.offerings-section { border-color: #e67e22; }
 .section-card.library-section { border-color: #95a5a6; }
-.altar-content { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 15px; }
 .card-content { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 15px 0; overflow-y: auto; }
 .card-image { width: 160px; height: 220px; background: #0f0f1e; border: 3px solid #d4af37; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 70px; overflow: hidden; flex-shrink: 0; }
 .card-image img { width: 100%; height: 100%; object-fit: cover; }
@@ -112,7 +112,7 @@ header { display: flex; justify-content: space-between; align-items: center; pad
 .search-input { width: 100%; padding: 10px 15px; font-size: 14px; background: #0f0f1e; color: #e0e0e0; border: 2px solid #d4af37; border-radius: 8px; }
 .search-input::placeholder { color: #a0a0a0; }
 .favorites-empty { text-align: center; color: #a0a0a0; padding: 40px; font-style: italic; }
-.book-card { background: #0f0f1e; border: 2px solid #d4af37; border-radius: 12px; padding: 15px; }
+.book-card { background: #0f0f1e; border: 2px solid #d4af37; border-radius: 12px; padding: 15px; margin-bottom: 10px; }
 .book-card h4 { font-size: 16px; color: #d4af37; margin-bottom: 5px; }
 .book-card p { font-size: 13px; color: #a0a0a0; line-height: 1.4; }
 @media (max-width: 480px) {
@@ -136,7 +136,7 @@ header { display: flex; justify-content: space-between; align-items: center; pad
     <h1 data-i18n="select_language">Выберите язык</h1>
     <p>Choose language / Elige idioma</p>
     <div class="language-buttons">
-      <button class="lang-btn" onclick="selectLang('ru')">🇷🇺 Русский</button>
+      <button class="lang-btn" onclick="selectLang('ru')">🇺 Русский</button>
       <button class="lang-btn" onclick="selectLang('en')">🇬🇧 English</button>
       <button class="lang-btn" onclick="selectLang('es')">🇪🇸 Español</button>
     </div>
@@ -159,7 +159,7 @@ header { display: flex; justify-content: space-between; align-items: center; pad
       <div class="syllable"><div class="syllable-char yellow">ཨོཾ</div><div class="syllable-text">OM</div></div>
       <div class="syllable"><div class="syllable-char blue">ཧཱུྃ</div><div class="syllable-text">HUNG</div></div>
       <div class="syllable"><div class="syllable-char red">རཱཾ</div><div class="syllable-text">RAM</div></div>
-      <div class="syllable"><div class="syllable-char green">ཿ</div><div class="syllable-text">DZA</div></div>
+      <div class="syllable"><div class="syllable-char green">ཛ</div><div class="syllable-text">DZA</div></div>
     </div>
     <h2 class="intro-title" data-i18n="bon_tradition">Традиция Юнгдрунг Бон</h2>
     <p class="intro-text" data-i18n="bon_description">Древняя тибетская традиция, основанная Тонпа Шенрабом Миво более 18 000 лет назад. Путь вечного света и изначальной мудрости.</p>
@@ -178,31 +178,146 @@ header { display: flex; justify-content: space-between; align-items: center; pad
     </div>
   </header>
   <div class="paths-container">
-    <h2 class="paths-title" data-i18n="three_gates">Три Врата</h2>
+    <h2 class="paths-title" data-i18n="three_gates">Девять разделов учения</h2>
     <div class="section-grid">
       <div class="section-card body-section" onclick="showSection('body')">
-        <div class="section-icon">🧘</div>
+        <div class="section-icon"></div>
         <div class="section-label" data-i18n="body">Тело</div>
       </div>
       <div class="section-card speech-section" onclick="showSection('speech')">
-        <div class="section-icon">🗣️</div>
+        <div class="section-icon">️</div>
         <div class="section-label" data-i18n="speech">Речь</div>
       </div>
       <div class="section-card mind-section" onclick="showSection('mind')">
-        <div class="section-icon">🧠</div>
+        <div class="section-icon"></div>
         <div class="section-label" data-i18n="mind">Ум</div>
       </div>
       <div class="section-card elements-section" onclick="showSection('elements')">
         <div class="section-icon">🌍</div>
         <div class="section-label" data-i18n="elements">Элементы</div>
       </div>
+      <div class="section-card pranas-section" onclick="showSection('pranas')">
+        <div class="section-icon">💨</div>
+        <div class="section-label" data-i18n="pranas">Праны</div>
+      </div>
       <div class="section-card dream-section" onclick="showSection('dream')">
-        <div class="section-icon"></div>
+        <div class="section-icon">🌙</div>
         <div class="section-label" data-i18n="dream">Сон</div>
       </div>
       <div class="section-card transition-section" onclick="showSection('transition')">
-        <div class="section-icon"></div>
+        <div class="section-icon">🌈</div>
         <div class="section-label" data-i18n="transition">Переходы</div>
       </div>
       <div class="section-card offerings-section" onclick="showSection('offerings')">
-        <div class="
+        <div class="section-icon"></div>
+        <div class="section-label" data-i18n="offerings">Подношения</div>
+      </div>
+      <div class="section-card library-section" onclick="showSection('library')">
+        <div class="section-icon">📚</div>
+        <div class="section-label" data-i18n="library">Библиотека</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="section-screen" class="screen">
+  <header>
+    <button class="icon-btn" onclick="showScreen('main-screen')">← <span data-i18n="back">Назад</span></button>
+    <button class="icon-btn" onclick="showScreen('flashcards-screen')" style="font-size:16px;"></button>
+  </header>
+  <div class="library-container">
+    <h2 class="library-title" id="section-title"></h2>
+    <div class="search-container">
+      <input type="text" class="search-input" id="search-input" data-i18n-placeholder="search_placeholder" placeholder="Поиск..." oninput="searchCards()">
+    </div>
+    <div class="library-list" id="library-list"></div>
+  </div>
+</div>
+
+<div id="card-screen" class="screen">
+  <header>
+    <button class="icon-btn" onclick="goBackFromCard()">← <span data-i18n="back">Назад</span></button>
+    <button class="favorite-btn" id="favorite-btn-card" onclick="toggleFavorite()">☆</button>
+  </header>
+  <div class="card-content">
+    <div class="card-image" id="card-image"></div>
+    <h2 id="card-title"></h2>
+    <p id="card-subtitle" class="card-subtitle"></p>
+    <p id="card-deck" class="card-deck-badge"></p>
+    <div class="card-situation"><p id="card-situation-text"></p></div>
+    <div class="card-actions">
+      <button class="action-btn primary" onclick="showPractice()" data-i18n="what_to_do">🔥 Практика</button>
+    </div>
+  </div>
+</div>
+
+<div id="practice-screen" class="screen">
+  <header>
+    <button class="icon-btn" onclick="showScreen('card-screen')">← <span data-i18n="back">Назад</span></button>
+  </header>
+  <div class="practice-content">
+    <div class="practice-card-image" id="practice-card-image"></div>
+    <div class="practice-header">
+      <h2 id="practice-title"></h2>
+      <p id="practice-time" class="practice-time"></p>
+    </div>
+    <div class="practice-divider">✦ ✦</div>
+    <div class="practice-steps-scroll">
+      <div class="practice-steps" id="practice-steps"></div>
+    </div>
+    <button class="action-btn primary timer-button" onclick="startTimer(300)" data-i18n="start_timer">⏱ Таймер</button>
+  </div>
+</div>
+
+<div id="flashcards-screen" class="screen">
+  <header>
+    <button class="icon-btn" onclick="showScreen('main-screen')">← <span data-i18n="back">Назад</span></button>
+  </header>
+  <div class="flashcard-container">
+    <h2 class="flashcard-title" data-i18n="flashcards_title">Флеш-карточки</h2>
+    <div class="flashcard-category-selector">
+      <button class="category-btn active" onclick="showFlashcards('mantras')" data-i18n="mantras">Мантры</button>
+      <button class="category-btn" onclick="showFlashcards('syllables')" data-i18n="syllables">Слоги</button>
+      <button class="category-btn" onclick="showFlashcards('elements')" data-i18n="elements">Элементы</button>
+      <button class="category-btn" onclick="showFlashcards('pranas_fc')" data-i18n="pranas_fc">Праны</button>
+      <button class="category-btn" onclick="showFlashcards('dzogchen')" data-i18n="dzogchen_terms">Дзогчен</button>
+      <button class="category-btn" onclick="showFlashcards('transition')" data-i18n="transition">Переходы</button>
+    </div>
+    <div class="flashcard" id="flashcard" onclick="flipCard()">
+      <div class="flashcard-inner">
+        <div class="flashcard-front" id="flashcard-front"></div>
+        <div class="flashcard-back" id="flashcard-back"></div>
+      </div>
+    </div>
+    <div class="flashcard-counter" id="flashcard-counter"></div>
+    <div class="flashcard-controls">
+      <button class="flashcard-btn" onclick="prevCard()" data-i18n="prev_card">← Предыдущая</button>
+      <button class="flashcard-btn" onclick="nextCard()" data-i18n="next_card">Следующая →</button>
+    </div>
+  </div>
+</div>
+
+<div id="books-screen" class="screen">
+  <header>
+    <button class="icon-btn" onclick="showScreen('main-screen')">← <span data-i18n="back">Назад</span></button>
+  </header>
+  <div class="books-container">
+    <h2 class="books-title" data-i18n="books_title">Книги Тендзина Вангьяла Ринпоче</h2>
+    <div class="book-card"><h4>1. Тибетская йога тела, речи и ума</h4><p>Три врата к просветлению. Практики цалунг, трюлкхор, пять слогов-воинов, мантра Али-Кали.</p></div>
+    <div class="book-card"><h4>2. Чудеса естественного ума</h4><p>Дзогчен: Кунжи, Ригпа, Цал. Трекчо и Тхогёл. Шесть светильников. Переходные состояния.</p></div>
+    <div class="book-card"><h4>3. Тибетская йога дыхания и движения</h4><p>Девять очистительных дыханий. Девять лунгов. Пять чакр и пять упражнений цалунг.</p></div>
+    <div class="book-card"><h4>4. Исцеление формой, энергией и светом</h4><p>Пять элементов. Богини элементов. Подношения. Четыре гостя. Возвращение энергий.</p></div>
+    <div class="book-card"><h4>5. Тибетская йога сна и сновидений</h4><p>Дакини Салчже Дудалма. Работа с тигле. Ясный свет сна. Интеграция сна и бодрствования.</p></div>
+  </div>
+</div>
+
+<div id="timer-modal" class="modal">
+  <div class="timer-content">
+    <div class="timer-display" id="timer-display">5:00</div>
+    <button class="action-btn secondary" onclick="stopTimer()" data-i18n="close">Закрыть</button>
+  </div>
+</div>
+
+<script src="data.js"></script>
+</body>
+</html>
