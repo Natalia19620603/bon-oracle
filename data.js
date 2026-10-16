@@ -239,7 +239,166 @@ const data = {
     } }
   ],
 
-  library: []
+    library: [
+    { id: "shamanism-desc", icon: "", translations: {
+      ru: { title: "Шаманизм", subtitle: "Внешний путь — работа с элементами и духами", situation: "Основы пути Бон", practice: { title: "Описание Шаманизма", time: "Чтение", steps: [
+        "Шаманизм — это работа с пятью элементами (земля, вода, огонь, воздух, пространство) как с живыми силами.",
+        "Практик устанавливает связь с духами природы: наги (вода), лу (земля), лха (небо), ньен (деревья и горы).",
+        "Основные практики: подношения (санг, серкьем, сур), возвращение утраченных энергий элементов, работа со стрелой души (дадар), бирюзой и оленем души (шава).",
+        "Цель: восстановить баланс элементов в теле и окружении, исцелить болезнь, вернуть жизненную силу (ла).",
+        "Шаманизм не стремится к обретению тела божества — это цель Тантры."
+      ] } },
+      en: { title: "Shamanism", subtitle: "Outer path — working with elements and spirits", situation: "Foundation of Bon", practice: { title: "Description of Shamanism", time: "Reading", steps: [
+        "Shamanism works with five elements (earth, water, fire, air, space) as living forces.",
+        "Practitioner connects with nature spirits: nagas (water), lu (earth), lha (sky), nyen (trees and mountains).",
+        "Main practices: offerings (sang, serkem, sur), returning lost element energies, working with soul arrow (dadar), turquoise and soul deer (shawa).",
+        "Goal: restore balance of elements in body and environment, heal illness, return life force (la).",
+        "Shamanism does not aim to attain deity body — that is the goal of Tantra."
+      ] } },
+      es: { title: "Chamanismo", subtitle: "Camino exterior — trabajo con elementos y espíritus", situation: "Fundamento del Bon", practice: { title: "Descripción del Chamanismo", time: "Lectura", steps: [
+        "El chamanismo trabaja con cinco elementos (tierra, agua, fuego, aire, espacio) como fuerzas vivas.",
+        "El practicante se conecta con espíritus de la naturaleza: nagas (agua), lu (tierra), lha (cielo), nyen (árboles y montañas).",
+        "Prácticas principales: ofrendas (sang, serkem, sur), retornar energías perdidas de elementos.",
+        "Objetivo: restaurar equilibrio de elementos en cuerpo y entorno, sanar enfermedad, retornar fuerza vital (la).",
+        "El chamanismo no busca obtener cuerpo de deidad — esa es la meta del Tantra."
+      ] } }
+    } },
+
+    { id: "sutra-desc", icon: "📿", translations: {
+      ru: { title: "Сутра", subtitle: "Путь преобразования ума через этику и сострадание", situation: "Развитие сердца", practice: { title: "Описание Сутры", time: "Чтение", steps: [
+        "Сутра — путь работы с умом через развитие этических качеств и сердечной мотивации.",
+        "Основа: принятие Прибежища в Трёх Драгоценностях (Будда, Бон, Сангха) и порождение Бодхичитты — намерения достичь просветления ради всех существ.",
+        "Четыре Безмерных качества: любящая доброта (майтри), сострадание (каруна/ньиндже), сорадование (мудита), равностность (упекша).",
+        "Шесть Парамит (совершенств): щедрость (джинпа), этика (цултим), терпение (зопе), радостное усердие (цондю), медитативная концентрация (самтен), мудрость (шераб).",
+        "Сутра меняет наше отношение к миру — от эгоцентризма к открытому сердцу."
+      ] } },
+      en: { title: "Sutra", subtitle: "Path of mind transformation through ethics and compassion", situation: "Heart development", practice: { title: "Description of Sutra", time: "Reading", steps: [
+        "Sutra is the path of working with mind through developing ethical qualities and heart motivation.",
+        "Foundation: taking Refuge in Three Jewels (Buddha, Bon, Sangha) and generating Bodhicitta — intention to attain awakening for all beings.",
+        "Four Immeasurables: loving-kindness (maitri), compassion (karuna/nyingje), joy (mudita), equanimity (upeksha).",
+        "Six Paramitas (perfections): generosity (jinpa), ethics (tsultrim), patience (zope), joyous effort (tsöndü), meditative concentration (samten), wisdom (sherab).",
+        "Sutra changes our attitude to the world — from egocentrism to open heart."
+      ] } },
+      es: { title: "Sutra", subtitle: "Camino de transformación mental a través de ética y compasión", situation: "Desarrollo del corazón", practice: { title: "Descripción de Sutra", time: "Lectura", steps: [
+        "Sutra es el camino de trabajar con la mente desarrollando cualidades éticas y motivación del corazón.",
+        "Base: tomar Refugio en Tres Joyas (Buda, Bon, Sangha) y generar Bodhicitta — intención de alcanzar despertar para todos los seres.",
+        "Cuatro Inconmensurables: amor bondadoso (maitri), compasión (karuna/nyingje), alegría (mudita), ecuanimidad (upeksha).",
+        "Seis Paramitas (perfecciones): generosidad (jinpa), ética (tsultrim), paciencia (zope), esfuerzo gozoso (tsöndü), concentración meditativa (samten), sabiduría (sherab).",
+        "Sutra cambia nuestra actitud al mundo — del egocentrismo al corazón abierto."
+      ] } }
+    } },
+
+    { id: "tantra-desc", icon: "🔥", translations: {
+      ru: { title: "Тантра", subtitle: "Путь преобразования энергии через каналы, ветры и божества", situation: "Работа с тонким телом", practice: { title: "Описание Тантры", time: "Чтение", steps: [
+        "Тантра обнаруживает энергии элементов в собственном теле — в каналах (ца), ветрах-пранах (лунг) и семенных сущностях (тигле).",
+        "Три коренных канала: центральный (ума, синий), правый (ро-ма, белый/красный), левый (кьянг-ма, красный/белый). Соединяются на четыре пальца ниже пупка.",
+        "Пять пран: поднимающая (горло, земля), жизненной силы (сердце, пространство), подобная огню (пупок, огонь), вездесущая (всё тело, воздух), опускающая (основание, вода).",
+        "Пять слогов-воинов: А (корона, пространство), ОМ (горло, качество), ХУНГ (сердце, проявление), РАМ (пупок, действие), ДЗА (тайная чакра, деятельность).",
+        "Практики: цалунг (движение ветра в каналах), трюлкхор (шесть движений), мантры божеств (Шерап Чамма, Шенла Одкар), работа с пятью Богинями-Матерями элементов.",
+        "Конечная цель Тантры — обретение тела божества, преображение обычных тела, речи и ума в просветлённые."
+      ] } },
+      en: { title: "Tantra", subtitle: "Path of energy transformation through channels, winds and deities", situation: "Working with subtle body", practice: { title: "Description of Tantra", time: "Reading", steps: [
+        "Tantra discovers element energies in one's own body — in channels (tsa), winds-pranas (lung) and seed essences (tigle).",
+        "Three root channels: central (uma, blue), right (ro-ma, white/red), left (kyang-ma, red/white). Join four finger-widths below navel.",
+        "Five pranas: ascending (throat, earth), life-force (heart, space), fire-like (navel, fire), all-pervading (whole body, air), downward (base, water).",
+        "Five warrior syllables: A (crown, space), OM (throat, quality), HUNG (heart, manifestation), RAM (navel, action), DZA (secret chakra, activity).",
+        "Practices: tsa lung (wind movement in channels), trulkhor (six movements), deity mantras (Sherap Chamma, Shenlha Okar), working with five Mother Goddesses of elements.",
+        "Ultimate goal of Tantra — attaining deity body, transforming ordinary body, speech and mind into enlightened ones."
+      ] } },
+      es: { title: "Tantra", subtitle: "Camino de transformación energética a través de canales, vientos y deidades", situation: "Trabajo con cuerpo sutil", practice: { title: "Descripción de Tantra", time: "Lectura", steps: [
+        "Tantra descubre energías de elementos en el propio cuerpo — en canales (tsa), vientos-pranas (lung) y esencias semilla (tigle).",
+        "Tres canales raíz: central (uma, azul), derecho (ro-ma, blanco/rojo), izquierdo (kyang-ma, rojo/blanco). Se unen cuatro dedos bajo ombligo.",
+        "Cinco pranas: ascendente (garganta, tierra), fuerza vital (corazón, espacio), similar al fuego (ombligo, fuego), omnipresente (todo cuerpo, aire), descendente (base, agua).",
+        "Cinco sílabas guerreras: A (coronilla, espacio), OM (garganta, cualidad), HUNG (corazón, manifestación), RAM (ombligo, acción), DZA (chakra secreto, actividad).",
+        "Prácticas: tsa lung (movimiento de viento en canales), trulkhor (seis movimientos), mantras de deidades (Sherap Chamma, Shenlha Okar), trabajo con cinco Diosas Madre de elementos.",
+        "Meta final del Tantra — obtener cuerpo de deidad, transformar cuerpo, habla y mente ordinarios en iluminados."
+      ] } }
+    } },
+
+    { id: "dzogchen-desc", icon: "☁️", translations: {
+      ru: { title: "Дзогчен", subtitle: "Путь Великого Совершенства — прямое узнавание природы ума", situation: "Высший путь Бон", practice: { title: "Описание Дзогчен", time: "Чтение", steps: [
+        "Дзогчен (Дзогпа Ченпо) — высшее учение Бон, путь прямого узнавания изначальной природы ума без усилий и трансформации.",
+        "Кунжи (основа всего) — изначальное пространство, мать всех проявлений. Ригпа (сын) — изначальное осознавание, неразрывное с пустотой. Цал — их нераздельное единство, проявляющееся как три великих видения: звук, свет, лучи.",
+        "Два главных метода: Трекчо (Прорыв) — отсечение отвлечений, пребывание в естественном состоянии; Тхогёл (Перескок) — работа со светом и видениями через шесть светильников.",
+        "Шесть светильников: свет Кунжи, свет сердца, свет мягкого белого канала, свет воды, свет чистого измерения, светильник Бардо.",
+        "Четыре Бардо: этой жизни (от рождения до смерти), умирания (растворение пяти элементов), дхарматы (встреча с ясным светом), становления (поиск нового рождения).",
+        "Высший плод Дзогчен — Радужное Тело (Джа Лю): тело практика растворяется в свете в момент смерти, остаются только волосы и ногти."
+      ] } },
+      en: { title: "Dzogchen", subtitle: "Path of Great Perfection — direct recognition of mind nature", situation: "Highest Bon path", practice: { title: "Description of Dzogchen", time: "Reading", steps: [
+        "Dzogchen (Dzogpa Chenpo) — highest teaching of Bon, path of direct recognition of primordial mind nature without effort or transformation.",
+        "Kunzhi (ground of all) — primordial space, mother of all manifestations. Rigpa (son) — primordial awareness, inseparable from emptiness. Tsal — their inseparable unity, manifesting as three great visions: sound, light, rays.",
+        "Two main methods: Trekchö (Cutting Through) — cutting off distractions, resting in natural state; Tögal (Leapover) — working with light and visions through six lamps.",
+        "Six lamps: lamp of Kunzhi, lamp of heart, lamp of soft white channel, water lamp, lamp of pure dimension, lamp of Bardo.",
+        "Four Bardos: of this life (birth to death), of dying (dissolution of five elements), of dharmata (meeting clear light), of becoming (seeking new birth).",
+        "Highest fruit of Dzogchen — Rainbow Body (Ja Lü): practitioner's body dissolves into light at death, only hair and nails remain."
+      ] } },
+      es: { title: "Dzogchen", subtitle: "Camino de la Gran Perfección — reconocimiento directo de la naturaleza de la mente", situation: "Camino supremo del Bon", practice: { title: "Descripción de Dzogchen", time: "Lectura", steps: [
+        "Dzogchen (Dzogpa Chenpo) — enseñanza suprema del Bon, camino de reconocimiento directo de la naturaleza primordial de la mente sin esfuerzo ni transformación.",
+        "Kunzhi (base de todo) — espacio primordial, madre de todas las manifestaciones. Rigpa (hijo) — conciencia primordial, inseparable de la vacuidad. Tsal — su unidad inseparable, manifestándose como tres grandes visiones: sonido, luz, rayos.",
+        "Dos métodos principales: Trekchö (Corte) — cortar distracciones, descansar en estado natural; Tögal (Salto) — trabajar con luz y visiones a través de seis lámparas.",
+        "Seis lámparas: lámpara de Kunzhi, lámpara de corazón, lámpara del canal blanco suave, lámpara de agua, lámpara de dimensión pura, lámpara de Bardo.",
+        "Cuatro Bardos: de esta vida (nacimiento a muerte), de la muerte (disolución de cinco elementos), de dharmata (encuentro con luz clara), del devenir (buscando nuevo nacimiento).",
+        "Fruto supremo de Dzogchen — Cuerpo Arcoíris (Ja Lü): cuerpo del practicante se disuelve en luz al morir, solo quedan pelo y uñas."
+      ] } }
+    } },
+
+    { id: "elements-desc", icon: "🌍", translations: {
+      ru: { title: "Пять Элементов", subtitle: "Основа всего проявленного мира", situation: "Ключ к пониманию Бон", practice: { title: "Описание Пяти Элементов", time: "Чтение", steps: [
+        "Пять элементов — земля, вода, огонь, воздух, пространство — основа всего проявленного мира в учении Бон.",
+        "Земля (жёлтый, квадрат, слог ЛАМ, орган — селезёнка): устойчивость, прочность, опора. Богиня — Сатри Эрсанг.",
+        "Вода (синий, полумесяц, слог ВАМ, орган — почки): текучесть, спокойствие, чувствительность. Богиня — Кьедима.",
+        "Огонь (красный, треугольник, слог РАМ, орган — печень): трансформация, тепло, сила воли. Богиня — Мэри.",
+        "Воздух (зелёный, круг, слог ЯМ, орган — лёгкие): движение, гибкость, свежесть. Богиня — Лунгта.",
+        "Пространство (белый, сфера, слог ХАМ, орган — сердце): открытость, ясность, вместимость. Богиня — Намкха.",
+        "Мантра всех элементов: А ЯМ РАМ МАМ КХАМ ДРУМ ДУ. Мантра долгой жизни: СО ДРУМ А КАР МУ ЛА ТИНГ НАМ О ДУ МУ ЙЕ ЦЕ НИ ДЗА."
+      ] } },
+      en: { title: "Five Elements", subtitle: "Foundation of all manifested world", situation: "Key to understanding Bon", practice: { title: "Description of Five Elements", time: "Reading", steps: [
+        "Five elements — earth, water, fire, air, space — foundation of all manifested world in Bon teaching.",
+        "Earth (yellow, square, syllable LAM, organ — spleen): stability, strength, support. Goddess — Satri Ersang.",
+        "Water (blue, crescent, syllable VAM, organ — kidneys): flow, calm, sensitivity. Goddess — Kyedima.",
+        "Fire (red, triangle, syllable RAM, organ — liver): transformation, warmth, willpower. Goddess — Meri.",
+        "Air (green, circle, syllable YAM, organ — lungs): movement, flexibility, freshness. Goddess — Lungta.",
+        "Space (white, sphere, syllable KHAM, organ — heart): openness, clarity, capacity. Goddess — Namkha.",
+        "Mantra of all elements: A YAM RAM MAM KHAM DRUM DU. Long life mantra: SO DRUM A KAR MU LA TING NAM O DU MU YE TSE NI DZA."
+      ] } },
+      es: { title: "Cinco Elementos", subtitle: "Fundamento de todo el mundo manifestado", situation: "Clave para entender Bon", practice: { title: "Descripción de Cinco Elementos", time: "Lectura", steps: [
+        "Cinco elementos — tierra, agua, fuego, aire, espacio — fundamento de todo el mundo manifestado en la enseñanza Bon.",
+        "Tierra (amarillo, cuadrado, sílaba LAM, órgano — bazo): estabilidad, fuerza, apoyo. Diosa — Satri Ersang.",
+        "Agua (azul, media luna, sílaba VAM, órgano — riñones): fluidez, calma, sensibilidad. Diosa — Kyedima.",
+        "Fuego (rojo, triángulo, sílaba RAM, órgano — hígado): transformación, calor, fuerza de voluntad. Diosa — Meri.",
+        "Aire (verde, círculo, sílaba YAM, órgano — pulmones): movimiento, flexibilidad, frescura. Diosa — Lungta.",
+        "Espacio (blanco, esfera, sílaba KHAM, órgano — corazón): apertura, claridad, capacidad. Diosa — Namkha.",
+        "Mantra de todos los elementos: A YAM RAM MAM KHAM DRUM DU. Mantra de larga vida: SO DRUM A KAR MU LA TING NAM O DU MU YE TSE NI DZA."
+      ] } }
+    } },
+
+    { id: "offerings-desc", icon: "🙏", translations: {
+      ru: { title: "Подношения и Четыре Гостя", subtitle: "Практика щедрости и связи с миром", situation: "Развитие сердца и гармонии", practice: { title: "Описание Подношений", time: "Чтение", steps: [
+        "Практика подношений развивает щедрость, чувствительность и сострадание. Истинное подношение происходит на уровне воображения и намерения.",
+        "Четыре категории гостей: 1) Гости почитания — Три Драгоценности (Будды, Бодхисаттвы, Гуру, Идамы, Дакини). 2) Гости-защитники — охранители учения (Дхармапалы). 3) Кармические гости — восемь классов духов и существа, перед которыми есть долг. 4) Гости сострадания — все чувствующие существа шести миров.",
+        "Санг — дымовое подношение можжевельника для очищения пространства и умилостивления духов местности.",
+        "Серкьем — золотое подношение напитка (чай, молоко) защитникам Дхармы.",
+        "Сур — подношение сожжённой пищи (цзамба с маслом) всем четырём группам гостей.",
+        "Перед едой предложите пищу 1-й и 2-й группам гостей. Остатки отдайте 3-й и 4-й группам."
+      ] } },
+      en: { title: "Offerings and Four Guests", subtitle: "Practice of generosity and connection with world", situation: "Heart development and harmony", practice: { title: "Description of Offerings", time: "Reading", steps: [
+        "Offering practice develops generosity, sensitivity and compassion. True offering happens at level of imagination and intention.",
+        "Four categories of guests: 1) Guests of reverence — Three Jewels (Buddhas, Bodhisattvas, Guru, Yidams, Dakinis). 2) Protector guests — dharma guardians (Dharmapalas). 3) Karmic guests — eight classes of spirits and beings to whom we owe debt. 4) Guests of compassion — all sentient beings of six realms.",
+        "Sang — smoke offering of juniper for purifying space and appeasing local spirits.",
+        "Serkem — golden drink offering (tea, milk) to Dharma protectors.",
+        "Sur — burnt food offering (tsampa with butter) to all four groups of guests.",
+        "Before eating, offer food to 1st and 2nd groups of guests. Remainders give to 3rd and 4th groups."
+      ] } },
+      es: { title: "Ofrendas y Cuatro Huéspedes", subtitle: "Práctica de generosidad y conexión con el mundo", situation: "Desarrollo del corazón y armonía", practice: { title: "Descripción de Ofrendas", time: "Lectura", steps: [
+        "Práctica de ofrendas desarrolla generosidad, sensibilidad y compasión. Verdadera ofrenda ocurre en nivel de imaginación e intención.",
+        "Cuatro categorías de huéspedes: 1) Huéspedes de reverencia — Tres Joyas (Budás, Bodhisattvas, Guru, Yidams, Dakinis). 2) Huéspedes protectores — guardianes del dharma (Dharmapalas). 3) Huéspedes kármicos — ocho clases de espíritus y seres a quienes debemos deuda. 4) Huéspedes de compasión — todos los seres sintientes de seis reinos.",
+        "Sang — ofrenda de humo de enebro para purificar espacio y apaciguar espíritus locales.",
+        "Serkem — ofrenda dorada de bebida (té, leche) a protectores del Dharma.",
+        "Sur — ofrenda de comida quemada (tsampa con mantequilla) a los cuatro grupos de huéspedes.",
+        "Antes de comer, ofrece comida a 1er y 2do grupos de huéspedes. Restos da a 3er y 4to grupos."
+      ] } }
+    } }
+  ]
 };
 
 const flashcards = {
