@@ -254,10 +254,31 @@ const data = {
         "Objetivo del chamanismo: restaurar equilibrio de elementos en cuerpo y entorno, sanar enfermedad, retornar fuerza vital."
       ] } }
     } },
-    { id: "sutra", icon: "📿", translations: {
-      ru: { title: "Сутра", subtitle: "Путь ума", situation: "Развитие сердца", practice: { title: "Описание", time: "Чтение", steps: ["Прибежище и Бодхичитта.", "Четыре Безмерных.", "Шесть совершенств.", "От эго к открытому сердцу."] } },
-      en: { title: "Sutra", subtitle: "Path of mind", situation: "Heart development", practice: { title: "Description", time: "Reading", steps: ["Refuge and Bodhicitta.", "Four Immeasurables.", "Six perfections.", "From ego to open heart."] } },
-      es: { title: "Sutra", subtitle: "Camino de mente", situation: "Desarrollo corazón", practice: { title: "Descripción", time: "Lectura", steps: ["Refugio y Bodhicitta.", "Cuatro Inconmensurables.", "Seis perfecciones.", "Del ego al corazón abierto."] } }
+        { id: "sutra", icon: "", translations: {
+      ru: { title: "Сутра", subtitle: "Путь преобразования ума через этику и сострадание", situation: "Развитие сердца", practice: { title: "Описание Сутры", time: "Чтение", steps: [
+        "Сутра — путь работы с умом через развитие этических качеств и сердечной мотивации. Основа: принятие Прибежища в Трёх Драгоценностях (Будда, Бон, Сангха).",
+        "Бодхичитта — намерение достичь просветления ради всех существ. Это сердце пути Сутры: от эгоцентризма к открытому сердцу.",
+        "Четыре Безмерных качества: любящая доброта (майтри) — желание счастья всем; сострадание (ньиндже) — желание освободить от страданий; сорадование (мудита) — радость за успехи других; равностность (упекша) — беспристрастность ко всем.",
+        "Шесть совершенств: щедрость (джинпа) — отпускание привязанности; нравственность (цултрим) — чистота действий; терпение (зопе) — принятие трудностей; усердие (цондю) — радостное усилие; медитация (самтен) — устойчивость ума; мудрость (шераб) — понимание пустоты.",
+        "Практика начинается с мотивации: «Пусть все существа будут счастливы». Заканчивается посвящением заслуг: «Пусть это послужит благу всех».",
+        "Сутра меняет наше отношение к миру — от защиты эго к открытому сердцу, от страха к доверию, от разделения к единству."
+      ] } },
+      en: { title: "Sutra", subtitle: "Path of mind transformation through ethics and compassion", situation: "Heart development", practice: { title: "Description of Sutra", time: "Reading", steps: [
+        "Sutra is the path of working with mind through ethical qualities and heart motivation. Foundation: taking Refuge in Three Jewels (Buddha, Bon, Sangha).",
+        "Bodhicitta — intention to attain awakening for all beings. This is the heart of Sutra path: from egocentrism to open heart.",
+        "Four Immeasurables: loving-kindness (maitri) — wish for happiness of all; compassion (nyingje) — wish to free from suffering; joy (mudita) — joy for others' success; equanimity (upeksha) — impartiality to all.",
+        "Six perfections: generosity (jinpa) — releasing attachment; ethics (tsultrim) — purity of action; patience (zope) — accepting difficulties; effort (tsöndü) — joyous diligence; meditation (samten) — stability of mind; wisdom (sherab) — understanding emptiness.",
+        "Practice begins with motivation: 'May all beings be happy'. Ends with dedication: 'May this serve the benefit of all'.",
+        "Sutra changes our attitude to the world — from defending ego to open heart, from fear to trust, from division to unity."
+      ] } },
+      es: { title: "Sutra", subtitle: "Camino de transformación mental a través de ética y compasión", situation: "Desarrollo del corazón", practice: { title: "Descripción de Sutra", time: "Lectura", steps: [
+        "Sutra es el camino de trabajar con la mente mediante cualidades éticas y motivación del corazón. Base: tomar Refugio en Tres Joyas (Buda, Bon, Sangha).",
+        "Bodhicitta — intención de alcanzar despertar para todos los seres. Este es el corazón del camino Sutra: del egocentrismo al corazón abierto.",
+        "Cuatro Inconmensurables: amor bondadoso (maitri) — deseo de felicidad para todos; compasión (nyingje) — deseo de liberar del sufrimiento; alegría (mudita) — alegría por el éxito ajeno; ecuanimidad (upeksha) — imparcialidad hacia todos.",
+        "Seis perfecciones: generosidad (jinpa) — soltar apego; ética (tsultrim) — pureza de acción; paciencia (zope) — aceptar dificultades; esfuerzo (tsöndü) — diligencia gozosa; meditación (samten) — estabilidad de mente; sabiduría (sherab) — comprensión de la vacuidad.",
+        "La práctica comienza con motivación: 'Que todos los seres sean felices'. Termina con dedicación: 'Que esto sirva al beneficio de todos'.",
+        "Sutra cambia nuestra actitud al mundo — de defender el ego a corazón abierto, del miedo a la confianza, de la división a la unidad."
+      ] } }
     } },
     { id: "tantra", icon: "🔥", translations: {
       ru: { title: "Тантра", subtitle: "Путь энергии", situation: "Тонкое тело", practice: { title: "Описание", time: "Чтение", steps: ["Каналы, праны, тигле.", "Пять слогов-воинов.", "Цалунг, трюлкхор.", "Тело божества."] } },
