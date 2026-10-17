@@ -477,6 +477,35 @@ const data = {
         "Orden de la práctica: antes de comer, ofrece comida a 1er y 2do grupos (Joyas y protectores). Restos da a 3er y 4to grupos (huéspedes kármicos y todos los seres). Termina con dedicación: 'Que esto sirva al beneficio de todos los seres'."
       ] } }
     } }
+    { id: "six-realms", icon: "🔄", translations: {
+      ru: { title: "Шесть миров сансары", subtitle: "Состояния ума и типы существ", situation: "Для понимания природы ума и кармы", practice: { title: "Описание шести миров", time: "Чтение", steps: [
+        "Шесть миров (лока) — это не только физические места перерождения, но и состояния ума, которые мы переживаем каждый день. В них обитают шесть классов существ.",
+        "1. Мир богов (лха): характеризуется ленью, самодовольством и иллюзорным равновесием. Обитатели наслаждаются, но не практикуют. Противоядие — всеохватывающее сострадание.",
+        "2. Мир полубогов (лха-ма-йин): наполнен гордостью, соперничеством и завистью. Обитатели всегда борются за превосходство. Противоядие — миролюбие и смирение.",
+        "3. Мир людей (ми): характеризуется ревностью, привязанностью и поиском счастья во внешнем. Люди обладают свободой воли для практики. Противоядие — великая открытость сердца.",
+        "4. Мир животных (дюдо): управляется неведением, тупостью и инстинктами. Обитатели живут в страхе и поедании друг друга. Противоядие — мудрость и ясность.",
+        "5. Мир голодных духов (йи-даг): характеризуется алчностью, жадностью и неутолимым голодом. Обитатели вечно ищут удовлетворения, но не находят его. Противоядие — открытая щедрость.",
+        "6. Мир ада (дурва): управляется гневом, ненавистью и страхом. Обитатели переживают невыносимые страдания. Противоядие — чистая, безусловная любовь."
+      ] } },
+      en: { title: "Six Realms of Samsara", subtitle: "States of mind and types of beings", situation: "For understanding mind nature and karma", practice: { title: "Description of Six Realms", time: "Reading", steps: [
+        "The Six Realms (loka) are not only physical places of rebirth, but also states of mind we experience daily. They are inhabited by six classes of beings.",
+        "1. God Realm (lha): characterized by laziness, complacency, and illusory balance. Beings enjoy but do not practice. Antidote — all-encompassing compassion.",
+        "2. Demi-god Realm (lha-ma-yin): filled with pride, rivalry, and jealousy. Beings constantly fight for supremacy. Antidote — peace and humility.",
+        "3. Human Realm (mi): characterized by jealousy, attachment, and seeking happiness externally. Humans have free will to practice. Antidote — great openness of heart.",
+        "4. Animal Realm (dudo): governed by ignorance, dullness, and instincts. Beings live in fear and eating each other. Antidote — wisdom and clarity.",
+        "5. Hungry Ghost Realm (yi-dak): characterized by greed, avarice, and insatiable hunger. Beings eternally seek satisfaction but never find it. Antidote — open generosity.",
+        "6. Hell Realm (durwa): governed by anger, hatred, and fear. Beings endure unbearable suffering. Antidote — pure, unconditional love."
+      ] } },
+      es: { title: "Seis Reinos del Samsara", subtitle: "Estados mentales y tipos de seres", situation: "Para comprender la naturaleza de la mente y el karma", practice: { title: "Descripción de los Seis Reinos", time: "Lectura", steps: [
+        "Los Seis Reinos (loka) no son solo lugares físicos de renacimiento, sino también estados mentales que experimentamos a diario. Están habitados por seis clases de seres.",
+        "1. Reino de los Dioses (lha): caracterizado por la pereza, la complacencia y el equilibrio ilusorio. Los seres disfrutan pero no practican. Antídoto — compasión abarcadora.",
+        "2. Reino de los Semidioses (lha-ma-yin): lleno de orgullo, rivalidad y celos. Los seres luchan constantemente por la supremacía. Antídoto — paz y humildad.",
+        "3. Reino Humano (mi): caracterizado por los celos, el apego y la búsqueda de felicidad externa. Los humanos tienen libre albedrío para practicar. Antídoto — gran apertura del corazón.",
+        "4. Reino Animal (dudo): gobernado por la ignorancia, el embotamiento y los instintos. Los seres viven en el miedo y devorándose unos a otros. Antídoto — sabiduría y claridad.",
+        "5. Reino de los Fantasmas Hambrientos (yi-dak): caracterizado por la avaricia, la codicia y el hambre insaciable. Los seres buscan eternamente satisfacción pero nunca la encuentran. Antídoto — generosidad abierta.",
+        "6. Reino del Infierno (durwa): gobernado por la ira, el odio y el miedo. Los seres soportan un sufrimiento insoportable. Antídoto — amor puro e incondicional."
+      ] } }
+    } }
   ]
 };
 
