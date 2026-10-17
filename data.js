@@ -364,6 +364,38 @@ const data = {
         "Mantra de todos los elementos: A YAM RAM MAM KHAM DRUM DU. Mantra de larga vida: SO DRUM A KAR MU LA TING NAM O DU MU YE TSE NI DZA. La práctica con elementos restaura el equilibrio en cuerpo y mente, retorna energías perdidas."
       ] } }
     } },
+	    { id: "offerings-desc", icon: "🙏", translations: {
+      ru: { title: "Подношения и Четыре Гостя", subtitle: "Практика щедрости и связи с миром", situation: "Развитие сердца и гармонии", practice: { title: "Описание Подношений", time: "Чтение", steps: [
+        "Практика подношений — одно из шести совершенств (парамит) пути Сутры. Развивает щедрость (джинпа), чувствительность и сострадание. Истинное подношение происходит на уровне воображения и намерения, а не материальных предметов.",
+        "Четыре категории гостей: 1) Гости почитания — Три Драгоценности (Будды, Бон, Сангха), Гуру, Идамы, Дакини. Им подносят в знак благодарности и преданности.",
+        "2) Гости-защитники — охранители учения (Дхармапалы), местные божества и духи-хранители. Им подносят в знак уважения и просьбы о защите.",
+        "3) Кармические гости — восемь классов духов (наги, лу, лха, ньен, цан, синпо, дре и другие), существа, перед которыми у нас есть кармический долг. Им подносят для очищения кармы и восстановления баланса.",
+        "4) Гости сострадания — все чувствующие существа шести миров (боги, асуры, люди, животные, голодные духи, существа ада). Им подносят из сострадания, желая освободить от страданий.",
+        "Четыре вида подношений: Санг — дымовое подношение можжевельника для очищения пространства и умилостивления духов местности. Серкьем — золотое подношение напитка (чай, молоко, пиво) защитникам Дхармы.",
+        "Сур — подношение сожжённой пищи (цзамба с маслом и сахаром) всем четырём группам гостей, особенно кармическим. Цзанг — чистое подношение свежей пищи и воды.",
+        "Порядок практики: перед едой предложите пищу 1-й и 2-й группам гостей (Драгоценностям и защитникам). Остатки отдайте 3-й и 4-й группам (кармическим гостям и всем существам). Завершите посвящением заслуг: «Пусть это послужит благу всех существ»."
+      ] } },
+      en: { title: "Offerings and Four Guests", subtitle: "Practice of generosity and connection with world", situation: "Heart development and harmony", practice: { title: "Description of Offerings", time: "Reading", steps: [
+        "Offering practice is one of the six perfections of the Sutra path. Develops generosity (jinpa), sensitivity and compassion. True offering happens at the level of imagination and intention, not material objects.",
+        "Four categories of guests: 1) Guests of reverence — Three Jewels (Buddha, Bon, Sangha), Guru, Yidams, Dakinis. Offered to in gratitude and devotion.",
+        "2) Protector guests — dharma guardians (Dharmapalas), local deities and guardian spirits. Offered to in respect and request for protection.",
+        "3) Karmic guests — eight classes of spirits (nagas, lu, lha, nyen, tsan, sinpo, dre and others), beings to whom we owe karmic debt. Offered to purify karma and restore balance.",
+        "4) Guests of compassion — all sentient beings of six realms (gods, asuras, humans, animals, hungry ghosts, hell beings). Offered from compassion, wishing to free them from suffering.",
+        "Four types of offerings: Sang — smoke offering of juniper for purifying space and appeasing local spirits. Serkem — golden drink offering (tea, milk, beer) to Dharma protectors.",
+        "Sur — burnt food offering (tsampa with butter and sugar) to all four groups, especially karmic guests. Tsang — pure offering of fresh food and water.",
+        "Order of practice: before eating, offer food to 1st and 2nd groups (Jewels and protectors). Remainders give to 3rd and 4th groups (karmic guests and all beings). End with dedication: 'May this serve the benefit of all beings'."
+      ] } },
+      es: { title: "Ofrendas y Cuatro Huéspedes", subtitle: "Práctica de generosidad y conexión con el mundo", situation: "Desarrollo del corazón y armonía", practice: { title: "Descripción de Ofrendas", time: "Lectura", steps: [
+        "La práctica de ofrendas es una de las seis perfecciones del camino Sutra. Desarrolla generosidad (jinpa), sensibilidad y compasión. Verdadera ofrenda ocurre en nivel de imaginación e intención, no objetos materiales.",
+        "Cuatro categorías de huéspedes: 1) Huéspedes de reverencia — Tres Joyas (Buda, Bon, Sangha), Guru, Yidams, Dakinis. Se ofrece en gratitud y devoción.",
+        "2) Huéspedes protectores — guardianes del dharma (Dharmapalas), deidades locales y espíritus guardianes. Se ofrece en respeto y petición de protección.",
+        "3) Huéspedes kármicos — ocho clases de espíritus (nagas, lu, lha, nyen, tsan, sinpo, dre y otros), seres a quienes debemos deuda kármica. Se ofrece para purificar karma y restaurar equilibrio.",
+        "4) Huéspedes de compasión — todos los seres sintientes de seis reinos (dioses, asuras, humanos, animales, fantasmas hambrientos, seres del infierno). Se ofrece desde compasión, deseando liberarlos del sufrimiento.",
+        "Cuatro tipos de ofrendas: Sang — ofrenda de humo de enebro para purificar espacio y apaciguar espíritus locales. Serkem — ofrenda dorada de bebida (té, leche, cerveza) a protectores del Dharma.",
+        "Sur — ofrenda de comida quemada (tsampa con mantequilla y azúcar) a los cuatro grupos, especialmente huéspedes kármicos. Tsang — ofrenda pura de comida fresca y agua.",
+        "Orden de la práctica: antes de comer, ofrece comida a 1er y 2do grupos (Joyas y protectores). Restos da a 3er y 4to grupos (huéspedes kármicos y todos los seres). Termina con dedicación: 'Que esto sirva al beneficio de todos los seres'."
+      ] } }
+    } }
   ]
 };
 
