@@ -63,33 +63,36 @@ const i18n = {
 
 const data = {
   body: [
-        { id: "nine-breaths", icon: "️", translations: {
-      ru: { title: "Девять очистительных дыханий", subtitle: "Цалунг — основа всех практик Бон", situation: "Энергетический застой, тревожность, неясность ума.", practice: { title: "Девять очистительных дыханий", time: "10 мин", steps: [
-        "Сядьте в пятичленную позу: скрестите ноги, спина прямая, руки на коленях, плечи расслаблены, взгляд направлен вниз.",
-        "Закройте правую ноздрю безымянным пальцем правой руки. Вдохните чистый белый свет через левую ноздрю — он наполняет левый канал (кьянг-ма) и очищает привязанность.",
-        "Задержите дыхание. Визуализируйте, как белый свет рассеивает всю мутную энергию в теле.",
-        "Закройте левую ноздрю большим пальцем, выдохните через правую ноздрю серый дым — это выходит загрязненная энергия.",
-        "Повторите три раза с левой стороны. Затем три раза с правой стороны (вдох через правую, выдох через левую — очищает гнев).",
-        "Три раза через обе ноздри одновременно: вдохните белый свет, выдохните серый дым — очищает невежество.",
-        "Всего девять дыханий. Завершите, отдохнув в естественном состоянии ума, свободном от трех ядов."
+            { id: "five-point-posture", icon: "🧘", translations: {
+      ru: { title: "Пятиченная поза", subtitle: "Основа всех практик — тело, прана и ум в единстве", situation: "Перед любой медитацией, при рассеянности или усталости.", practice: { title: "Медитация в пятичленной позе", time: "5-15 мин", steps: [
+        "Сядьте на пол, скрестив ноги (правая поверх левой). Это положение удерживает тепло и предотвращает рассеивание пранической энергии, генерирует внутреннее тепло для глубоких опытов.",
+        "Сложите руки в положение равновесия (ньягшаг): опустите руки на четыре пальца ниже пупка, ладонями вверх, левая поверх правой. Это уравнивает ясность и пустоту, сводит к минимуму двойственность.",
+        "Выпрямите позвоночник — прямо и расслабленно. Это выравнивает основные каналы, позволяет пране подниматься легко и плавно.",
+        "Слегка опустите подбородок, растянув заднюю поверхность шеи. Это успокаивает мысли и внутренний диалог.",
+        "Расправьте грудную клетку. Это делает дыхание свободным и помогает открыть сердечную чакру — центральный энергетический фокус тела.",
+        "Глаза могут быть открыты или закрыты. Если открыты — смотрите в пространство перед собой и немного вниз, не фокусируясь на объектах. Если закрыты — легче концентрироваться в начале практики.",
+        "Соединитесь с неподвижностью тела, безмолвием речи и просторностью ума. Побудьте в этом состоянии, прежде чем начинать основную практику.",
+        "Визуализируйте три канала: центральный синий (толщина большого пальца) идет от четырех пальцев ниже пупка до макушки; правый белый и левый красный (толщина мизинца) соединяются с центральным внизу и открываются в ноздрях."
       ] } },
-      en: { title: "Nine Purifying Breaths", subtitle: "Tsa Lung — foundation of all Bon practices", situation: "Energy stagnation, anxiety, unclear mind.", practice: { title: "Nine Purifying Breaths", time: "10 min", steps: [
-        "Sit in five-point posture: legs crossed, spine straight, hands on knees, shoulders relaxed, gaze downward.",
-        "Close right nostril with right ring finger. Inhale pure white light through left nostril — it fills the left channel (kyang-ma) and purifies attachment.",
-        "Hold the breath. Visualize white light dispersing all murky energy in the body.",
-        "Close left nostril with thumb, exhale gray smoke through right nostril — polluted energy leaves.",
-        "Repeat three times on left side. Then three times on right side (inhale right, exhale left — purifies anger).",
-        "Three times through both nostrils together: inhale white light, exhale gray smoke — purifies ignorance.",
-        "Nine breaths total. Finish by resting in natural state of mind, free from three poisons."
+      en: { title: "Five-Point Posture", subtitle: "Foundation of all practices — body, prana and mind in unity", situation: "Before any meditation, when scattered or tired.", practice: { title: "Meditation in Five-Point Posture", time: "5-15 min", steps: [
+        "Sit on the floor, legs crossed (right over left). This position retains heat and prevents pranic energy from scattering, generates inner heat for deep experiences.",
+        "Place hands in equilibrium position (nyamshag): lower hands four finger-widths below navel, palms up, left over right. This balances clarity and emptiness, minimizes duality.",
+        "Straighten spine — upright and relaxed. This aligns main channels, allows prana to rise easily and smoothly.",
+        "Slightly lower chin, stretching back of neck. This calms thoughts and inner dialogue.",
+        "Open chest. This makes breathing free and helps open heart chakra — central energy focus of body.",
+        "Eyes can be open or closed. If open — gaze into space before you and slightly down, not focusing on objects. If closed — easier to concentrate at beginning.",
+        "Connect with stillness of body, silence of speech and spaciousness of mind. Rest in this state before beginning main practice.",
+        "Visualize three channels: central blue (thumb thickness) runs from four fingers below navel to crown; right white and left red (pinky thickness) join central at bottom and open in nostrils."
       ] } },
-      es: { title: "Nueve Respiraciones Purificadoras", subtitle: "Tsa Lung — base de todas las prácticas Bon", situation: "Estancamiento energético, ansiedad, mente confusa.", practice: { title: "Nueve Respiraciones Purificadoras", time: "10 min", steps: [
-        "Siéntate en postura de cinco puntos: piernas cruzadas, columna recta, manos en rodillas, hombros relajados, mirada hacia abajo.",
-        "Cierra fosa nasal derecha con dedo anular derecho. Inhala luz blanca pura por fosa izquierda — llena el canal izquierdo (kyang-ma) y purifica el apego.",
-        "Mantén la respiración. Visualiza luz blanca dispersando toda energía turbia del cuerpo.",
-        "Cierra fosa izquierda con pulgar, exhala humo gris por fosa derecha — sale energía contaminada.",
-        "Repite tres veces del lado izquierdo. Luego tres veces del lado derecho (inhala derecha, exhala izquierda — purifica ira).",
-        "Tres veces por ambas fosas: inhala luz blanca, exhala humo gris — purifica ignorancia.",
-        "Nueve respiraciones en total. Termina descansando en estado natural de la mente, libre de tres venenos."
+      es: { title: "Postura de Cinco Puntos", subtitle: "Base de todas las prácticas — cuerpo, prana y mente en unidad", situation: "Antes de cualquier meditación, cuando estás disperso o cansado.", practice: { title: "Meditación en Postura de Cinco Puntos", time: "5-15 min", steps: [
+        "Siéntate en el suelo, piernas cruzadas (derecha sobre izquierda). Esta posición retiene el calor y previene la dispersión de energía pránica, genera calor interno para experiencias profundas.",
+        "Coloca las manos en posición de equilibrio (nyamshag): baja las manos cuatro dedos debajo del ombligo, palmas hacia arriba, izquierda sobre derecha. Esto equilibra claridad y vacuidad, minimiza dualidad.",
+        "Endereza la columna — erguida y relajada. Esto alinea los canales principales, permite que la prana suba fácil y suavemente.",
+        "Baja ligeramente la barbilla, estirando la parte posterior del cuello. Esto calma pensamientos y diálogo interno.",
+        "Abre el pecho. Esto hace la respiración libre y ayuda a abrir el chakra del corazón — foco energético central del cuerpo.",
+        "Los ojos pueden estar abiertos o cerrados. Si abiertos — mira al espacio frente a ti y ligeramente abajo, sin enfocarte en objetos. Si cerrados — más fácil concentrarse al inicio.",
+        "Conéctate con la quietud del cuerpo, silencio del habla y amplitud de la mente. Descansa en este estado antes de comenzar la práctica principal.",
+        "Visualiza tres canales: central azul (grosor del pulgar) va desde cuatro dedos debajo del ombligo hasta la coronilla; derecho blanco e izquierdo rojo (grosor del meñique) se unen al central abajo y se abren en las fosas nasales."
       ] } }
     } },
     { id: "five-warrior-syllables", icon: "⚔️", translations: {
