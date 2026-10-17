@@ -121,30 +121,30 @@ const data = {
         "Repite ciclo 7, 21 o 108 veces. Termina disolviendo todas las sílabas en HUNG en corazón y descansando en naturaleza unificada de la mente — Rigpa."
       ] } }
     } },
-    { id: "four-immeasurables", icon: "💛", translations: {
-      ru: { title: "Четыре безмерных", subtitle: "Любовь, сострадание, радость, равностность — путь открытого сердца", situation: "Нужно развить сердечные качества, преодолеть эгоцентризм.", practice: { title: "Практика четырёх безмерных", time: "15 мин", steps: [
+        { id: "four-immeasurables", icon: "💛", translations: {
+      ru: { title: "Четыре безмерных", subtitle: "Джампа, Ньиндже, Гава, Тангньом — путь открытого сердца", situation: "Нужно развить сердечные качества, преодолеть эгоцентризм.", practice: { title: "Практика четырёх безмерных", time: "15 мин", steps: [
         "Сядьте удобно, расслабьте тело. Сгенерируйте мотивацию Бодхичитты: «Пусть эта практика послужит благу всех существ без исключения».",
-        "Безмерная любовь (майтри): «Пусть все существа будут счастливы и обладают причинами счастья». Визуализируйте теплый золотой свет, исходящий из сердца и наполняющий всех существ. Повторите 7 раз.",
-        "Безмерное сострадание (каруна/ньиндже): «Пусть все существа будут свободны от страданий и их причин». Представьте всех страдающих существ — от насекомых до людей. Пусть голубой свет из сердца освобождает их. Повторите 7 раз.",
-        "Безмерная радость (мудита): «Пусть все существа никогда не расстанутся с радостью, свободной от страданий». Радуйтесь счастью и успехам других, особенно тех, кого трудно любить. Повторите 7 раз.",
-        "Безмерная равностность (упекша): «Пусть все существа пребывают в великой равностности, свободной от привязанности к близким и отвращения к врагам». Отпустите разделение на «своих» и «чужих». Повторите 7 раз.",
-        "Расширьте каждое качество на все шесть миров: богов, асуров, людей, животных, голодных духов, существ ада. Завершите посвящением заслуг: «Пусть эти качества проявятся в каждом существе»."
+        "Безмерная любовь (Джампа): «Пусть все существа будут счастливы и обладают причинами счастья». Визуализируйте теплый золотой свет, исходящий из сердца и наполняющий всех существ. Повторите 7 раз.",
+        "Безмерное сострадание (Ньиндже): «Пусть все существа будут свободны от страданий и их причин». Представьте всех страдающих существ. Пусть голубой свет из сердца освобождает их от боли. Повторите 7 раз.",
+        "Безмерная радость (Гава): «Пусть все существа никогда не расстанутся с радостью, свободной от страданий». Искренне радуйтесь счастью и успехам других, особенно тех, кого трудно любить. Повторите 7 раз.",
+        "Безмерная равностность (Тангньом): «Пусть все существа пребывают в великой равностности, свободной от привязанности к близким и отвращения к врагам». Отпустите разделение на «своих» и «чужих». Повторите 7 раз.",
+        "Расширьте каждое качество на все шесть миров. Завершите посвящением заслуг: «Пусть эти качества проявятся в каждом существе, приводя их к просветлению»."
       ] } },
-      en: { title: "Four Immeasurables", subtitle: "Love, compassion, joy, equanimity — path of open heart", situation: "Need to develop heart qualities, overcome egocentrism.", practice: { title: "Four Immeasurables Practice", time: "15 min", steps: [
+      en: { title: "Four Immeasurables", subtitle: "Jam-pa, Nying-je, Ga-wa, Tang-nyom — path of open heart", situation: "Need to develop heart qualities, overcome egocentrism.", practice: { title: "Four Immeasurables Practice", time: "15 min", steps: [
         "Sit comfortably, relax body. Generate Bodhicitta motivation: 'May this practice serve the benefit of all beings without exception'.",
-        "Immeasurable love (maitri): 'May all beings be happy and have causes of happiness'. Visualize warm golden light radiating from heart, filling all beings. Repeat 7 times.",
-        "Immeasurable compassion (karuna/nyingje): 'May all beings be free from suffering and its causes'. Imagine all suffering beings — from insects to humans. Let blue light from heart liberate them. Repeat 7 times.",
-        "Immeasurable joy (mudita): 'May all beings never be separated from joy free from suffering'. Rejoice in happiness and success of others, especially those hard to love. Repeat 7 times.",
-        "Immeasurable equanimity (upeksha): 'May all beings rest in great equanimity, free from attachment to friends and aversion to enemies'. Release division into 'us' and 'them'. Repeat 7 times.",
-        "Extend each quality to all six realms: gods, asuras, humans, animals, hungry ghosts, hell beings. Finish with dedication: 'May these qualities manifest in every being'."
+        "Immeasurable love (Jam-pa): 'May all beings be happy and have causes of happiness'. Visualize warm golden light radiating from heart, filling all beings. Repeat 7 times.",
+        "Immeasurable compassion (Nying-je): 'May all beings be free from suffering and its causes'. Imagine all suffering beings. Let blue light from heart liberate them from pain. Repeat 7 times.",
+        "Immeasurable joy (Ga-wa): 'May all beings never be separated from joy free from suffering'. Sincerely rejoice in happiness and success of others, especially those hard to love. Repeat 7 times.",
+        "Immeasurable equanimity (Tang-nyom): 'May all beings rest in great equanimity, free from attachment to friends and aversion to enemies'. Release division into 'us' and 'them'. Repeat 7 times.",
+        "Extend each quality to all six realms. Finish with dedication: 'May these qualities manifest in every being, leading them to enlightenment'."
       ] } },
-      es: { title: "Cuatro Inconmensurables", subtitle: "Amor, compasión, alegría, ecuanimidad — camino del corazón abierto", situation: "Necesitas desarrollar cualidades del corazón, superar egocentrismo.", practice: { title: "Práctica de Cuatro Inconmensurables", time: "15 min", steps: [
+      es: { title: "Cuatro Inconmensurables", subtitle: "Jam-pa, Nying-je, Ga-wa, Tang-nyom — camino del corazón abierto", situation: "Necesitas desarrollar cualidades del corazón, superar egocentrismo.", practice: { title: "Práctica de Cuatro Inconmensurables", time: "15 min", steps: [
         "Siéntate cómodo, relaja cuerpo. Genera motivación de Bodhicitta: 'Que esta práctica sirva al beneficio de todos los seres sin excepción'.",
-        "Amor inconmensurable (maitri): 'Que todos los seres sean felices y tengan causas de felicidad'. Visualiza luz dorada cálida irradiando del corazón, llenando todos los seres. Repite 7 veces.",
-        "Compasión inconmensurable (karuna/nyingje): 'Que todos los seres sean libres del sufrimiento y sus causas'. Imagina todos los seres que sufren — desde insectos hasta humanos. Que luz azul del corazón los libere. Repite 7 veces.",
-        "Alegría inconmensurable (mudita): 'Que todos los seres nunca se separen de la alegría libre de sufrimiento'. Alégrate por felicidad y éxito de otros, especialmente de los difíciles de amar. Repite 7 veces.",
-        "Ecuanimidad inconmensurable (upeksha): 'Que todos los seres descansen en gran ecuanimidad, libres de apego a amigos y aversión a enemigos'. Suelta división en 'nosotros' y 'ellos'. Repite 7 veces.",
-        "Extiende cada cualidad a los seis reinos: dioses, asuras, humanos, animales, fantasmas hambrientos, seres del infierno. Termina con dedicación: 'Que estas cualidades se manifiesten en cada ser'."
+        "Amor inconmensurable (Jam-pa): 'Que todos los seres sean felices y tengan causas de felicidad'. Visualiza luz dorada cálida irradiando del corazón, llenando todos los seres. Repite 7 veces.",
+        "Compasión inconmensurable (Nying-je): 'Que todos los seres sean libres del sufrimiento y sus causas'. Imagina todos los seres que sufren. Que luz azul del corazón los libere del dolor. Repite 7 veces.",
+        "Alegría inconmensurable (Ga-wa): 'Que todos los seres nunca se separen de la alegría libre de sufrimiento'. Alégrate sinceramente por la felicidad y el éxito de otros, especialmente de los difíciles de amar. Repite 7 veces.",
+        "Ecuanimidad inconmensurable (Tang-nyom): 'Que todos los seres descansen en gran ecuanimidad, libres de apego a amigos y aversión a enemigos'. Suelta la división en 'nosotros' y 'ellos'. Repite 7 veces.",
+        "Extiende cada cualidad a los seis reinos. Termina con dedicación: 'Que estas cualidades se manifiesten en cada ser, llevándolos a la iluminación'."
       ] } }
     } },
     { id: "prostrations-detailed", icon: "🙏", translations: {
