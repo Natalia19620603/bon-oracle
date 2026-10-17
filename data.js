@@ -280,10 +280,31 @@ const data = {
         "Sutra cambia nuestra actitud al mundo — de defender el ego a corazón abierto, del miedo a la confianza, de la división a la unidad."
       ] } }
     } },
-    { id: "tantra", icon: "🔥", translations: {
-      ru: { title: "Тантра", subtitle: "Путь энергии", situation: "Тонкое тело", practice: { title: "Описание", time: "Чтение", steps: ["Каналы, праны, тигле.", "Пять слогов-воинов.", "Цалунг, трюлкхор.", "Тело божества."] } },
-      en: { title: "Tantra", subtitle: "Path of energy", situation: "Subtle body", practice: { title: "Description", time: "Reading", steps: ["Channels, pranas, tigles.", "Five warrior syllables.", "Tsa lung, trulkhor.", "Deity body."] } },
-      es: { title: "Tantra", subtitle: "Camino de energía", situation: "Cuerpo sutil", practice: { title: "Descripción", time: "Lectura", steps: ["Canales, pranas, tigles.", "Cinco sílabas guerreras.", "Tsa lung, trulkhor.", "Cuerpo de deidad."] } }
+        { id: "tantra", icon: "", translations: {
+      ru: { title: "Тантра", subtitle: "Путь преобразования энергии через каналы, ветры и божества", situation: "Работа с тонким телом", practice: { title: "Описание Тантры", time: "Чтение", steps: [
+        "Тантра обнаруживает энергии элементов не вовне, а в собственном теле — в каналах (ца), ветрах-пранах (лунг) и семенных сущностях (тигле). Это путь преобразования.",
+        "Три коренных канала: центральный (ума, синий) — проходит через центр тела; правый (ро-ма, белый/красный); левый (кьянг-ма, красный/белый). Все три соединяются на четыре пальца ниже пупка.",
+        "Пять пран: поднимающая (горло, земля) — приводит в действие чувства; жизненной силы (сердце, пространство) — заключает жизнеспособность; подобная огню (пупок, огонь) — энергия пищеварения; вездесущая (всё тело, воздух) — обеспечивает связи; опускающая (основание, вода) — связана с выделением.",
+        "Пять слогов-воинов: А (корона, пространство) — чистота тела; ОМ (горло, качество) — чистота речи; ХУНГ (сердце, проявление) — чистота ума; РАМ (пупок, действие) — чистота качеств; ДЗА (тайная чакра, деятельность) — чиста деяний.",
+        "Практики: цалунг (движение ветра в каналах через задержку дыхания), трюлкхор (шесть движений для очищения каналов), мантры божеств (Шерап Чамма, Шенла Одкар), работа с пятью Богинями-Матерями элементов.",
+        "Конечная цель Тантры — обретение тела божества, преображение обычных тела, речи и ума в просветлённые. В отличие от Шаманизма, Тантра стремится к состоянию божества."
+      ] } },
+      en: { title: "Tantra", subtitle: "Path of energy transformation through channels, winds and deities", situation: "Working with subtle body", practice: { title: "Description of Tantra", time: "Reading", steps: [
+        "Tantra discovers element energies not externally, but in one's own body — in channels (tsa), winds-pranas (lung) and seed essences (tigle). This is the path of transformation.",
+        "Three root channels: central (uma, blue) — passes through body center; right (ro-ma, white/red); left (kyang-ma, red/white). All three join four finger-widths below navel.",
+        "Five pranas: ascending (throat, earth) — activates senses; life-force (heart, space) — contains vitality; fire-like (navel, fire) — digestive energy; all-pervading (whole body, air) — provides connections; downward (base, water) — related to elimination.",
+        "Five warrior syllables: A (crown, space) — purity of body; OM (throat, quality) — purity of speech; HUNG (heart, manifestation) — purity of mind; RAM (navel, action) — purity of qualities; DZA (secret chakra, activity) — purity of deeds.",
+        "Practices: tsa lung (wind movement in channels through breath retention), trulkhor (six movements to purify channels), deity mantras (Sherap Chamma, Shenlha Okar), working with five Mother Goddesses of elements.",
+        "Ultimate goal of Tantra — attaining deity body, transforming ordinary body, speech and mind into enlightened ones. Unlike Shamanism, Tantra aims for the state of deity."
+      ] } },
+      es: { title: "Tantra", subtitle: "Camino de transformación energética a través de canales, vientos y deidades", situation: "Trabajo con cuerpo sutil", practice: { title: "Descripción de Tantra", time: "Lectura", steps: [
+        "Tantra descubre energías de elementos no externamente, sino en el propio cuerpo — en canales (tsa), vientos-pranas (lung) y esencias semilla (tigle). Este es el camino de transformación.",
+        "Tres canales raíz: central (uma, azul) — pasa por el centro del cuerpo; derecho (ro-ma, blanco/rojo); izquierdo (kyang-ma, rojo/blanco). Los tres se unen cuatro dedos bajo el ombligo.",
+        "Cinco pranas: ascendente (garganta, tierra) — activa los sentidos; fuerza vital (corazón, espacio) — contiene vitalidad; similar al fuego (ombligo, fuego) — energía digestiva; omnipresente (todo el cuerpo, aire) — proporciona conexiones; descendente (base, agua) — relacionada con eliminación.",
+        "Cinco sílabas guerreras: A (coronilla, espacio) — pureza del cuerpo; OM (garganta, cualidad) — pureza del habla; HUNG (corazón, manifestación) — pureza de la mente; RAM (ombligo, acción) — pureza de cualidades; DZA (chakra secreto, actividad) — pureza de acciones.",
+        "Prácticas: tsa lung (movimiento de viento en canales mediante retención de aliento), trulkhor (seis movimientos para purificar canales), mantras de deidades (Sherap Chamma, Shenlha Okar), trabajo con cinco Diosas Madre de elementos.",
+        "Meta final del Tantra — obtener cuerpo de deidad, transformar cuerpo, habla y mente ordinarios en iluminados. A diferencia del Chamanismo, el Tantra busca el estado de deidad."
+      ] } }
     } },
     { id: "dzogchen", icon: "☁️", translations: {
       ru: { title: "Дзогчен", subtitle: "Великое Совершенство", situation: "Высший путь", practice: { title: "Описание", time: "Чтение", steps: ["Кунжи, Ригпа, Цал.", "Трекчо и Тхогёл.", "Шесть светильников.", "Радужное Тело."] } },
