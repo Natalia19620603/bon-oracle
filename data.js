@@ -332,61 +332,38 @@ const data = {
         "Cuatro Bardos: de esta vida (nacimiento a muerte), de la muerte (disolución de cinco elementos), de dharmata (encuentro con luz clara — naturaleza de la mente), del devenir (buscando nuevo nacimiento). Fruto supremo de Dzogchen — Cuerpo Arcoíris (Ja Lü): cuerpo del practicante se disuelve en luz al morir, solo quedan pelo y uñas."
       ] } }
     } },
-	    { id: "elements-desc", icon: "🌍", translations: {
+	        { id: "elements-desc", icon: "🌍", translations: {
       ru: { title: "Пять Элементов", subtitle: "Основа всего проявленного мира", situation: "Ключ к пониманию Бон", practice: { title: "Описание Пяти Элементов", time: "Чтение", steps: [
-        "Пять элементов — земля, вода, огонь, воздух, пространство — основа всего проявленного мира в учении Бон.",
-        "Земля (жёлтый, квадрат, слог ЛАМ, селезёнка): устойчивость. Богиня — Сатри Эрсанг.",
-        "Вода (синий, полумесяц, слог ВАМ, почки): текучесть. Богиня — Кьедима.",
-        "Огонь (красный, треугольник, слог РАМ, печень): трансформация. Богиня — Мэри.",
-        "Воздух (зелёный, круг, слог ЯМ, лёгкие): движение. Богиня — Лунгта.",
-        "Пространство (белый, сфера, слог ХАМ, сердце): открытость. Богиня — Намкха.",
-        "Мантра всех элементов: А ЯМ РАМ МАМ КХАМ ДРУМ ДУ."
+        "Пять элементов — земля, вода, огонь, воздух, пространство — основа всего проявленного мира в учении Бон. Каждый элемент имеет цвет, форму, слог-семя, орган в теле, чакры и Богиню-Мать.",
+        "Земля (жёлтый, квадрат, слог ЛАМ, селезёнка, чакра основания): устойчивость, прочность, опора. Богиня — Сатри Эрсанг. Мантра: КХАМ ЛА ЖИ КЬЕ ЛЕ ДУ. Отвечает за чувство осязания.",
+        "Вода (синий, полумесяц, слог ВАМ, почки, сакральная чакра): текучесть, спокойствие, чувствительность. Богиня — Кьедима. Мантра: МАМ ДАНГ РА МАМ ТИНГ ДУ. Отвечает за вкус.",
+        "Огонь (красный, треугольник, слог РАМ, печень, пупочная чакра): трансформация, тепло, сила воли. Богиня — Мерима. Мантра: РАМ ЦАНГ ТАНГ НЕ РАМ ДУ. Отвечает за зрение.",
+        "Воздух (зелёный, круг, слог ЯМ, лёгкие, сердечная чакра): движение, гибкость, свежесть. Богиня — Лунгта. Мантра: ЯМ ЯМ НИ ЛИ ТУН ДУ. Отвечает за обоняние.",
+        "Пространство (белый, сфера, слог ХАМ, сердце, горловая чакра): открытость, ясность, вместимость. Богиня — Намкха. Мантра: А МУ ЙЕ А КАР А НИ А. Отвечает за слух.",
+        "Пять пран связаны с элементами: поднимающая (земля, горло), жизненной силы (пространство, сердце), подобная огню (огонь, пупок), вездесущая (воздух, всё тело), опускающая (вода, основание).",
+        "Мантра всех элементов: А ЯМ РАМ МАМ КХАМ ДРУМ ДУ. Мантра долгой жизни: СО ДРУМ А КАР МУ ЛА ТИНГ НАМ О ДУ МУ ЙЕ ЦЕ НИ ДЗА. Практика с элементами восстанавливает баланс в теле и уме, возвращает утраченные энергии."
       ] } },
       en: { title: "Five Elements", subtitle: "Foundation of all manifested world", situation: "Key to understanding Bon", practice: { title: "Description of Five Elements", time: "Reading", steps: [
-        "Five elements — earth, water, fire, air, space — foundation of all manifested world in Bon.",
-        "Earth (yellow, square, syllable LAM, spleen): stability. Goddess — Satri Ersang.",
-        "Water (blue, crescent, syllable VAM, kidneys): flow. Goddess — Kyedima.",
-        "Fire (red, triangle, syllable RAM, liver): transformation. Goddess — Meri.",
-        "Air (green, circle, syllable YAM, lungs): movement. Goddess — Lungta.",
-        "Space (white, sphere, syllable KHAM, heart): openness. Goddess — Namkha.",
-        "Mantra of all elements: A YAM RAM MAM KHAM DRUM DU."
+        "Five elements — earth, water, fire, air, space — foundation of all manifested world in Bon. Each element has color, form, seed syllable, body organ, chakra and Mother Goddess.",
+        "Earth (yellow, square, syllable LAM, spleen, base chakra): stability, strength, support. Goddess — Satri Ersang. Mantra: KHAM LA ZHI KYE LE DU. Governs touch.",
+        "Water (blue, crescent, syllable VAM, kidneys, sacral chakra): flow, calm, sensitivity. Goddess — Kyedima. Mantra: MAM DANG RA MAM TING DU. Governs taste.",
+        "Fire (red, triangle, syllable RAM, liver, navel chakra): transformation, warmth, willpower. Goddess — Merima. Mantra: RAM TSANG TANG NE RAM DU. Governs sight.",
+        "Air (green, circle, syllable YAM, lungs, heart chakra): movement, flexibility, freshness. Goddess — Lungta. Mantra: YAM YAM NI LI TUN DU. Governs smell.",
+        "Space (white, sphere, syllable KHAM, heart, throat chakra): openness, clarity, capacity. Goddess — Namkha. Mantra: A MU YE A KAR A NI A. Governs hearing.",
+        "Five pranas are linked to elements: ascending (earth, throat), life-force (space, heart), fire-like (fire, navel), all-pervading (air, whole body), downward (water, base).",
+        "Mantra of all elements: A YAM RAM MAM KHAM DRUM DU. Long life mantra: SO DRUM A KAR MU LA TING NAM O DU MU YE TSE NI DZA. Practice with elements restores balance in body and mind, returns lost energies."
       ] } },
       es: { title: "Cinco Elementos", subtitle: "Fundamento de todo el mundo manifestado", situation: "Clave para entender Bon", practice: { title: "Descripción de Cinco Elementos", time: "Lectura", steps: [
-        "Cinco elementos — tierra, agua, fuego, aire, espacio — fundamento de todo el mundo manifestado en Bon.",
-        "Tierra (amarillo, cuadrado, sílaba LAM, bazo): estabilidad. Diosa — Satri Ersang.",
-        "Agua (azul, media luna, sílaba VAM, riñones): fluidez. Diosa — Kyedima.",
-        "Fuego (rojo, triángulo, sílaba RAM, hígado): transformación. Diosa — Meri.",
-        "Aire (verde, círculo, sílaba YAM, pulmones): movimiento. Diosa — Lungta.",
-        "Espacio (blanco, esfera, sílaba KHAM, corazón): apertura. Diosa — Namkha.",
-        "Mantra de todos los elementos: A YAM RAM MAM KHAM DRUM DU."
+        "Cinco elementos — tierra, agua, fuego, aire, espacio — fundamento de todo el mundo manifestado en Bon. Cada elemento tiene color, forma, sílaba semilla, órgano, chakra y Diosa Madre.",
+        "Tierra (amarillo, cuadrado, sílaba LAM, bazo, chakra base): estabilidad, fuerza, apoyo. Diosa — Satri Ersang. Mantra: KHAM LA ZHI KYE LE DU. Gobierna el tacto.",
+        "Agua (azul, media luna, sílaba VAM, riñones, chakra sacro): fluidez, calma, sensibilidad. Diosa — Kyedima. Mantra: MAM DANG RA MAM TING DU. Gobierna el gusto.",
+        "Fuego (rojo, triángulo, sílaba RAM, hígado, chakra ombligo): transformación, calor, fuerza de voluntad. Diosa — Merima. Mantra: RAM TSANG TANG NE RAM DU. Gobierna la vista.",
+        "Aire (verde, círculo, sílaba YAM, pulmones, chakra corazón): movimiento, flexibilidad, frescura. Diosa — Lungta. Mantra: YAM YAM NI LI TUN DU. Gobierna el olfato.",
+        "Espacio (blanco, esfera, sílaba KHAM, corazón, chakra garganta): apertura, claridad, capacidad. Diosa — Namkha. Mantra: A MU YE A KAR A NI A. Gobierna el oído.",
+        "Cinco pranas están ligadas a elementos: ascendente (tierra, garganta), fuerza vital (espacio, corazón), similar al fuego (fuego, ombligo), omnipresente (aire, todo cuerpo), descendente (agua, base).",
+        "Mantra de todos los elementos: A YAM RAM MAM KHAM DRUM DU. Mantra de larga vida: SO DRUM A KAR MU LA TING NAM O DU MU YE TSE NI DZA. La práctica con elementos restaura el equilibrio en cuerpo y mente, retorna energías perdidas."
       ] } }
     } },
-    { id: "offerings-desc", icon: "🙏", translations: {
-      ru: { title: "Подношения и Четыре Гостя", subtitle: "Практика щедрости и связи с миром", situation: "Развитие сердца и гармонии", practice: { title: "Описание Подношений", time: "Чтение", steps: [
-        "Практика подношений развивает щедрость, чувствительность и сострадание. Истинное подношение происходит на уровне воображения и намерения.",
-        "Четыре категории гостей: 1) Гости почитания — Три Драгоценности (Будды, Бодхисаттвы, Гуру). 2) Гости-защитники — охранители учения (Дхармапалы). 3) Кармические гости — восемь классов духов. 4) Гости сострадания — все чувствующие существа.",
-        "Санг — дымовое подношение можжевельника для очищения пространства.",
-        "Серкьем — золотое подношение напитка (чай, молоко) защитникам Дхармы.",
-        "Сур — подношение сожжённой пищи (цзамба с маслом) всем четырём группам гостей.",
-        "Перед едой предложите пищу 1-й и 2-й группам гостей. Остатки отдайте 3-й и 4-й группам."
-      ] } },
-      en: { title: "Offerings and Four Guests", subtitle: "Practice of generosity and connection with world", situation: "Heart development and harmony", practice: { title: "Description of Offerings", time: "Reading", steps: [
-        "Offering practice develops generosity, sensitivity and compassion. True offering happens at level of imagination and intention.",
-        "Four categories of guests: 1) Guests of reverence — Three Jewels (Buddhas, Bodhisattvas, Guru). 2) Protector guests — dharma guardians (Dharmapalas). 3) Karmic guests — eight classes of spirits. 4) Guests of compassion — all sentient beings.",
-        "Sang — smoke offering of juniper for purifying space.",
-        "Serkem — golden drink offering (tea, milk) to Dharma protectors.",
-        "Sur — burnt food offering (tsampa with butter) to all four groups of guests.",
-        "Before eating, offer food to 1st and 2nd groups. Remainders give to 3rd and 4th groups."
-      ] } },
-      es: { title: "Ofrendas y Cuatro Huéspedes", subtitle: "Práctica de generosidad y conexión con el mundo", situation: "Desarrollo del corazón y armonía", practice: { title: "Descripción de Ofrendas", time: "Lectura", steps: [
-        "La práctica de ofrendas desarrolla generosidad, sensibilidad y compasión. Verdadera ofrenda ocurre en nivel de imaginación e intención.",
-        "Cuatro categorías de huéspedes: 1) Huéspedes de reverencia — Tres Joyas (Budás, Bodhisattvas, Guru). 2) Huéspedes protectores — guardianes del dharma (Dharmapalas). 3) Huéspedes kármicos — ocho clases de espíritus. 4) Huéspedes de compasión — todos los seres sintientes.",
-        "Sang — ofrenda de humo de enebro para purificar espacio.",
-        "Serkem — ofrenda dorada de bebida (té, leche) a protectores del Dharma.",
-        "Sur — ofrenda de comida quemada (tsampa con mantequilla) a los cuatro grupos.",
-        "Antes de comer, ofrece comida a 1er y 2do grupos. Restos da a 3er y 4to grupos."
-      ] } }
-    } }
   ]
 };
 
