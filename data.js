@@ -306,11 +306,32 @@ const data = {
         "Meta final del Tantra — obtener cuerpo de deidad, transformar cuerpo, habla y mente ordinarios en iluminados. A diferencia del Chamanismo, el Tantra busca el estado de deidad."
       ] } }
     } },
-    { id: "dzogchen", icon: "☁️", translations: {
-      ru: { title: "Дзогчен", subtitle: "Великое Совершенство", situation: "Высший путь", practice: { title: "Описание", time: "Чтение", steps: ["Кунжи, Ригпа, Цал.", "Трекчо и Тхогёл.", "Шесть светильников.", "Радужное Тело."] } },
-      en: { title: "Dzogchen", subtitle: "Great Perfection", situation: "Highest path", practice: { title: "Description", time: "Reading", steps: ["Kunzhi, Rigpa, Tsal.", "Trekchö and Tögal.", "Six lamps.", "Rainbow Body."] } },
-      es: { title: "Dzogchen", subtitle: "Gran Perfección", situation: "Camino supremo", practice: { title: "Descripción", time: "Lectura", steps: ["Kunzhi, Rigpa, Tsal.", "Trekchö y Tögal.", "Seis lámparas.", "Cuerpo Arcoíris."] } }
-    } }
+        { id: "dzogchen", icon: "☁️", translations: {
+      ru: { title: "Дзогчен", subtitle: "Путь Великого Совершенства — прямое узнавание природы ума", situation: "Высший путь Бон", practice: { title: "Описание Дзогчен", time: "Чтение", steps: [
+        "Дзогчен (Дзогпа Ченпо) — высшее учение Бон, путь прямого узнавания изначальной природы ума без усилий и трансформации. В отличие от Тантры, здесь не нужно ничего преобразовывать — нужно просто узнать то, что уже есть.",
+        "Кунжи (основа всего) — изначальное пространство, мать всех проявлений. Ригпа (сын) — изначальное осознавание, неразрывное с пустотой. Цал — их нераздельное единство, проявляющееся как три великих видения: звук, свет, лучи.",
+        "Сем (обычный ум) — двойственный ум, захваченный мыслями. Ригпа — чистое осознавание за пределами мыслей. Практика Дзогчен — это переход от Сем к Ригпа через прямое узнавание.",
+        "Два главных метода: Трекчо (Прорыв) — отсечение отвлечений, пребывание в естественном состоянии без усилий; Тхогёл (Перескок) — работа со светом и видениями через шесть светильников.",
+        "Шесть светильников: светильник Кунжи (основа), светильник сердца (источник), светильник мягкого белого канала (путь от сердца к глазам), светильник воды (чистота восприятия), светильник чистого измерения (видения), светильник Бардо (переход).",
+        "Четыре Бардо: этой жизни (от рождения до смерти), умирания (растворение пяти элементов), дхарматы (встреча с ясным светом — природа ума), становления (поиск нового рождения). Высший плод Дзогчен — Радужное Тело (Джа Лю): тело практика растворяется в свете в момент смерти, остаются только волосы и ногти."
+      ] } },
+      en: { title: "Dzogchen", subtitle: "Path of Great Perfection — direct recognition of mind nature", situation: "Highest Bon path", practice: { title: "Description of Dzogchen", time: "Reading", steps: [
+        "Dzogchen (Dzogpa Chenpo) — highest teaching of Bon, path of direct recognition of primordial mind nature without effort or transformation. Unlike Tantra, nothing needs to be transformed — one simply recognizes what is already there.",
+        "Kunzhi (ground of all) — primordial space, mother of all manifestations. Rigpa (son) — primordial awareness, inseparable from emptiness. Tsal — their inseparable unity, manifesting as three great visions: sound, light, rays.",
+        "Sem (ordinary mind) — dualistic mind caught in thoughts. Rigpa — pure awareness beyond thoughts. Dzogchen practice is the transition from Sem to Rigpa through direct recognition.",
+        "Two main methods: Trekchö (Cutting Through) — cutting off distractions, resting in natural state without effort; Tögal (Leapover) — working with light and visions through six lamps.",
+        "Six lamps: lamp of Kunzhi (ground), lamp of heart (source), lamp of soft white channel (path from heart to eyes), water lamp (purity of perception), lamp of pure dimension (visions), lamp of Bardo (transition).",
+        "Four Bardos: of this life (birth to death), of dying (dissolution of five elements), of dharmata (meeting clear light — nature of mind), of becoming (seeking new birth). Highest fruit of Dzogchen — Rainbow Body (Ja Lü): practitioner's body dissolves into light at death, only hair and nails remain."
+      ] } },
+      es: { title: "Dzogchen", subtitle: "Camino de la Gran Perfección — reconocimiento directo de la naturaleza de la mente", situation: "Camino supremo del Bon", practice: { title: "Descripción de Dzogchen", time: "Lectura", steps: [
+        "Dzogchen (Dzogpa Chenpo) — enseñanza suprema del Bon, camino de reconocimiento directo de la naturaleza primordial de la mente sin esfuerzo ni transformación. A diferencia del Tantra, no hay que transformar nada — simplemente se reconoce lo que ya está ahí.",
+        "Kunzhi (base de todo) — espacio primordial, madre de todas las manifestaciones. Rigpa (hijo) — conciencia primordial, inseparable de la vacuidad. Tsal — su unidad inseparable, manifestándose como tres grandes visiones: sonido, luz, rayos.",
+        "Sem (mente ordinaria) — mente dualista atrapada en pensamientos. Rigpa — conciencia pura más allá de los pensamientos. La práctica de Dzogchen es la transición de Sem a Rigpa mediante reconocimiento directo.",
+        "Dos métodos principales: Trekchö (Corte) — cortar distracciones, descansar en estado natural sin esfuerzo; Tögal (Salto) — trabajar con luz y visiones a través de seis lámparas.",
+        "Seis lámparas: lámpara de Kunzhi (base), lámpara de corazón (fuente), lámpara del canal blanco suave (camino del corazón a los ojos), lámpara de agua (pureza de percepción), lámpara de dimensión pura (visiones), lámpara de Bardo (transición).",
+        "Cuatro Bardos: de esta vida (nacimiento a muerte), de la muerte (disolución de cinco elementos), de dharmata (encuentro con luz clara — naturaleza de la mente), del devenir (buscando nuevo nacimiento). Fruto supremo de Dzogchen — Cuerpo Arcoíris (Ja Lü): cuerpo del practicante se disuelve en luz al morir, solo quedan pelo y uñas."
+      ] } }
+    } },
   ]
 };
 
