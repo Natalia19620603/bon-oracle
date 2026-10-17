@@ -63,41 +63,119 @@ const i18n = {
 
 const data = {
   body: [
-    { id: "nine-breaths", icon: "🌬️", translations: {
-      ru: { title: "Девять очистительных дыханий", subtitle: "Цалунг — основа всех практик", situation: "Энергетический застой, тревожность.", practice: { title: "Девять очистительных дыханий", time: "5 мин", steps: ["Сядьте в пятичленную позу.", "Закройте правую ноздрю, вдохните белый свет через левую.", "Задержите, визуализируя очищение.", "Закройте левую, выдохните через правую.", "Повторите 9 раз, меняя стороны."] } },
-      en: { title: "Nine Purifying Breaths", subtitle: "Tsa Lung — foundation", situation: "Energy stagnation.", practice: { title: "Nine Purifying Breaths", time: "5 min", steps: ["Sit in five-point posture.", "Close right nostril, inhale white light through left.", "Hold, visualizing purification.", "Close left, exhale through right.", "Repeat 9 times."] } },
-      es: { title: "Nueve Respiraciones", subtitle: "Tsa Lung — base", situation: "Estancamiento energético.", practice: { title: "Nueve Respiraciones", time: "5 min", steps: ["Siéntate en postura de cinco puntos.", "Cierra fosa derecha, inhala luz blanca.", "Mantén, visualizando purificación.", "Cierra izquierda, exhala.", "Repite 9 veces."] } }
-    } },
-    { id: "tsalung-fire", icon: "🔥", translations: {
-      ru: { title: "Цалунг: Огонь", subtitle: "Развитие внутреннего тепла", situation: "Холод, апатия.", practice: { title: "Движение огня", time: "5 мин", steps: ["Визуализируйте красный слог РАМ в пупке.", "Вдохните огонь вверх по центральному каналу.", "Задержите дыхание, почувствуйте тепло.", "Выдохните, рассеивая тепло.", "Повторите 9 раз."] } },
-      en: { title: "Tsa Lung: Fire", subtitle: "Inner heat", situation: "Cold, apathy.", practice: { title: "Fire Movement", time: "5 min", steps: ["Visualize red RAM in navel.", "Inhale fire up central channel.", "Hold breath, feel warmth.", "Exhale, spreading warmth.", "Repeat 9 times."] } },
-      es: { title: "Tsa Lung: Fuego", subtitle: "Calor interno", situation: "Frío, apatía.", practice: { title: "Movimiento de Fuego", time: "5 min", steps: ["Visualiza RAM rojo en ombligo.", "Inhala fuego por canal central.", "Mantén, siente calor.", "Exhala, expande calor.", "Repite 9 veces."] } }
-    } },
-    { id: "trulkhor-hammer", icon: "⚡", translations: {
-      ru: { title: "Трюлкхор: Молот", subtitle: "Преодоление гнева", situation: "Гнев, раздражение.", practice: { title: "Молот атлета", time: "5 мин", steps: ["Встаньте, ноги на ширине плеч.", "Поднимите руки над головой.", "Резко опустите с выдохом ХА.", "Повторите 7 раз.", "Побудьте в тишине."] } },
-      en: { title: "Trulkhor: Hammer", subtitle: "Overcoming anger", situation: "Anger.", practice: { title: "Athlete's Hammer", time: "5 min", steps: ["Stand, feet shoulder-width.", "Raise hands above head.", "Lower sharply with HA exhale.", "Repeat 7 times.", "Rest in silence."] } },
-      es: { title: "Trulkhor: Martillo", subtitle: "Superando ira", situation: "Ira.", practice: { title: "Martillo del Atleta", time: "5 min", steps: ["Párate, pies al ancho de hombros.", "Levanta manos sobre cabeza.", "Baja bruscamente con HA.", "Repite 7 veces.", "Descansa en silencio."] } }
-    } },
-    { id: "prostrations", icon: "🙏", translations: {
-      ru: { title: "Простирания", subtitle: "Очищение эго", situation: "Привязанность к себе.", practice: { title: "Простирания", time: "10 мин", steps: ["Встаньте, руки сложены у сердца.", "Поднимите руки к макушке.", "Опустите к горлу.", "Опустите к сердцу.", "Лягте на землю, коснувшись пятью точками."] } },
-      en: { title: "Prostrations", subtitle: "Purifying ego", situation: "Self-attachment.", practice: { title: "Prostrations", time: "10 min", steps: ["Stand, hands at heart.", "Raise hands to crown.", "Lower to throat.", "Lower to heart.", "Lie on ground, touching five points."] } },
-      es: { title: "Postraciones", subtitle: "Purificando ego", situation: "Apego al yo.", practice: { title: "Postraciones", time: "10 min", steps: ["Párate, manos en corazón.", "Levanta manos a coronilla.", "Baja a garganta.", "Baja a corazón.", "Acuéstate, tocando cinco puntos."] } }
+        { id: "nine-breaths", icon: "️", translations: {
+      ru: { title: "Девять очистительных дыханий", subtitle: "Цалунг — основа всех практик Бон", situation: "Энергетический застой, тревожность, неясность ума.", practice: { title: "Девять очистительных дыханий", time: "10 мин", steps: [
+        "Сядьте в пятичленную позу: скрестите ноги, спина прямая, руки на коленях, плечи расслаблены, взгляд направлен вниз.",
+        "Закройте правую ноздрю безымянным пальцем правой руки. Вдохните чистый белый свет через левую ноздрю — он наполняет левый канал (кьянг-ма) и очищает привязанность.",
+        "Задержите дыхание. Визуализируйте, как белый свет рассеивает всю мутную энергию в теле.",
+        "Закройте левую ноздрю большим пальцем, выдохните через правую ноздрю серый дым — это выходит загрязненная энергия.",
+        "Повторите три раза с левой стороны. Затем три раза с правой стороны (вдох через правую, выдох через левую — очищает гнев).",
+        "Три раза через обе ноздри одновременно: вдохните белый свет, выдохните серый дым — очищает невежество.",
+        "Всего девять дыханий. Завершите, отдохнув в естественном состоянии ума, свободном от трех ядов."
+      ] } },
+      en: { title: "Nine Purifying Breaths", subtitle: "Tsa Lung — foundation of all Bon practices", situation: "Energy stagnation, anxiety, unclear mind.", practice: { title: "Nine Purifying Breaths", time: "10 min", steps: [
+        "Sit in five-point posture: legs crossed, spine straight, hands on knees, shoulders relaxed, gaze downward.",
+        "Close right nostril with right ring finger. Inhale pure white light through left nostril — it fills the left channel (kyang-ma) and purifies attachment.",
+        "Hold the breath. Visualize white light dispersing all murky energy in the body.",
+        "Close left nostril with thumb, exhale gray smoke through right nostril — polluted energy leaves.",
+        "Repeat three times on left side. Then three times on right side (inhale right, exhale left — purifies anger).",
+        "Three times through both nostrils together: inhale white light, exhale gray smoke — purifies ignorance.",
+        "Nine breaths total. Finish by resting in natural state of mind, free from three poisons."
+      ] } },
+      es: { title: "Nueve Respiraciones Purificadoras", subtitle: "Tsa Lung — base de todas las prácticas Bon", situation: "Estancamiento energético, ansiedad, mente confusa.", practice: { title: "Nueve Respiraciones Purificadoras", time: "10 min", steps: [
+        "Siéntate en postura de cinco puntos: piernas cruzadas, columna recta, manos en rodillas, hombros relajados, mirada hacia abajo.",
+        "Cierra fosa nasal derecha con dedo anular derecho. Inhala luz blanca pura por fosa izquierda — llena el canal izquierdo (kyang-ma) y purifica el apego.",
+        "Mantén la respiración. Visualiza luz blanca dispersando toda energía turbia del cuerpo.",
+        "Cierra fosa izquierda con pulgar, exhala humo gris por fosa derecha — sale energía contaminada.",
+        "Repite tres veces del lado izquierdo. Luego tres veces del lado derecho (inhala derecha, exhala izquierda — purifica ira).",
+        "Tres veces por ambas fosas: inhala luz blanca, exhala humo gris — purifica ignorancia.",
+        "Nueve respiraciones en total. Termina descansando en estado natural de la mente, libre de tres venenos."
+      ] } }
     } },
     { id: "five-warrior-syllables", icon: "⚔️", translations: {
-      ru: { title: "Пять слогов-воинов", subtitle: "А-ОМ-ХУНГ-РАМ-ДЗА — пребывание в природе ума", situation: "Нужно достичь состояния неизменного присутствия.", practice: { title: "Практика пяти слогов-воинов", time: "15 мин", steps: ["Сядьте в пятичленную позу.", "Визуализируйте в сердце синий слог ХУНГ.", "Вдыхайте через левую ноздрю, произнося А.", "Задержите дыхание, произнося ОМ.", "Выдыхайте через правую ноздрю, произнося ХУНГ.", "Повторите цикл 7, 21 или 108 раз.", "Побудьте в едином ХУНГ — природе ума."] } },
-      en: { title: "Five Warrior Syllables", subtitle: "A-OM-HUNG-RAM-DZA — resting in mind nature", situation: "Need to attain unchanging presence.", practice: { title: "Five Warrior Syllables Practice", time: "15 min", steps: ["Sit in five-point posture.", "Visualize blue HUNG in heart.", "Inhale through left nostril, sounding A.", "Hold breath, sounding OM.", "Exhale through right nostril, sounding HUNG.", "Repeat cycle 7, 21 or 108 times.", "Rest in unified HUNG — mind nature."] } },
-      es: { title: "Cinco Sílabas Guerreras", subtitle: "A-OM-HUNG-RAM-DZA — descansar en naturaleza de mente", situation: "Necesitas alcanzar presencia inmutable.", practice: { title: "Práctica de Cinco Sílabas Guerreras", time: "15 min", steps: ["Siéntate en postura de cinco puntos.", "Visualiza HUNG azul en corazón.", "Inhala por fosa izquierda, sonando A.", "Mantén respiración, sonando OM.", "Exhala por fosa derecha, sonando HUNG.", "Repite ciclo 7, 21 o 108 veces.", "Descansa en HUNG unificado — naturaleza de mente."] } }
+      ru: { title: "Пять слогов-воинов", subtitle: "А-ОМ-ХУНГ-РАМ-ДЗА — пребывание в природе ума", situation: "Нужно достичь состояния неизменного присутствия, очистить пять ядов.", practice: { title: "Практика пяти слогов-воинов", time: "15 мин", steps: [
+        "Сядьте в пятичленную позу. Визуализируйте в центре сердца синий слог ХУНГ, излучающий свет. ХУНГ — это природа вашего ума, изначальное осознавание.",
+        "Первый слог — А (белый, корона, пространство). Вдохните через левую ноздрю, произнося А. Очищает гордость и яд гордыни. Белый свет заполняет макушку.",
+        "Второй слог — ОМ (красный, горло, качество). Задержите дыхание на уровне горла, произнося ОМ. Очищает зависть. Красный свет наполняет горловую чакру.",
+        "Третий слог — ХУНГ (синий, сердце, проявление). Удерживайте дыхание в сердце, произнося ХУНГ. Очищает привязанность. Синий свет сияет в сердечной чакре.",
+        "Четвертый слог — РАМ (красный, пупок, действие). Опустите энергию к пупку, произнося РАМ. Очищает гнев. Огненный свет пылает в пупочной чакре.",
+        "Пятый слог — ДЗА (зеленый, тайная чакра, деятельность). Выдохните через правую ноздрю, произнося ДЗА. Очищает невежество. Зеленый свет распространяется по всему телу.",
+        "Повторите цикл 7, 21 или 108 раз. Завершите, растворив все слоги в ХУНГ в сердце и отдохнув в единой природе ума — Ригпа."
+      ] } },
+      en: { title: "Five Warrior Syllables", subtitle: "A-OM-HUNG-RAM-DZA — resting in mind nature", situation: "Need to attain unchanging presence, purify five poisons.", practice: { title: "Five Warrior Syllables Practice", time: "15 min", steps: [
+        "Sit in five-point posture. Visualize blue syllable HUNG in heart center, radiating light. HUNG is your mind nature, primordial awareness.",
+        "First syllable — A (white, crown, space). Inhale through left nostril, sounding A. Purifies pride. White light fills crown.",
+        "Second syllable — OM (red, throat, quality). Hold breath at throat level, sounding OM. Purifies jealousy. Red light fills throat chakra.",
+        "Third syllable — HUNG (blue, heart, manifestation). Hold breath in heart, sounding HUNG. Purifies attachment. Blue light shines in heart chakra.",
+        "Fourth syllable — RAM (red, navel, action). Lower energy to navel, sounding RAM. Purifies anger. Fiery light blazes in navel chakra.",
+        "Fifth syllable — DZA (green, secret chakra, activity). Exhale through right nostril, sounding DZA. Purifies ignorance. Green light spreads through whole body.",
+        "Repeat cycle 7, 21 or 108 times. Finish by dissolving all syllables into HUNG in heart and resting in unified mind nature — Rigpa."
+      ] } },
+      es: { title: "Cinco Sílabas Guerreras", subtitle: "A-OM-HUNG-RAM-DZA — descansar en naturaleza de mente", situation: "Necesitas alcanzar presencia inmutable, purificar cinco venenos.", practice: { title: "Práctica de Cinco Sílabas Guerreras", time: "15 min", steps: [
+        "Siéntate en postura de cinco puntos. Visualiza sílaba azul HUNG en centro del corazón, irradiando luz. HUNG es tu naturaleza mental, conciencia primordial.",
+        "Primera sílaba — A (blanca, coronilla, espacio). Inhala por fosa izquierda, sonando A. Purifica orgullo. Luz blanca llena coronilla.",
+        "Segunda sílaba — OM (roja, garganta, cualidad). Mantén respiración en garganta, sonando OM. Purifica envidia. Luz roja llena chakra garganta.",
+        "Tercera sílaba — HUNG (azul, corazón, manifestación). Mantén respiración en corazón, sonando HUNG. Purifica apego. Luz azul brilla en chakra corazón.",
+        "Cuarta sílaba — RAM (roja, ombligo, acción). Baja energía al ombligo, sonando RAM. Purifica ira. Luz de fuego arde en chakra ombligo.",
+        "Quinta sílaba — DZA (verde, chakra secreto, actividad). Exhala por fosa derecha, sonando DZA. Purifica ignorancia. Luz verde se expande por todo el cuerpo.",
+        "Repite ciclo 7, 21 o 108 veces. Termina disolviendo todas las sílabas en HUNG en corazón y descansando en naturaleza unificada de la mente — Rigpa."
+      ] } }
     } },
     { id: "four-immeasurables", icon: "💛", translations: {
-      ru: { title: "Четыре безмерных", subtitle: "Любовь, сострадание, радость, равностность", situation: "Нужно развить сердечные качества.", practice: { title: "Практика четырёх безмерных", time: "10 мин", steps: ["Любовь: «Пусть все существа будут счастливы».", "Сострадание: «Пусть все существа будут свободны от страданий».", "Радость: «Пусть все существа не расстанутся с радостью».", "Равностность: «Пусть все существа пребывают в беспристрастности».", "Расширь каждое качество на всех существ без исключения."] } },
-      en: { title: "Four Immeasurables", subtitle: "Love, compassion, joy, equanimity", situation: "Need to develop heart qualities.", practice: { title: "Four Immeasurables Practice", time: "10 min", steps: ["Love: 'May all beings be happy'.", "Compassion: 'May all beings be free from suffering'.", "Joy: 'May all beings not be separated from joy'.", "Equanimity: 'May all beings rest in impartiality'.", "Extend each quality to all beings without exception."] } },
-      es: { title: "Cuatro Inconmensurables", subtitle: "Amor, compasión, alegría, ecuanimidad", situation: "Necesitas desarrollar cualidades del corazón.", practice: { title: "Práctica de Cuatro Inconmensurables", time: "10 min", steps: ["Amor: 'Que todos los seres sean felices'.", "Compasión: 'Que todos los seres sean libres del sufrimiento'.", "Alegría: 'Que todos los seres no se separen de la alegría'.", "Ecuanimidad: 'Que todos los seres descansen en imparcialidad'.", "Extiende cada cualidad a todos los seres sin excepción."] } }
+      ru: { title: "Четыре безмерных", subtitle: "Любовь, сострадание, радость, равностность — путь открытого сердца", situation: "Нужно развить сердечные качества, преодолеть эгоцентризм.", practice: { title: "Практика четырёх безмерных", time: "15 мин", steps: [
+        "Сядьте удобно, расслабьте тело. Сгенерируйте мотивацию Бодхичитты: «Пусть эта практика послужит благу всех существ без исключения».",
+        "Безмерная любовь (майтри): «Пусть все существа будут счастливы и обладают причинами счастья». Визуализируйте теплый золотой свет, исходящий из сердца и наполняющий всех существ. Повторите 7 раз.",
+        "Безмерное сострадание (каруна/ньиндже): «Пусть все существа будут свободны от страданий и их причин». Представьте всех страдающих существ — от насекомых до людей. Пусть голубой свет из сердца освобождает их. Повторите 7 раз.",
+        "Безмерная радость (мудита): «Пусть все существа никогда не расстанутся с радостью, свободной от страданий». Радуйтесь счастью и успехам других, особенно тех, кого трудно любить. Повторите 7 раз.",
+        "Безмерная равностность (упекша): «Пусть все существа пребывают в великой равностности, свободной от привязанности к близким и отвращения к врагам». Отпустите разделение на «своих» и «чужих». Повторите 7 раз.",
+        "Расширьте каждое качество на все шесть миров: богов, асуров, людей, животных, голодных духов, существ ада. Завершите посвящением заслуг: «Пусть эти качества проявятся в каждом существе»."
+      ] } },
+      en: { title: "Four Immeasurables", subtitle: "Love, compassion, joy, equanimity — path of open heart", situation: "Need to develop heart qualities, overcome egocentrism.", practice: { title: "Four Immeasurables Practice", time: "15 min", steps: [
+        "Sit comfortably, relax body. Generate Bodhicitta motivation: 'May this practice serve the benefit of all beings without exception'.",
+        "Immeasurable love (maitri): 'May all beings be happy and have causes of happiness'. Visualize warm golden light radiating from heart, filling all beings. Repeat 7 times.",
+        "Immeasurable compassion (karuna/nyingje): 'May all beings be free from suffering and its causes'. Imagine all suffering beings — from insects to humans. Let blue light from heart liberate them. Repeat 7 times.",
+        "Immeasurable joy (mudita): 'May all beings never be separated from joy free from suffering'. Rejoice in happiness and success of others, especially those hard to love. Repeat 7 times.",
+        "Immeasurable equanimity (upeksha): 'May all beings rest in great equanimity, free from attachment to friends and aversion to enemies'. Release division into 'us' and 'them'. Repeat 7 times.",
+        "Extend each quality to all six realms: gods, asuras, humans, animals, hungry ghosts, hell beings. Finish with dedication: 'May these qualities manifest in every being'."
+      ] } },
+      es: { title: "Cuatro Inconmensurables", subtitle: "Amor, compasión, alegría, ecuanimidad — camino del corazón abierto", situation: "Necesitas desarrollar cualidades del corazón, superar egocentrismo.", practice: { title: "Práctica de Cuatro Inconmensurables", time: "15 min", steps: [
+        "Siéntate cómodo, relaja cuerpo. Genera motivación de Bodhicitta: 'Que esta práctica sirva al beneficio de todos los seres sin excepción'.",
+        "Amor inconmensurable (maitri): 'Que todos los seres sean felices y tengan causas de felicidad'. Visualiza luz dorada cálida irradiando del corazón, llenando todos los seres. Repite 7 veces.",
+        "Compasión inconmensurable (karuna/nyingje): 'Que todos los seres sean libres del sufrimiento y sus causas'. Imagina todos los seres que sufren — desde insectos hasta humanos. Que luz azul del corazón los libere. Repite 7 veces.",
+        "Alegría inconmensurable (mudita): 'Que todos los seres nunca se separen de la alegría libre de sufrimiento'. Alégrate por felicidad y éxito de otros, especialmente de los difíciles de amar. Repite 7 veces.",
+        "Ecuanimidad inconmensurable (upeksha): 'Que todos los seres descansen en gran ecuanimidad, libres de apego a amigos y aversión a enemigos'. Suelta división en 'nosotros' y 'ellos'. Repite 7 veces.",
+        "Extiende cada cualidad a los seis reinos: dioses, asuras, humanos, animales, fantasmas hambrientos, seres del infierno. Termina con dedicación: 'Que estas cualidades se manifiesten en cada ser'."
+      ] } }
     } },
-    { id: "prostrations-detailed", icon: "", translations: {
-      ru: { title: "Простирания (подробно)", subtitle: "Очищение тела, речи и ума через поклонение", situation: "Нужно очистить карму трёх врат.", practice: { title: "Практика простираний", time: "15 мин", steps: ["Встаньте, руки сложены у сердца (ум).", "Поднимите руки к макушке — очищение тела.", "Опустите к горлу — очищение речи.", "Опустите к сердцу — очищение ума.", "Лягте на землю, коснувшись пятью точками (лоб, две руки, два колена).", "Поднимитесь, повторяя: «Принимаю прибежище в Будде, Боне и Сангхе».", "Повторите 3, 7, 21 или 108 раз."] } },
-      en: { title: "Prostrations (detailed)", subtitle: "Purifying body, speech and mind through reverence", situation: "Need to purify karma of three gates.", practice: { title: "Prostrations Practice", time: "15 min", steps: ["Stand, hands joined at heart (mind).", "Raise hands to crown — purify body.", "Lower to throat — purify speech.", "Lower to heart — purify mind.", "Lie on ground, touching five points (forehead, two hands, two knees).", "Rise, repeating: 'I take refuge in Buddha, Bon and Sangha'.", "Repeat 3, 7, 21 or 108 times."] } },
-      es: { title: "Postraciones (detallado)", subtitle: "Purificando cuerpo, habla y mente mediante reverencia", situation: "Necesitas purificar karma de tres puertas.", practice: { title: "Práctica de Postraciones", time: "15 min", steps: ["Párate, manos unidas en corazón (mente).", "Levanta manos a coronilla — purifica cuerpo.", "Baja a garganta — purifica habla.", "Baja a corazón — purifica mente.", "Acuéstate, tocando cinco puntos (frente, dos manos, dos rodillas).", "Levántate, repitiendo: 'Tomo refugio en Buda, Bon y Sangha'.", "Repite 3, 7, 21 o 108 veces."] } }
-    } }
+    { id: "prostrations-detailed", icon: "🙏", translations: {
+      ru: { title: "Простирания", subtitle: "Очищение тела, речи и ума через поклонение Трем Драгоценностям", situation: "Нужно очистить карму трёх врат, преодолеть гордость.", practice: { title: "Практика простираний", time: "15 мин", steps: [
+        "Встаньте прямо, ноги вместе. Сложите ладони в форме лотоса у сердца — это символизирует чистую мотивацию и уважение к Трем Драгоценностям (Будда, Бон, Сангха).",
+        "Поднимите сложенные ладони к макушке — очищает тело и карму телесных действий. Произнесите: «Принимаю прибежище в Гуру».",
+        "Опустите ладони к горлу — очищает речь и карму словесных действий. Произнесите: «Принимаю прибежище в Будде».",
+        "Опустите ладони к сердцу — очищает ум и карму мысленных действий. Произнесите: «Принимаю прибежище в Дхарме».",
+        "Опуститесь на колени, затем лягте на землю, коснувшись пятью точками: лоб, две ладони, два колена. Это символизирует очищение пяти ядов (гордость, зависть, привязанность, гнев, невежество) и поклонение пяти Буддам-семьям.",
+        "Поднимитесь, сложив ладони у сердца. Произнесите: «Принимаю прибежище в Сангхе». Повторите цикл 3, 7, 21 или 108 раз.",
+        "Завершите, сидя в медитации. Визуализируйте, как все Будды и Гуру растворяются в вашем сердце, и отдохните в состоянии единства с ними."
+      ] } },
+      en: { title: "Prostrations", subtitle: "Purifying body, speech and mind through reverence to Three Jewels", situation: "Need to purify karma of three gates, overcome pride.", practice: { title: "Prostrations Practice", time: "15 min", steps: [
+        "Stand straight, feet together. Join palms in lotus shape at heart — symbolizes pure motivation and reverence to Three Jewels (Buddha, Bon, Sangha).",
+        "Raise joined palms to crown — purifies body and karma of physical actions. Say: 'I take refuge in the Guru'.",
+        "Lower palms to throat — purifies speech and karma of verbal actions. Say: 'I take refuge in the Buddha'.",
+        "Lower palms to heart — purifies mind and karma of mental actions. Say: 'I take refuge in the Dharma'.",
+        "Kneel down, then lie on ground, touching five points: forehead, two palms, two knees. Symbolizes purification of five poisons (pride, jealousy, attachment, anger, ignorance) and reverence to five Buddha families.",
+        "Rise up, palms joined at heart. Say: 'I take refuge in the Sangha'. Repeat cycle 3, 7, 21 or 108 times.",
+        "Finish sitting in meditation. Visualize all Buddhas and Gurus dissolving into your heart, and rest in state of unity with them."
+      ] } },
+      es: { title: "Postraciones", subtitle: "Purificando cuerpo, habla y mente mediante reverencia a Tres Joyas", situation: "Necesitas purificar karma de tres puertas, superar orgullo.", practice: { title: "Práctica de Postraciones", time: "15 min", steps: [
+        "Párate derecho, pies juntos. Une palmas en forma de loto en corazón — simboliza motivación pura y reverencia a Tres Joyas (Buda, Bon, Sangha).",
+        "Levanta palmas unidas a coronilla — purifica cuerpo y karma de acciones físicas. Di: 'Tomo refugio en el Guru'.",
+        "Baja palmas a garganta — purifica habla y karma de acciones verbales. Di: 'Tomo refugio en el Buda'.",
+        "Baja palmas a corazón — purifica mente y karma de acciones mentales. Di: 'Tomo refugio en el Dharma'.",
+        "Arrodíllate, luego acuéstate en el suelo, tocando cinco puntos: frente, dos palmas, dos rodillas. Simboliza purificación de cinco venenos (orgullo, envidia, apego, ira, ignorancia) y reverencia a cinco familias de Budas.",
+        "Levántate, palmas unidas en corazón. Di: 'Tomo refugio en la Sangha'. Repite ciclo 3, 7, 21 o 108 veces.",
+        "Termina sentado en meditación. Visualiza todos los Budas y Gurus disolviéndose en tu corazón, y descansa en estado de unidad con ellos."
+      ] } }
+    } },
   ],
 
   speech: [
