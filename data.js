@@ -225,10 +225,34 @@ const data = {
     } }
   ],
   library: [
-    { id: "shamanism", icon: "🌿", translations: {
-      ru: { title: "Шаманизм", subtitle: "Внешний путь", situation: "Основы Бон", practice: { title: "Описание", time: "Чтение", steps: ["Работа с пятью элементами.", "Связь с духами: наги, лу, лха, ньен.", "Практики: санг, серкьем, сур.", "Цель: баланс элементов."] } },
-      en: { title: "Shamanism", subtitle: "Outer path", situation: "Bon foundation", practice: { title: "Description", time: "Reading", steps: ["Work with five elements.", "Connect with spirits: nagas, lu, lha, nyen.", "Practices: sang, serkem, sur.", "Goal: element balance."] } },
-      es: { title: "Chamanismo", subtitle: "Camino exterior", situation: "Base del Bon", practice: { title: "Descripción", time: "Lectura", steps: ["Trabajo con cinco elementos.", "Conecta con espíritus.", "Prácticas: sang, serkem, sur.", "Objetivo: equilibrio."] } }
+        { id: "shamanism", icon: "🌿", translations: {
+      ru: { title: "Шаманизм", subtitle: "Внешний путь — работа с элементами и духами", situation: "Основы пути Бон", practice: { title: "Описание Шаманизма", time: "Чтение", steps: [
+        "Шаманизм — внешний уровень духовной практики в Бон. Работает с пятью элементами (земля, вода, огонь, воздух, пространство) как с живыми силами природы.",
+        "Три уровня души: Ла (жизненная сила), Йид (душа ума), Сем (жизненная сущность). Когда они уравновешены — человек здоров и счастлив.",
+        "Практик устанавливает связь с духами природы: наги (водные духи), лу (духи земли), лха (небесные божества), ньен (духи деревьев и гор).",
+        "Основные практики: подношения (санг — дымовое, серкьем — напиток, сур — сожжённая пища), возвращение утраченных энергий элементов.",
+        "Стрела души (дадар), бирюза и олень души (шава) — шаманские инструменты для восстановления баланса.",
+        "Четыре категории гостей: почитания (Три Драгоценности), защитники (дхармапалы), кармические (духи, перед которыми есть долг), сострадания (все существа).",
+        "Цель шаманизма: восстановить баланс элементов в теле и окружении, исцелить болезнь, вернуть жизненную силу."
+      ] } },
+      en: { title: "Shamanism", subtitle: "Outer path — working with elements and spirits", situation: "Foundation of Bon", practice: { title: "Description of Shamanism", time: "Reading", steps: [
+        "Shamanism is the outer level of spiritual practice in Bon. Works with five elements as living forces of nature.",
+        "Three levels of soul: La (life force), Yid (soul of mind), Sem (life essence). When balanced — person is healthy.",
+        "Practitioner connects with nature spirits: nagas (water), lu (earth), lha (sky), nyen (trees and mountains).",
+        "Main practices: offerings (sang, serkem, sur), returning lost element energies.",
+        "Soul arrow (dadar), turquoise and soul deer (shawa) — shamanic tools for restoring balance.",
+        "Four categories of guests: reverence (Three Jewels), protectors (dharmapalas), karmic, compassion (all beings).",
+        "Goal of shamanism: restore balance of elements in body and environment, heal illness, return life force."
+      ] } },
+      es: { title: "Chamanismo", subtitle: "Camino exterior — trabajo con elementos y espíritus", situation: "Fundamento del Bon", practice: { title: "Descripción del Chamanismo", time: "Lectura", steps: [
+        "El chamanismo es el nivel exterior de la práctica espiritual en Bon. Trabaja con cinco elementos como fuerzas vivas.",
+        "Tres niveles del alma: La (fuerza vital), Yid (alma de la mente), Sem (esencia vital). Cuando están equilibrados — la persona está sana.",
+        "El practicante se conecta con espíritus de la naturaleza: nagas (agua), lu (tierra), lha (cielo), nyen (árboles y montañas).",
+        "Prácticas principales: ofrendas (sang, serkem, sur), retornar energías perdidas de elementos.",
+        "Flecha del alma (dadar), turquesa y ciervo del alma (shawa) — herramientas chamánicas para restaurar el equilibrio.",
+        "Cuatro categorías de huéspedes: reverencia (Tres Joyas), protectores (dharmapalas), kármicos, compasión (todos los seres).",
+        "Objetivo del chamanismo: restaurar equilibrio de elementos en cuerpo y entorno, sanar enfermedad, retornar fuerza vital."
+      ] } }
     } },
     { id: "sutra", icon: "📿", translations: {
       ru: { title: "Сутра", subtitle: "Путь ума", situation: "Развитие сердца", practice: { title: "Описание", time: "Чтение", steps: ["Прибежище и Бодхичитта.", "Четыре Безмерных.", "Шесть совершенств.", "От эго к открытому сердцу."] } },
