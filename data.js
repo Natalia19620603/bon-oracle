@@ -332,6 +332,61 @@ const data = {
         "Cuatro Bardos: de esta vida (nacimiento a muerte), de la muerte (disolución de cinco elementos), de dharmata (encuentro con luz clara — naturaleza de la mente), del devenir (buscando nuevo nacimiento). Fruto supremo de Dzogchen — Cuerpo Arcoíris (Ja Lü): cuerpo del practicante se disuelve en luz al morir, solo quedan pelo y uñas."
       ] } }
     } },
+	    { id: "elements-desc", icon: "🌍", translations: {
+      ru: { title: "Пять Элементов", subtitle: "Основа всего проявленного мира", situation: "Ключ к пониманию Бон", practice: { title: "Описание Пяти Элементов", time: "Чтение", steps: [
+        "Пять элементов — земля, вода, огонь, воздух, пространство — основа всего проявленного мира в учении Бон.",
+        "Земля (жёлтый, квадрат, слог ЛАМ, селезёнка): устойчивость. Богиня — Сатри Эрсанг.",
+        "Вода (синий, полумесяц, слог ВАМ, почки): текучесть. Богиня — Кьедима.",
+        "Огонь (красный, треугольник, слог РАМ, печень): трансформация. Богиня — Мэри.",
+        "Воздух (зелёный, круг, слог ЯМ, лёгкие): движение. Богиня — Лунгта.",
+        "Пространство (белый, сфера, слог ХАМ, сердце): открытость. Богиня — Намкха.",
+        "Мантра всех элементов: А ЯМ РАМ МАМ КХАМ ДРУМ ДУ."
+      ] } },
+      en: { title: "Five Elements", subtitle: "Foundation of all manifested world", situation: "Key to understanding Bon", practice: { title: "Description of Five Elements", time: "Reading", steps: [
+        "Five elements — earth, water, fire, air, space — foundation of all manifested world in Bon.",
+        "Earth (yellow, square, syllable LAM, spleen): stability. Goddess — Satri Ersang.",
+        "Water (blue, crescent, syllable VAM, kidneys): flow. Goddess — Kyedima.",
+        "Fire (red, triangle, syllable RAM, liver): transformation. Goddess — Meri.",
+        "Air (green, circle, syllable YAM, lungs): movement. Goddess — Lungta.",
+        "Space (white, sphere, syllable KHAM, heart): openness. Goddess — Namkha.",
+        "Mantra of all elements: A YAM RAM MAM KHAM DRUM DU."
+      ] } },
+      es: { title: "Cinco Elementos", subtitle: "Fundamento de todo el mundo manifestado", situation: "Clave para entender Bon", practice: { title: "Descripción de Cinco Elementos", time: "Lectura", steps: [
+        "Cinco elementos — tierra, agua, fuego, aire, espacio — fundamento de todo el mundo manifestado en Bon.",
+        "Tierra (amarillo, cuadrado, sílaba LAM, bazo): estabilidad. Diosa — Satri Ersang.",
+        "Agua (azul, media luna, sílaba VAM, riñones): fluidez. Diosa — Kyedima.",
+        "Fuego (rojo, triángulo, sílaba RAM, hígado): transformación. Diosa — Meri.",
+        "Aire (verde, círculo, sílaba YAM, pulmones): movimiento. Diosa — Lungta.",
+        "Espacio (blanco, esfera, sílaba KHAM, corazón): apertura. Diosa — Namkha.",
+        "Mantra de todos los elementos: A YAM RAM MAM KHAM DRUM DU."
+      ] } }
+    } },
+    { id: "offerings-desc", icon: "🙏", translations: {
+      ru: { title: "Подношения и Четыре Гостя", subtitle: "Практика щедрости и связи с миром", situation: "Развитие сердца и гармонии", practice: { title: "Описание Подношений", time: "Чтение", steps: [
+        "Практика подношений развивает щедрость, чувствительность и сострадание. Истинное подношение происходит на уровне воображения и намерения.",
+        "Четыре категории гостей: 1) Гости почитания — Три Драгоценности (Будды, Бодхисаттвы, Гуру). 2) Гости-защитники — охранители учения (Дхармапалы). 3) Кармические гости — восемь классов духов. 4) Гости сострадания — все чувствующие существа.",
+        "Санг — дымовое подношение можжевельника для очищения пространства.",
+        "Серкьем — золотое подношение напитка (чай, молоко) защитникам Дхармы.",
+        "Сур — подношение сожжённой пищи (цзамба с маслом) всем четырём группам гостей.",
+        "Перед едой предложите пищу 1-й и 2-й группам гостей. Остатки отдайте 3-й и 4-й группам."
+      ] } },
+      en: { title: "Offerings and Four Guests", subtitle: "Practice of generosity and connection with world", situation: "Heart development and harmony", practice: { title: "Description of Offerings", time: "Reading", steps: [
+        "Offering practice develops generosity, sensitivity and compassion. True offering happens at level of imagination and intention.",
+        "Four categories of guests: 1) Guests of reverence — Three Jewels (Buddhas, Bodhisattvas, Guru). 2) Protector guests — dharma guardians (Dharmapalas). 3) Karmic guests — eight classes of spirits. 4) Guests of compassion — all sentient beings.",
+        "Sang — smoke offering of juniper for purifying space.",
+        "Serkem — golden drink offering (tea, milk) to Dharma protectors.",
+        "Sur — burnt food offering (tsampa with butter) to all four groups of guests.",
+        "Before eating, offer food to 1st and 2nd groups. Remainders give to 3rd and 4th groups."
+      ] } },
+      es: { title: "Ofrendas y Cuatro Huéspedes", subtitle: "Práctica de generosidad y conexión con el mundo", situation: "Desarrollo del corazón y armonía", practice: { title: "Descripción de Ofrendas", time: "Lectura", steps: [
+        "La práctica de ofrendas desarrolla generosidad, sensibilidad y compasión. Verdadera ofrenda ocurre en nivel de imaginación e intención.",
+        "Cuatro categorías de huéspedes: 1) Huéspedes de reverencia — Tres Joyas (Budás, Bodhisattvas, Guru). 2) Huéspedes protectores — guardianes del dharma (Dharmapalas). 3) Huéspedes kármicos — ocho clases de espíritus. 4) Huéspedes de compasión — todos los seres sintientes.",
+        "Sang — ofrenda de humo de enebro para purificar espacio.",
+        "Serkem — ofrenda dorada de bebida (té, leche) a protectores del Dharma.",
+        "Sur — ofrenda de comida quemada (tsampa con mantequilla) a los cuatro grupos.",
+        "Antes de comer, ofrece comida a 1er y 2do grupos. Restos da a 3er y 4to grupos."
+      ] } }
+    } }
   ]
 };
 
